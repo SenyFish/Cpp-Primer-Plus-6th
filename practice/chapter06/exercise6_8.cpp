@@ -13,7 +13,7 @@ int main() {
     unsigned int n = 0;
     char ch;
 
-    cout << "Enter a file name: ";
+    cout << "请输入文件名：";
     getline(cin, fn);
 
     in_file_handle.open(fn.c_str());
@@ -22,8 +22,8 @@ int main() {
     }
     in_file_handle.close();
 
-    cout << "There are " << n << " characters in " 
-         << fn << " file." << endl;
+    cout << "文件" << fn << "中有" << n 
+         << "个字符。" << endl;
 
     return 0;
 }

@@ -19,21 +19,21 @@ int main() {
     using namespace std;
 
     int n;
-    cout << "Enter an integer number: ";
+    cout << "请输入一个整数：";
     while (!(cin >> n)) {
         cin.clear();
         while (cin.get() != '\n') {
             continue;
         }
-        cout << "Please enter an integer number: ";
+        cout << "请输入一个整数：";
     }
 
     if (n < 0) {
-        cout << "Negative number don't have factorial." << endl;
+        cout << "负数没有阶乘。" << endl;
         exit(1);
     }
 
     long f = factorial(n);
-    cout << "The factorial of " << n << " is " << f << endl;
+    cout << n << "的阶乘为" << f << endl;
     return 0;
 }

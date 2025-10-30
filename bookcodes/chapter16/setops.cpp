@@ -1,4 +1,4 @@
-// setops.cpp -- some set operations
+// setops.cpp -- 一些集合操作
 #include <iostream>
 #include <string>
 #include <set>
@@ -16,27 +16,27 @@ int main()
     set<string> B(s2, s2 + N);
 
     ostream_iterator<string, char> out(cout, " ");
-    cout << "Set A: ";
+    cout << "集合A：";
     copy(A.begin(), A.end(), out);
     cout << endl;
-    cout << "Set B: ";
+    cout << "集合B：";
     copy(B.begin(), B.end(), out);
     cout << endl;
 
-    cout << "Union of A and B:\n";
+    cout << "A和B的并集：\n";
     set_union(A.begin(), A.end(), B.begin(), B.end(), out);
     cout << endl;
 
-    cout << "Intersection of A and B:\n";
+    cout << "A和B的交集：\n";
     set_intersection(A.begin(), A.end(), B.begin(), B.end(), out);
     cout << endl;
 
-    cout << "Difference of A and B:\n";
+    cout << "A和B的差集：\n";
     set_difference(A.begin(), A.end(), B.begin(), B.end(), out);
     cout << endl;
 
     set<string> C;
-    cout << "Set C:\n";
+    cout << "集合C：\n";
     set_union(A.begin(), A.end(), B.begin(), B.end(),
         insert_iterator<set<string> >(C, C.begin()));
     copy(C.begin(), C.end(), out);
@@ -44,11 +44,11 @@ int main()
 
     string s3("grungy");
     C.insert(s3);
-    cout << "Set C after insertion:\n";
+    cout << "插入后的集合C：\n";
     copy(C.begin(), C.end(),out);
     cout << endl;
 
-    cout << "Showing a range:\n";
+    cout << "显示一个范围：\n";
     copy(C.lower_bound("ghost"),C.upper_bound("spook"), out);
     cout << endl;
     // cin.get();

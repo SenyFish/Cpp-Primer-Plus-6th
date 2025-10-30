@@ -1,24 +1,24 @@
-// strings.cpp -- storing strings in an array
+// strings.cpp -- 在数组中存储字符串
 #include <iostream>
-#include <cstring>  // for the strlen() function
+#include <cstring>  // 用于strlen()函数
 int main()
 {
     using namespace std;
     const int Size = 15;
-    char name1[Size];               // empty array
-    char name2[Size] = "C++owboy";  // initialized array
-    // NOTE: some implementations may require the static keyword
-    // to initialize the array name2
+    char name1[Size];               // 空数组
+    char name2[Size] = "C++owboy";  // 初始化的数组
+    // 注意：某些实现可能需要static关键字
+    // 来初始化数组name2
 
-    cout << "Howdy! I'm " << name2;
-    cout << "! What's your name?\n";
+    cout << "你好！我是 " << name2;
+    cout << "！你叫什么名字？\n";
     cin >> name1;
-    cout << "Well, " << name1 << ", your name has ";
-    cout << strlen(name1) << " letters and is stored\n";
-    cout << "in an array of " << sizeof(name1) << " bytes.\n";
-    cout << "Your initial is " << name1[0] << ".\n";
-    name2[3] = '\0';                // set to null character
-    cout << "Here are the first 3 characters of my name: ";
+    cout << "好的，" << name1 << "，你的名字有 ";
+    cout << strlen(name1) << " 个字母，存储在\n";
+    cout << "一个 " << sizeof(name1) << " 字节的数组中。\n";
+    cout << "你名字的首字母是 " << name1[0] << "。\n";
+    name2[3] = '\0';                // 设置为空字符
+    cout << "这是我名字的前3个字符：";
     cout << name2 << endl;
     // cin.get();
     // cin.get();

@@ -7,19 +7,19 @@ int main() {
 
     double degree, minutes, seconds;
 
-    cout << "Enter a latitude in degree, minutes and seconds." << endl;
-    cout << "First, enter the degree: ";
+    cout << "请输入以度、分、秒表示的纬度。" << endl;
+    cout << "首先，输入度数：";
     cin >> degree;
 
-    cout << "Next, enter the minutes of arc: ";
+    cout << "接下来，输入弧分：";
     cin >> minutes;
 
-    cout << "Finally, enter the seconds of arc: ";
+    cout << "最后，输入弧秒：";
     cin >> seconds;
 
     double degree2 = degree + minutes/60 + seconds/3600;
-    cout << degree << " degrees, " << minutes << " minutes, "
-         << seconds << " seconds = " << degree2 << endl;
+    cout << degree << " 度，" << minutes << " 分，"
+         << seconds << " 秒 = " << degree2 << " 度" << endl;
 
     return 0;
 }

@@ -1,4 +1,4 @@
-// food processing program
+// 食品加工程序
 
 #include <iostream>
 
@@ -8,12 +8,13 @@ int main() {
     int carrots;
 
     carrots = 25;
-    cout << "I have ";
+    cout << "我有 ";
     cout << carrots;
+    cout << " 根胡萝卜";
     cout << endl;
 
     carrots = carrots - 1;
-    cout << "Crunch, crunch. Now I have " << carrots << " carrots." << endl;
+    cout << "咔嚓咔嚓。现在我有 " << carrots << " 根胡萝卜。" << endl;
 
     return 0;
 }

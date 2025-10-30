@@ -1,15 +1,15 @@
-// twofile1.cpp -- variables with external and internal linkage
-#include <iostream>     // to be compiled with two file2.cpp
-int tom = 3;            // external variable definition
-int dick = 30;          // external variable definition
-static int harry = 300; // static, internal linkage
-// function prototype
+// twofile1.cpp -- 具有外部和内部链接的变量
+#include <iostream>     // 与twofile2.cpp一起编译
+int tom = 3;            // 外部变量定义
+int dick = 30;          // 外部变量定义
+static int harry = 300; // static，内部链接
+// 函数原型
 void remote_access();
 
 int main()
 {
     using namespace std;
-    cout << "main() reports the following addresses:\n";
+    cout << "main()报告以下地址：\n";
     cout << &tom << " = &tom, " << &dick << " = &dick, ";
     cout << &harry << " = &harry\n";
     remote_access();

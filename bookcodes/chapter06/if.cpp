@@ -1,22 +1,22 @@
-// if.cpp -- using the if statement
+// if.cpp -- 使用if语句
 #include <iostream>
 int main()
 {
-    using std::cin;     // using declarations
+    using std::cin;     // using声明
 	using std::cout;
     char ch;
     int spaces = 0;
     int total = 0;
     cin.get(ch);
-    while (ch != '.')   // quit at end of sentence
+    while (ch != '.')   // 在句子结尾退出
     {
-        if (ch == ' ')  // check if ch is a space
+        if (ch == ' ')  // 检查ch是否为空格
             ++spaces;
-        ++total;        // done every time
+        ++total;        // 每次都执行
         cin.get(ch);
     }
-    cout << spaces << " spaces, " << total;
-    cout << " characters total in sentence\n";
+    cout << spaces << "个空格，" << total;
+    cout << "个字符，句子总计\n";
     // cin.get();
     // cin.get();
     return 0;

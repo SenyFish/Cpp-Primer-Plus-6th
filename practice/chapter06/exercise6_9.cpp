@@ -17,7 +17,7 @@ int main() {
     };
 
     int contribute_num = 0;
-    cout << "Enter a file name: ";
+    cout << "请输入文件名：";
 
     getline(cin, file_name);  // 读一整行，行末回车符排除
     in_file_handle.open(file_name.c_str());
@@ -44,31 +44,31 @@ int main() {
     in_file_handle.close();
 
     unsigned int grand_amount_n = 0;
-    cout << "\nGrand patron: " << endl;
+    cout << "\n大捐助者：" << endl;
     for (int i = 0; i < contribute_num; ++i) {
 
         if (p_contribution[i].amount > Grand_Amount) {
-            cout << "Contributor name: " << p_contribution[i].name << "\n"
-                 << "Contributor amount: " << p_contribution[i].amount << endl;
+            cout << "捐助者姓名：" << p_contribution[i].name << "\n"
+                 << "捐助金额：" << p_contribution[i].amount << endl;
             ++grand_amount_n;
         }
     }
 
     if (grand_amount_n == 0) {
-        cout << "None" << endl;
+        cout << "无" << endl;
     }
 
     bool is_empty = true;
-    cout << "\nPatrons: " << endl;
+    cout << "\n捐助者：" << endl;
     for (int i=0; i < contribute_num; ++i) {
-        cout << "Contributor name: " << p_contribution[i].name << "\n"
-             << "Contributor amount: " << p_contribution[i].amount << endl;
+        cout << "捐助者姓名：" << p_contribution[i].name << "\n"
+             << "捐助金额：" << p_contribution[i].amount << endl;
 
         is_empty = false;
     }
 
     if (is_empty) {
-        cout << "** None **" << endl;
+        cout << "** 无 **" << endl;
     }
 
     delete [] p_contribution;

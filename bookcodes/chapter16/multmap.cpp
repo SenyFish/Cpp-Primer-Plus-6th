@@ -1,4 +1,4 @@
-// multmap.cpp -- use a multimap
+// multmap.cpp -- 使用multimap
 #include <iostream>
 #include <string>
 #include <map>
@@ -20,13 +20,13 @@ int main()
     codes.insert(Pair(415, "San Rafael"));
     codes.insert(Pair(510, "Berkeley"));
 
-    cout << "Number of cities with area code 415: "
+    cout << "区号415的城市数量："
          << codes.count(415) << endl;
-    cout << "Number of cities with area code 718: "
+    cout << "区号718的城市数量："
          << codes.count(718) << endl;
-    cout << "Number of cities with area code 510: "
+    cout << "区号510的城市数量："
          << codes.count(510) << endl;
-    cout << "Area Code   City\n";
+    cout << "区号        城市\n";
     MapCode::iterator it;
     for (it = codes.begin(); it != codes.end(); ++it)
         cout << "    " << (*it).first << "     "
@@ -35,7 +35,7 @@ int main()
     pair<MapCode::iterator, MapCode::iterator> 
 		auto range
          = codes.equal_range(718);
-    cout << "Cities with area code 718:\n";
+    cout << "区号718的城市：\n";
     for (it = range.first; it != range.second; ++it)
         cout <<  (*it).second    << endl;
     // cin.get();

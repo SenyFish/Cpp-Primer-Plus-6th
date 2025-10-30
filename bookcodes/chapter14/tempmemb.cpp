@@ -1,4 +1,4 @@
-// tempmemb.cpp -- template members
+// tempmemb.cpp -- 模板成员
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -7,7 +7,7 @@ template <typename T>
 class beta
 {
 private:
-    template <typename V>  // nested template class member
+    template <typename V>  // 嵌套模板类成员
     class hold
     {
     private:
@@ -17,11 +17,11 @@ private:
         void show() const { cout << val << endl; }
         V Value() const { return val; }
     };
-    hold<T> q;             // template object
-    hold<int> n;           // template object
+    hold<T> q;             // 模板对象
+    hold<int> n;           // 模板对象
 public:
     beta( T t, int i) : q(t), n(i) {}
-    template<typename U>   // template method
+    template<typename U>   // 模板方法
     U blab(U u, T t) { return (n.Value() + q.Value()) * u / t; }
     void Show() const { q.show(); n.show();}
 };
@@ -29,14 +29,14 @@ public:
 int main()
 {
     beta<double> guy(3.5, 3);
-    cout << "T was set to double\n";
+    cout << "T被设置为double\n";
     guy.Show();
-    cout << "V was set to T, which is double, then V was set to int\n";
+    cout << "V被设置为T，即double，然后V被设置为int\n";
     cout << guy.blab(10, 2.3) << endl;
-    cout << "U was set to int\n";
+    cout << "U被设置为int\n";
     cout << guy.blab(10.0, 2.3) << endl;
-    cout << "U was set to double\n";
-    cout << "Done\n";
+    cout << "U被设置为double\n";
+    cout << "完成\n";
     // std::cin.get();
     return 0; 
 }

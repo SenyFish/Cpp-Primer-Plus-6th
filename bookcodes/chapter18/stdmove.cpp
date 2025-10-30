@@ -1,30 +1,30 @@
-// stdmove.cpp -- using std::move()
+// stdmove.cpp -- 使用std::move()
 #include <iostream>
 #include <utility>
-// use the following for g++4.5
+// g++4.5使用以下内容
 // #define nullptr 0
-// interface
+// 接口
 class Useless
 {
 private:
-    int n;          // number of elements
-    char * pc;      // pointer to data
-    static int ct;  // number of objects
+    int n;          // 元素数量
+    char * pc;      // 数据指针
+    static int ct;  // 对象数量
     void ShowObject() const;
 public:
     Useless();
     explicit Useless(int k);
     Useless(int k, char ch);
-    Useless(const Useless & f); // regular copy constructor
-    Useless(Useless && f);      // move constructor
+    Useless(const Useless & f); // 常规复制构造函数
+    Useless(Useless && f);      // 移动构造函数
     ~Useless();
     Useless operator+(const Useless & f)const;
-    Useless & operator=(const Useless & f); // copy assignment
-    Useless & operator=(Useless && f);      // move assignment 
+    Useless & operator=(const Useless & f); // 复制赋值
+    Useless & operator=(Useless && f);      // 移动赋值
     void ShowData() const;
 };
 
-// implementation
+// 实现
 int Useless::ct = 0;
 
 Useless::Useless()
@@ -59,8 +59,8 @@ Useless::Useless(const Useless & f): n(f.n)
 Useless::Useless(Useless && f): n(f.n) 
 {
     ++ct;
-    pc = f.pc;       // steal address
-    f.pc = nullptr;  // give old object nothing in return
+    pc = f.pc;       // 窃取地址
+    f.pc = nullptr;  // 不给旧对象任何回报
     f.n = 0;
 }
 
@@ -69,9 +69,9 @@ Useless::~Useless()
     delete [] pc;
 }
 
-Useless & Useless::operator=(const Useless & f)  // copy assignment
+Useless & Useless::operator=(const Useless & f)  // 复制赋值
 {
-    std::cout << "copy assignment operator called:\n";
+    std::cout << "复制赋值运算符被调用：\n";
     if (this == &f)
         return *this;
     delete [] pc;
@@ -82,9 +82,9 @@ Useless & Useless::operator=(const Useless & f)  // copy assignment
     return *this;
 }
 
-Useless & Useless::operator=(Useless && f)       // move assignment
+Useless & Useless::operator=(Useless && f)       // 移动赋值
 {
-    std::cout << "move assignment operator called:\n";
+    std::cout << "移动赋值运算符被调用：\n";
     if (this == &f)
         return *this;
     delete [] pc;
@@ -107,47 +107,47 @@ Useless Useless::operator+(const Useless & f)const
 
 void Useless::ShowObject() const
 { 
-    std::cout << "Number of elements: " << n;
-    std::cout << " Data address: " << (void *) pc << std::endl;
+    std::cout << "元素数量：" << n;
+    std::cout << " 数据地址：" << (void *) pc << std::endl;
 }
 
 void Useless::ShowData() const
 {
     if (n == 0)
-        std::cout << "(object empty)";
+        std::cout << "（对象为空）";
     else
         for (int i = 0; i < n; i++)
             std::cout << pc[i];
     std::cout << std::endl;
 }
 
-// application
+// 应用
 int main()
 {
     using std::cout;
     {
         Useless one(10, 'x');
-        Useless two = one +one;   // calls move constructor
-        cout << "object one: ";
+        Useless two = one +one;   // 调用移动构造函数
+        cout << "对象one：";
         one.ShowData();
-        cout << "object two: ";
+        cout << "对象two：";
         two.ShowData();
         Useless three, four;
         cout << "three = one\n";
-        three = one;              // automatic copy assignment
-        cout << "now object three = ";
+        three = one;              // 自动复制赋值
+        cout << "现在对象three = ";
         three.ShowData();
-        cout << "and object one = ";
+        cout << "对象one = ";
         one.ShowData();
         cout << "four = one + two\n";
-        four = one + two;         // automatic move assignment
-        cout << "now object four = ";
+        four = one + two;         // 自动移动赋值
+        cout << "现在对象four = ";
         four.ShowData();
         cout << "four = move(one)\n";
-        four = std::move(one);    // forced move assignment
-        cout << "now object four = ";
+        four = std::move(one);    // 强制移动赋值
+        cout << "现在对象four = ";
         four.ShowData();
-        cout << "and object one = ";
+        cout << "对象one = ";
         one.ShowData();
     }
      std::cin.get();

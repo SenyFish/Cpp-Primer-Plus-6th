@@ -1,21 +1,21 @@
-// ifelse.cpp -- using the if else statement
+// ifelse.cpp -- 使用if else语句
 #include <iostream>
 int main()
 {
     char ch;
 
-    std::cout << "Type, and I shall repeat.\n";
+    std::cout << "请输入，我会重复。\n";
     std::cin.get(ch);
     while (ch != '.')
     {
         if (ch == '\n')
-            std::cout << ch;     // done if newline
+            std::cout << ch;     // 如果是换行符则完成
         else
-            std::cout << ++ch;   // done otherwise
+            std::cout << ++ch;   // 否则完成
         std::cin.get(ch);
     }
-// try ch + 1 instead of ++ch for interesting effect
-    std::cout << "\nPlease excuse the slight confusion.\n";
+// 尝试用ch + 1代替++ch会有有趣的效果
+    std::cout << "\n请原谅这轻微的混乱。\n";
 	// std::cin.get();
 	// std::cin.get();
     return 0;

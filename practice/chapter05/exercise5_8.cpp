@@ -7,7 +7,7 @@ int main() {
 
     int word_count = 0;
     char ch[80];
-    cout << "Enter a word (type 'done' to stop the program.): \n";
+    cout << "请输入单词（输入'done'停止程序）：\n";
     do {
         cin >> ch;
 
@@ -17,7 +17,7 @@ int main() {
 
     } while (strcmp(ch, "done") != 0);
 
-    cout << "\nYou entered a total of " << word_count << " words." << endl;
+    cout << "\n你总共输入了" << word_count << "个单词。" << endl;
 
     return 0;
 }

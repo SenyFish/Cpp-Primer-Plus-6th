@@ -1,23 +1,23 @@
-// block.cpp -- use a block statement
+// block.cpp -- 使用块语句
 #include <iostream>
 int main()
 {
     using namespace std;
-    cout << "The Amazing Accounto will sum and average ";
-    cout << "five numbers for you.\n";
-    cout << "Please enter five values:\n";
+    cout << "神奇的会计师将为你求和并计算";
+    cout << "五个数字的平均值。\n";
+    cout << "请输入五个值：\n";
     double number;
     double sum = 0.0;
     for (int i = 1; i <= 5; i++)
-    {                                   // block starts here
-        cout << "Value " << i << ": ";
+    {                                   // 块从这里开始
+        cout << "值 " << i << "：";
         cin >> number;
         sum += number;
-    }                                   // block ends here
-    cout << "Five exquisite choices indeed! ";
-    cout << "They sum to " << sum << endl;
-    cout << "and average to " << sum / 5 << ".\n";
-    cout << "The Amazing Accounto bids you adieu!\n";
+    }                                   // 块在这里结束
+    cout << "五个绝妙的选择！";
+    cout << "它们的和是 " << sum << endl;
+    cout << "平均值是 " << sum / 5 << "。\n";
+    cout << "神奇的会计师向你告别！\n";
     // cin.get();
     // cin.get();
     return 0; 

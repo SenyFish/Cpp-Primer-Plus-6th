@@ -1,31 +1,31 @@
-// cingolf.cpp -- non-numeric input skipped
+// cingolf.cpp -- 跳过非数字输入
 #include <iostream>
 const int Max = 5;
 int main()
 {
     using namespace std;
-// get data
+// 获取数据
     int golf[Max];
-    cout << "Please enter your golf scores.\n";
-    cout << "You must enter " << Max << " rounds.\n";
+    cout << "请输入你的高尔夫成绩。\n";
+    cout << "你必须输入" << Max << "轮成绩。\n";
     int i;
     for (i = 0; i < Max; i++)
     {
-        cout << "round #" << i+1 << ": ";
+        cout << "第" << i+1 << "轮：";
         while (!(cin >> golf[i])) {
-            cin.clear();     // reset input
+            cin.clear();     // 重置输入
             while (cin.get() != '\n')
-                continue;    // get rid of bad input
-            cout << "Please enter a number: ";
+                continue;    // 清除错误输入
+            cout << "请输入一个数字：";
         }
     }
-// calculate average
+// 计算平均值
     double total = 0.0;
     for (i = 0; i < Max; i++)
         total += golf[i];
-// report results
-    cout << total / Max << " = average score "
-            << Max << " rounds\n";
+// 报告结果
+    cout << total / Max << " = " << Max 
+            << "轮的平均成绩\n";
     // cin.get();
     // cin.get();
     return 0; 

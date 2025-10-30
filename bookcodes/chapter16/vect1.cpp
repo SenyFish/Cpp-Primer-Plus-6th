@@ -1,4 +1,4 @@
-// vect1.cpp -- introducing the vector template
+// vect1.cpp -- 介绍vector模板
 #include <iostream>
 #include <string>
 #include <vector>
@@ -14,19 +14,19 @@ int main()
 
     vector<int> ratings(NUM);
     vector<string> titles(NUM);
-    cout << "You will do exactly as told. You will enter\n"
-         << NUM << " book titles and your ratings (0-10).\n";
+    cout << "您将完全按照指示操作。您将输入\n"
+         << NUM << "本书的标题和您的评分（0-10）。\n";
     int i;
     for (i = 0; i < NUM; i++)
     {
-        cout << "Enter title #" << i + 1 << ": ";
+        cout << "输入标题#" << i + 1 << "：";
         getline(cin,titles[i]);
-        cout << "Enter your rating (0-10): ";
+        cout << "输入您的评分（0-10）：";
         cin >> ratings[i];
         cin.get();
     }
-    cout << "Thank you. You entered the following:\n"
-          << "Rating\tBook\n";
+    cout << "谢谢。您输入了以下内容：\n"
+          << "评分\t书籍\n";
     for (i = 0; i < NUM; i++)
     {
         cout << ratings[i] << "\t" << titles[i] << endl;

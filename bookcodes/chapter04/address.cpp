@@ -1,4 +1,4 @@
-// address.cpp -- using the & operator to find addresses
+// address.cpp -- 使用&运算符查找地址
 #include <iostream>
 int main()
 {
@@ -6,12 +6,12 @@ int main()
     int donuts = 6;
     double cups = 4.5;
 
-    cout << "donuts value = " << donuts;
-    cout << " and donuts address = " << &donuts << endl;
-// NOTE: you may need to use unsigned (&donuts)
-// and unsigned (&cups)
-    cout << "cups value = " << cups;
-    cout << " and cups address = " << &cups << endl;
+    cout << "donuts的值 = " << donuts;
+    cout << "，donuts的地址 = " << &donuts << endl;
+// 注意：你可能需要使用unsigned (&donuts)
+// 和unsigned (&cups)
+    cout << "cups的值 = " << cups;
+    cout << "，cups的地址 = " << &cups << endl;
     // cin.get();
     return 0; 
 }

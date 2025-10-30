@@ -22,19 +22,19 @@ int main() {
     };
 
     // 输出第一个结构体元素，按照数组的方式输出
-    cout << "The name of the CandyBar: " << p_candybar[0].name << "\n"
-         << "The weight of the candy: " << p_candybar[0].weight << "\n"
-         << "The calories information: " << p_candybar[0].calories << "\n\n";
+    cout << "糖果的名称：" << p_candybar[0].name << "\n"
+         << "糖果的重量：" << p_candybar[0].weight << "\n"
+         << "热量信息：" << p_candybar[0].calories << "\n\n";
 
     // 输出第二个结构体元素，可以按照指针的逻辑输出
-    cout << "The name of the CandyBar: " << (p_candybar+1)->name << "\n"
-         << "The weight of the candy: " << (p_candybar+1)->weight << "\n"
-         << "The calories information: " << (p_candybar+1)->calories << "\n\n";
+    cout << "糖果的名称：" << (p_candybar+1)->name << "\n"
+         << "糖果的重量：" << (p_candybar+1)->weight << "\n"
+         << "热量信息：" << (p_candybar+1)->calories << "\n\n";
 
     // 输出第三个结构体元素，又是数据的方式
-    cout << "The name of the CandyBar: " << p_candybar[2].name << "\n"
-         << "The weight of the candy: " << p_candybar[2].weight << "\n"
-         << "The calories information: " << p_candybar[2].calories << endl;
+    cout << "糖果的名称：" << p_candybar[2].name << "\n"
+         << "糖果的重量：" << p_candybar[2].weight << "\n"
+         << "热量信息：" << p_candybar[2].calories << endl;
 
     delete [] p_candybar;
 

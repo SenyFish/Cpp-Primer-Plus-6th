@@ -5,18 +5,18 @@
 
 int Fill_array(double data[], int max_num) {
 
-    std::cout << "Enter double numbers (non-digital to quit): " << std::endl;
+    std::cout << "请输入浮点数（输入非数字退出）：" << std::endl;
     int i = 0;
     while ((i < max_num) && (std::cin >> data[i]))
         ++i;
 
-    // return the size of array
+    // 返回数组大小
     return i;
 }
 
 void Show_array(const double data[], int n) {
 
-    std::cout << "The size of array is: " << n << " and the data is: ";
+    std::cout << "数组大小为：" << n << "，数据为：";
     for (size_t i(0); i < n; ++i) {
         std::cout << data[i] << " ";
     }

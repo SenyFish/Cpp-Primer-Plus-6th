@@ -10,7 +10,7 @@ int main() {
 
     while (1) {
 
-        cout << "Enter a number (int/double) (0 to exit): ";
+        cout << "请输入一个数字（整数/小数）（输入0退出）：";
         cin >> ch;
 
         if (ch == 0) {
@@ -18,7 +18,7 @@ int main() {
         }
 
         s += ch;
-        cout << "Until now, the sum of the number you inputed is: " 
+        cout << "到目前为止，你输入的数字总和为：" 
              << s << endl;
     }
 

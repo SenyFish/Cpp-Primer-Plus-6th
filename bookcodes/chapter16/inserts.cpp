@@ -1,4 +1,4 @@
-// inserts.cpp -- copy() and insert iterators
+// inserts.cpp -- copy()和插入迭代器
 #include <iostream>
 #include <string>
 #include <iterator>
@@ -18,12 +18,12 @@ int main()
     for_each(words.begin(), words.end(), output);
     cout << endl;
  
-// construct anonymous back_insert_iterator object
+// 构造匿名back_insert_iterator对象
     copy(s2, s2 + 2, back_insert_iterator<vector<string> >(words));
     for_each(words.begin(), words.end(), output);
     cout << endl;
 
-// construct anonymous insert_iterator object
+// 构造匿名insert_iterator对象
     copy(s3, s3 + 2, insert_iterator<vector<string> >(words, words.begin()));
     for_each(words.begin(), words.end(), output);
     cout << endl;

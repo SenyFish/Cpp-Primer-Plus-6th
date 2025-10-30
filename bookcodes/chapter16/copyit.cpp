@@ -1,4 +1,4 @@
-// copyit.cpp -- copy() and iterators
+// copyit.cpp -- copy()和迭代器
 #include <iostream>
 #include <iterator>
 #include <vector>
@@ -9,19 +9,19 @@ int main()
 
     int casts[10] = {6, 7, 2, 9 ,4 , 11, 8, 7, 10, 5};
     vector<int> dice(10);
-    // copy from array to vector
+    // 从数组复制到vector
     copy(casts, casts + 10, dice.begin());
-    cout << "Let the dice be cast!\n";
-    // create an ostream iterator
+    cout << "让骰子掷出去！\n";
+    // 创建一个ostream迭代器
     ostream_iterator<int, char> out_iter(cout, " ");
-    // copy from vector to output
+    // 从vector复制到输出
     copy(dice.begin(), dice.end(), out_iter);
     cout << endl;
-    cout <<"Implicit use of reverse iterator.\n";
+    cout <<"隐式使用反向迭代器。\n";
     copy(dice.rbegin(), dice.rend(), out_iter);
     cout << endl;
-    cout <<"Explicit use of reverse iterator.\n";
-   // vector<int>::reverse_iterator ri;  // use if auto doesn't work
+    cout <<"显式使用反向迭代器。\n";
+   // vector<int>::reverse_iterator ri;  // 如果auto不起作用则使用
     for (auto ri = dice.rbegin(); ri != dice.rend(); ++ri)
         cout << *ri << ' ';
     cout << endl;

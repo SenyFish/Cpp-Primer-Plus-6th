@@ -5,8 +5,8 @@ main
     namespace
          std; cout
             <<
-"Come up and C++ me some time."
+"快来用 C++ 编程吧！"
 ;    cout <<
 endl; cout <<
-"You won't regret it!" << 
+"你一定不会后悔的！" << 
 endl;/*cin.get();*/return 0; }

@@ -1,18 +1,18 @@
-// numstr.cpp -- following number input with line input
+// numstr.cpp -- 数字输入后跟行输入
 #include <iostream>
 int main()
 {
     using namespace std;
-    cout << "What year was your house built?\n";
+    cout << "你的房子是哪一年建的？\n";
     int year;
     cin >> year;
     // cin.get();
-    cout << "What is its street address?\n";
+    cout << "它的街道地址是什么？\n";
     char address[80];
     cin.getline(address, 80);
-    cout << "Year built: " << year << endl;
-    cout << "Address: " << address << endl;
-    cout << "Done!\n";
+    cout << "建造年份：" << year << endl;
+    cout << "地址：" << address << endl;
+    cout << "完成！\n";
     // cin.get();
     return 0; 
 }

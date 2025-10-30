@@ -1,5 +1,5 @@
-// usestok0.cpp -- the client program
-// compile with stock.cpp
+// usestok0.cpp -- 客户端程序
+// 与stock.cpp一起编译
 #include <iostream>
 #include "stock00.h"
 

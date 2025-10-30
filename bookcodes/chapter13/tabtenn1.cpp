@@ -1,4 +1,4 @@
-//tabtenn1.cpp -- simple base-class methods
+//tabtenn1.cpp -- 简单的基类方法
 #include "tabtenn1.h"
 #include <iostream>
 
@@ -11,7 +11,7 @@ void TableTennisPlayer::Name() const
     std::cout << lastname << ", " << firstname;
 }
 
-// RatedPlayer methods
+// RatedPlayer方法
 RatedPlayer::RatedPlayer(unsigned int r, const string & fn,
      const string & ln, bool ht) : TableTennisPlayer(fn, ln, ht)
 {

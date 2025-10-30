@@ -1,15 +1,15 @@
-// stacker.cpp -- testing the Stack class
+// stacker.cpp -- 测试Stack类
 #include <iostream>
-#include <cctype>  // or ctype.h
+#include <cctype>  // 或ctype.h
 #include "stack.h"
 int main()
 {
     using namespace std;
-    Stack st; // create an empty stack
+    Stack st; // 创建空栈
     char ch;
     unsigned long po;
-    cout << "Please enter A to add a purchase order,\n"
-        << "P to process a PO, or Q to quit.\n";
+    cout << "请输入A添加采购订单，\n"
+        << "P处理采购订单，或Q退出。\n";
     while (cin >> ch && toupper(ch) != 'Q')
     {
         while (cin.get() != '\n')   
@@ -22,25 +22,25 @@ int main()
         switch(ch)
         {
              case 'A':
-             case 'a': cout << "Enter a PO number to add: ";
+             case 'a': cout << "请输入要添加的采购订单号：";
                        cin >> po;
                        if (st.isfull())
-                           cout << "stack already full\n";
+                           cout << "栈已满\n";
                        else
                            st.push(po);
                        break;
              case 'P':
              case 'p': if (st.isempty())
-                           cout << "stack already empty\n";
+                           cout << "栈已空\n";
                        else {
                            st.pop(po);
-                           cout << "PO #" << po << " popped\n";
+                           cout << "采购订单#" << po << "已弹出\n";
                        }
                        break;
         }
-        cout << "Please enter A to add a purchase order,\n"
-             << "P to process a PO, or Q to quit.\n";
+        cout << "请输入A添加采购订单，\n"
+             << "P处理采购订单，或Q退出。\n";
     }
-    cout << "Bye\n";
+    cout << "再见\n";
     return 0; 
 }

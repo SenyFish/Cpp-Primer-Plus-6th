@@ -1,4 +1,4 @@
-// use_sales.cpp  -- nested exceptions
+// use_sales.cpp  -- 嵌套异常
 #include <iostream>
 #include "sales.h"
 
@@ -23,11 +23,11 @@ int main()
     Sales sales1(2011, vals1, 12);
     LabeledSales sales2("Blogstar",2012, vals2, 12 );
 
-    cout << "First try block:\n";
+    cout << "第一个try块：\n";
     try
     {
         int i;
-        cout << "Year = " << sales1.Year() << endl;
+        cout << "年份 = " << sales1.Year() << endl;
         for (i = 0; i < 12; ++i)
         {
 
@@ -35,8 +35,8 @@ int main()
             if (i % 6 == 5)
                 cout << endl;
         }
-        cout << "Year = " << sales2.Year() << endl;
-        cout << "Label = " << sales2.Label() << endl;
+        cout << "年份 = " << sales2.Year() << endl;
+        cout << "标签 = " << sales2.Label() << endl;
         for (i = 0; i <= 12; ++i)
         {
 
@@ -44,38 +44,38 @@ int main()
             if (i % 6 == 5)
                 cout << endl;
         }
-        cout << "End of try block 1.\n";
+        cout << "try块1结束。\n";
    }
    catch(LabeledSales::nbad_index & bad)
    {
         cout << bad.what();
-        cout << "Company: " << bad.label_val() << endl;
-        cout << "bad index: " << bad.bi_val() << endl;
+        cout << "公司：" << bad.label_val() << endl;
+        cout << "错误索引：" << bad.bi_val() << endl;
    }
    catch(Sales::bad_index & bad)
    {
         cout << bad.what();
-        cout << "bad index: " << bad.bi_val() << endl;
+        cout << "错误索引：" << bad.bi_val() << endl;
    }
-   cout << "\nNext try block:\n";
+   cout << "\n下一个try块：\n";
    try
     {
         sales2[2] = 37.5;
         sales1[20] = 23345;
-        cout << "End of try block 2.\n";
+        cout << "try块2结束。\n";
    }
    catch(LabeledSales::nbad_index & bad)
    {
         cout << bad.what();
-        cout << "Company: " << bad.label_val() << endl;
-        cout << "bad index: " << bad.bi_val() << endl;
+        cout << "公司：" << bad.label_val() << endl;
+        cout << "错误索引：" << bad.bi_val() << endl;
    }
    catch(Sales::bad_index & bad)
    {
         cout << bad.what();
-        cout << "bad index: " << bad.bi_val() << endl;
+        cout << "错误索引：" << bad.bi_val() << endl;
    }
-   cout << "done\n";
+   cout << "完成\n";
    // std::cin.get();
    return 0;
 }

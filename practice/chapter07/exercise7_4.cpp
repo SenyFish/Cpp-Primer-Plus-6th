@@ -20,8 +20,8 @@ int main() {
     unsigned int field1 = 47;
     unsigned int field2 = 27;
 
-    std::cout << "You have no chance in "
+    std::cout << "你有"
               << probability(field1, 5) * probability(field2, 1)
-              << " of winning.\n" << std::endl;
+              << "分之一的获胜机会。\n" << std::endl;
     return 0;
 }

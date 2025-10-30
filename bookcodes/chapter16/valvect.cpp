@@ -1,4 +1,4 @@
-// valvect.cpp -- comparing vector and valarray
+// valvect.cpp -- 比较vector和valarray
 #include <iostream>
 #include <valarray>
 #include <vector>
@@ -9,7 +9,7 @@ int main()
     vector<double> data;
     double temp;
 
-    cout << "Enter numbers (<=0 to quit):\n";
+    cout << "输入数字（<=0退出）：\n";
     while (cin >> temp && temp > 0)
         data.push_back(temp);
     sort(data.begin(), data.end());
@@ -27,11 +27,11 @@ int main()
     for (i = 0; i < size; i++)
     {
         cout.width(8);
-        cout << numbers[i] << ": ";
+        cout << numbers[i] << "：";
         cout.width(8);
         cout << results[i] << endl;
     }
-    cout << "done\n";
+    cout << "完成\n";
     // cin.get();
     // cin.get();
 

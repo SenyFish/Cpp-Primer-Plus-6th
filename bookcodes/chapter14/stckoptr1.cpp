@@ -1,4 +1,4 @@
-// stkoptr1.cpp -- testing stack of pointers
+// stkoptr1.cpp -- 测试指针栈
 #include <iostream>
 #include <cstdlib>     // for rand(), srand()
 #include <ctime>       // for time()
@@ -6,14 +6,14 @@
 const int Num = 10;
 int main()
 {
-    std::srand(std::time(0)); // randomize rand()
-    std::cout << "Please enter stack size: ";
+    std::srand(std::time(0)); // 随机化rand()
+    std::cout << "请输入栈大小：";
     int stacksize;
     std::cin >> stacksize;
-// create an empty stack with stacksize slots
+// 创建一个有stacksize个槽位的空栈
     Stack<const char *> st(stacksize); 
 
-// in basket
+// 输入篮
     const char * in[Num] = {
             " 1: Hank Gilgamesh", " 2: Kiki Ishtar",
             " 3: Betty Rocker", " 4: Ian Flagranti",
@@ -21,7 +21,7 @@ int main()
             " 7: Joy Almondo", " 8: Xaverie Paprika",
             " 9: Juan Moore", "10: Misha Mache"
             };
- // out basket
+ // 输出篮
     const char * out[Num];
 
     int processed = 0;
@@ -32,7 +32,7 @@ int main()
             st.push(in[nextin++]);
         else if (st.isfull())
             st.pop(out[processed++]);
-        else if (std::rand() % 2  && nextin < Num)   // 50-50 chance
+        else if (std::rand() % 2  && nextin < Num)   // 50-50概率
             st.push(in[nextin++]);
         else
             st.pop(out[processed++]);
@@ -40,7 +40,7 @@ int main()
     for (int i = 0; i < Num; i++)
         std::cout << out[i] << std::endl;
 
-    std::cout << "Bye\n";
+    std::cout << "再见\n";
     // std::cin.get();
     // std::cin.get();
 	return 0; 

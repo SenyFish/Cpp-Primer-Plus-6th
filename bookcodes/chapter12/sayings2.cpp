@@ -29,38 +29,38 @@ int main()
         else
             sayings[i] = temp;       // overloaded assignment
     }
-    int total = i;                   // total # of lines read
+    int total = i;                   // 读取的行数总计
 
     if (total > 0)
     {
-        cout << "Here are your sayings:\n";
+        cout << "以下是你的名言：\n";
         for (i = 0; i < total; i++)
             cout << sayings[i] << "\n";
 
-    // use pointers to keep track of shortest, first strings
-        String * shortest = &sayings[0]; // initialize to first object
+    // 使用指针追踪最短和首字母最先的字符串
+        String * shortest = &sayings[0]; // 初始化为第一个对象
         String * first = &sayings[0];
         for (i = 1; i < total; i++)
         {
             if (sayings[i].length() < shortest->length())
                 shortest = &sayings[i];
-            if (sayings[i] < *first)     // compare values
-                first = &sayings[i];     // assign address
+            if (sayings[i] < *first)     // 比较数值
+                first = &sayings[i];     // 赋值地址
         }
-        cout << "Shortest saying:\n" << * shortest << endl;
-        cout << "First alphabetically:\n" << * first << endl;
+        cout << "最短的名言：\n" << * shortest << endl;
+        cout << "字母序最靠前的名言：\n" << * first << endl;
 
         srand(time(0));
-        int choice = rand() % total; // pick index at random
-    // use new to create, initialize new String object
+        int choice = rand() % total; // 随机选择索引
+    // 使用new创建并初始化一个新的String对象
         String * favorite = new String(sayings[choice]);
-        cout << "My favorite saying:\n" << *favorite << endl;
+        cout << "我最喜欢的名言：\n" << *favorite << endl;
         delete favorite;
     }
     else
-        cout << "Not much to say, eh?\n";
-    cout << "Bye.\n";
-// keep window open
+        cout << "没有可显示的内容。\n";
+    cout << "再见。\n";
+// 保持窗口打开
 /*    if (!cin)
         cin.clear();
     while (cin.get() != '\n')

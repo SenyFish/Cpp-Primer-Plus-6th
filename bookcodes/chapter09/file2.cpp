@@ -1,9 +1,9 @@
-// file2.cpp -- contains functions called in file1.cpp
+// file2.cpp -- 包含file1.cpp中调用的函数
 #include <iostream>
 #include <cmath>
-#include "coordin.h" // structure templates, function prototypes
+#include "coordin.h" // 结构模板，函数原型
 
-// convert rectangular to polar coordinates
+// 将直角坐标转换为极坐标
 polar rect_to_polar(rect xypos)
 {
     using namespace std;
@@ -12,16 +12,16 @@ polar rect_to_polar(rect xypos)
     answer.distance =
         sqrt( xypos.x * xypos.x + xypos.y * xypos.y);
     answer.angle = atan2(xypos.y, xypos.x);
-    return answer;      // returns a polar structure
+    return answer;      // 返回极坐标结构
 }
 
-// show polar coordinates, converting angle to degrees
+// 显示极坐标，将角度转换为度
 void show_polar (polar dapos)
 {
     using namespace std;
     const double Rad_to_deg = 57.29577951;
 
-    cout << "distance = " << dapos.distance;
-    cout << ", angle = " << dapos.angle * Rad_to_deg;
-    cout << " degrees\n";
+    cout << "距离 = " << dapos.distance;
+    cout << "，角度 = " << dapos.angle * Rad_to_deg;
+    cout << "度\n";
 }

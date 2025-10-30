@@ -1,4 +1,4 @@
-// constcast.cpp -- using const_cast<>
+// constcast.cpp -- 使用const_cast<>
 #include <iostream>
 using std::cout;
 using std::endl;

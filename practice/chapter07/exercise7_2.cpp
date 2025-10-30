@@ -5,7 +5,7 @@
 
 int input(double data[], int max_num) {
     int i = 0;
-    std::cout << "Enter up o 10 golf score (-1 to quit): " << std::endl;
+    std::cout << "请输入最多10个高尔夫成绩（输入-1退出）：" << std::endl;
     while (std::cin >> data[i]) {
         if (data[i] == -1) {
             --i;
@@ -32,7 +32,7 @@ double calculate_average(const double data[], int n) {
 
 void output(const double data[], int n) {
 
-    std::cout << "The score are: " << std::endl;
+    std::cout << "成绩为：" << std::endl;
     for (size_t i(0); i < n; ++i) {
         std::cout << data[i] << " ";
     }
@@ -45,7 +45,7 @@ int main() {
     int n = input(glf_score, 10);
     double avg_score = calculate_average(glf_score, n);
     output(glf_score, n);
-    std::cout << "The average is: " << avg_score << std::endl;
+    std::cout << "平均分为：" << avg_score << std::endl;
 
     return 0;
 }

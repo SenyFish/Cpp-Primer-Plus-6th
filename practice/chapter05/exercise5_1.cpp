@@ -5,10 +5,10 @@ int main() {
     using namespace std;
     int number1, number2;
 
-    cout << "Enter the first number: ";
+    cout << "请输入第一个数字：";
     cin >> number1;
 
-    cout << "Enter the second number: ";
+    cout << "请输入第二个数字：";
     cin >> number2;
 
     if (number1 > number2) {
@@ -23,8 +23,8 @@ int main() {
         s += num;
     }
 
-    cout << "Sum the number from " << number1 << " to " << number2 
-         << ", sum = " << s << endl;
+    cout << "从 " << number1 << " 到 " << number2 
+         << " 的数字之和 = " << s << endl;
 
     return 0;
 }

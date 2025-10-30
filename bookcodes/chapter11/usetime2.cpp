@@ -1,5 +1,5 @@
-// usetime2.cpp -- using the third draft of the Time class
-// compile usetime2.cpp and mytime2.cpp together
+// usetime2.cpp -- 使用Time类的第三个草稿
+// 将usetime2.cpp和mytime2.cpp一起编译
 #include <iostream>
 #include "mytime2.h"
 
@@ -13,26 +13,26 @@ int main()
     Time diff;
     Time adjusted;
 
-    cout << "weeding time = ";
+    cout << "除草时间 = ";
     weeding.Show();
     cout << endl;
  
-    cout << "waxing time = ";
+    cout << "打蜡时间 = ";
     waxing.Show();
     cout << endl;
     
-    cout << "total work time = ";
-    total = weeding + waxing;   // use operator+()
+    cout << "总工作时间 = ";
+    total = weeding + waxing;   // 使用operator+()
     total.Show();
     cout << endl;
 
-    diff = weeding - waxing;    // use operator-()
-    cout << "weeding time - waxing time = ";
+    diff = weeding - waxing;    // 使用operator-()
+    cout << "除草时间 - 打蜡时间 = ";
     diff.Show();
     cout << endl;
 
-    adjusted = total * 1.5;      // use operator+()
-    cout << "adjusted work time = ";
+    adjusted = total * 1.5;      // 使用operator+()
+    cout << "调整后的工作时间 = ";
     adjusted.Show();
     cout << endl;
     // std::cin.get();    

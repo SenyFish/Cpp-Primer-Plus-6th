@@ -20,17 +20,17 @@ int main() {
         {"Joy Boy", 4.1, 430}
     };
 
-    cout << "The name of the CandyBar: " << candbar[0].name << "\n"
-         << "The weight of the candy: " << candbar[0].weight << "\n"
-         << "The calories information: " << candbar[0].calories << "\n\n";
+    cout << "糖果的名称：" << candbar[0].name << "\n"
+         << "糖果的重量：" << candbar[0].weight << "\n"
+         << "热量信息：" << candbar[0].calories << "\n\n";
 
-    cout << "The name of the CandyBar: " << candbar[1].name << "\n"
-         << "The weight of the candy: " << candbar[1].weight << "\n"
-         << "The calories information: " << candbar[1].calories << "\n\n";
+    cout << "糖果的名称：" << candbar[1].name << "\n"
+         << "糖果的重量：" << candbar[1].weight << "\n"
+         << "热量信息：" << candbar[1].calories << "\n\n";
 
-    cout << "The name of the CandyBar: " << candbar[2].name << "\n"
-         << "The weight of the candy: " << candbar[2].weight << "\n"
-         << "The calories information: " << candbar[2].calories << endl;
+    cout << "糖果的名称：" << candbar[2].name << "\n"
+         << "糖果的重量：" << candbar[2].weight << "\n"
+         << "热量信息：" << candbar[2].calories << endl;
 
     return 0;
 }

@@ -15,10 +15,10 @@ int main() {
         cleo_account += cleo_account * 0.05;
     }
 
-    cout << "After " << year << " Years. " 
-         << "Cleo's account is " << cleo_account
-         << " while more than the one of Daphne which is " 
-         << daphne_account << "." << endl;
+    cout << "经过" << year << "年后，" 
+         << "Cleo的账户金额为" << cleo_account
+         << "，超过了Daphne的账户金额" 
+         << daphne_account << "。" << endl;
 
     return 0;
 }

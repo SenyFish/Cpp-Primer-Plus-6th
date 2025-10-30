@@ -8,12 +8,12 @@ int main() {
     const double Gallon2Litre = 3.875;
 
     double fuel_comsuption_en = 0.0;
-    cout << "Enter the fuel comsuption in European standard: ";
+    cout << "请输入欧洲标准的油耗：";
     cin >> fuel_comsuption_en;
 
     double fuel_comsuption_us = (100 * Km2Mile) / (fuel_comsuption_en/Gallon2Litre);
-    cout << "The fuel comsuption in US standard is " << fuel_comsuption_us 
-         << " Miles/Gallon (mpg)." << endl;  
+    cout << "美国标准的油耗是 " << fuel_comsuption_us 
+         << " 英里/加仑 (mpg)。" << endl;  
 
     return 0;
 }

@@ -1,4 +1,4 @@
-//usealgo.cpp -- using several STL elements
+//usealgo.cpp -- 使用多个STL元素
 #include <iostream>
 #include <string>
 #include <vector>
@@ -16,34 +16,34 @@ void display(const string & s);
 int main()
 {
     vector<string> words;
-    cout << "Enter words (enter quit to quit):\n";
+    cout << "输入单词（输入quit退出）：\n";
     string input;
     while (cin >> input && input != "quit")
         words.push_back(input);
 
-    cout << "You entered the following words:\n";
+    cout << "您输入了以下单词：\n";
     for_each(words.begin(), words.end(), display);
     cout << endl;
 
-    // place words in set, converting to lowercase
+    // 将单词放入集合，转换为小写
     set<string> wordset;
     transform(words.begin(), words.end(),
         insert_iterator<set<string> > (wordset, wordset.begin()),
         ToLower);
-    cout << "\nAlphabetic list of words:\n";
+    cout << "\n单词的字母顺序列表：\n";
     for_each(wordset.begin(), wordset.end(), display);
     cout << endl;
 
-    // place word and frequency in map
+    // 将单词和频率放入映射
     map<string, int> wordmap;
     set<string>::iterator si;
     for (si = wordset.begin(); si != wordset.end(); si++)
         wordmap[*si] = count(words.begin(), words.end(), *si);
 
-    // display map contents
-    cout << "\nWord frequency:\n";
+    // 显示映射内容
+    cout << "\n单词频率：\n";
     for (si = wordset.begin(); si != wordset.end(); si++)
-        cout << *si << ": " << wordmap[*si] << endl;
+        cout << *si << "：" << wordmap[*si] << endl;
     // cin.get();
     // cin.get();
     return 0;

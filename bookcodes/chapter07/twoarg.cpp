@@ -1,4 +1,4 @@
-// twoarg.cpp -- a function with 2 arguments
+// twoarg.cpp -- 带有2个参数的函数
 #include <iostream>
 using namespace std;
 void n_chars(char, int);
@@ -7,26 +7,26 @@ int main()
     int times;
     char ch;
 
-    cout << "Enter a character: ";
+    cout << "请输入一个字符：";
     cin >> ch;
-    while (ch != 'q')        // q to quit
+    while (ch != 'q')        // 输入q退出
     {
-        cout << "Enter an integer: ";
+        cout << "请输入一个整数：";
         cin >> times;
-        n_chars(ch, times); // function with two arguments
-        cout << "\nEnter another character or press the"
-                " q-key to quit: ";
+        n_chars(ch, times); // 带有两个参数的函数
+        cout << "\n请输入另一个字符或按"
+                "q键退出：";
            cin >> ch;
     }
-    cout << "The value of times is " << times << ".\n";
-    cout << "Bye\n";
+    cout << "times的值为" << times << "。\n";
+    cout << "再见\n";
     // cin.get();
     // cin.get();
     return 0;
 }
 
-void n_chars(char c, int n) // displays c n times
+void n_chars(char c, int n) // 显示c n次
 {
-    while (n-- > 0)         // continue until n reaches 0
+    while (n-- > 0)         // 继续直到n达到0
         cout << c;
 }

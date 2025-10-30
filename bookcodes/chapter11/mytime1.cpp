@@ -1,4 +1,4 @@
-// mytime1.cpp  -- implementing Time methods
+// mytime1.cpp  -- 实现Time方法
 #include <iostream>
 #include "mytime1.h"
 
@@ -42,5 +42,5 @@ Time Time::operator+(const Time & t) const
 
 void Time::Show() const
 {
-    std::cout << hours << " hours, " << minutes << " minutes";
+    std::cout << hours << "小时，" << minutes << "分钟";
 }

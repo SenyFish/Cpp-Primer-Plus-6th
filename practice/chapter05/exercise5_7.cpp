@@ -12,20 +12,20 @@ int main() {
     };
 
     int car_num = 0;
-    cout << "How many cars do you wish to catalog? ";
+    cout << "你想要记录多少辆汽车？";
     cin >> car_num;
     cin.get();
 
     Car *cars = new Car[car_num];
     for (int i=0; i < car_num; ++i) {
-        cout << "Please enter the maker: ";
+        cout << "请输入制造商：";
         cin >> (cars+i)->company;
 
-        cout << "Please enter the year made: ";
+        cout << "请输入生产年份：";
         cin >> (cars+i)->year;
     }
 
-    cout << "\nHere is your collection: \n";
+    cout << "\n这是你的收藏：\n";
     for (int i=0; i < car_num; ++i) {
         cout << cars[i].year << " " << cars[i].company << endl;
     }

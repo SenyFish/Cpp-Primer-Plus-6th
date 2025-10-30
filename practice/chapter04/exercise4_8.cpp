@@ -15,10 +15,10 @@ int main() {
 
     Pizza *pizza = new Pizza;
     
-    cout << "Enter the diameter of pizza: ";
+    cout << "请输入披萨的直径：";
     cin >> pizza->diameter;
 
-    cout << "Enter the weight of pizza: ";
+    cout << "请输入披萨的重量：";
     cin >> pizza->weight;
 
     // 注意上语句输入完 weight 后，回车键留在输入流中，以下的 getline 
@@ -26,13 +26,13 @@ int main() {
     // 取回车，那么用户永远获得 company 的值。
     cin.get(); 
 
-    cout << "Enter the pizza company: ";
+    cout << "请输入披萨公司名称：";
     getline(cin, pizza->company);
 
-    cout << "\nHere is the pizza information: \n"
-         << "Company: " << pizza->company << "\n"
-         << "Diameter: " << pizza->diameter << "\n"
-         << "Weight: " << pizza->weight << endl;
+    cout << "\n以下是披萨信息：\n"
+         << "公司：" << pizza->company << "\n"
+         << "直径：" << pizza->diameter << "\n"
+         << "重量：" << pizza->weight << endl;
 
     delete pizza;
 

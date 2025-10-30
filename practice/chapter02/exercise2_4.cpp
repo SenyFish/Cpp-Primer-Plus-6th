@@ -7,10 +7,10 @@ int main() {
     using namespace std;
 
     int years, months;
-    cout << "Enter your age: ";
+    cout << "请输入你的年龄：";
     cin >> years;
 
     months = years * 12;
-    cout << years << " years is " << months << " monthes." << endl;
+    cout << years << " 年等于 " << months << " 个月。" << endl;
     return 0;
 }

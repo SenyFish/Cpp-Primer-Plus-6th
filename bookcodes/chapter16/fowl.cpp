@@ -1,4 +1,4 @@
-// fowl.cpp  -- auto_ptr a poor choice
+// fowl.cpp  -- auto_ptr是一个糟糕的选择
 #include <iostream>
 #include <string>
 #include <memory>
@@ -15,12 +15,12 @@ int main()
         auto_ptr<string> (new string("Goose Eggs"))
     };
     auto_ptr<string> pwin;
-    pwin = films[2];   // films[2] loses ownership
+    pwin = films[2];   // films[2]失去所有权
 
-    cout << "The nominees for best avian baseball film are\n";
+    cout << "最佳鸟类棒球电影的提名者是\n";
     for (int i = 0; i < 5; i++)
         cout << *films[i] << endl;
-    cout << "The winner is " << *pwin << "!\n";
+    cout << "获胜者是" << *pwin << "！\n";
     // cin.get();
     return 0;
 }

@@ -11,21 +11,21 @@ int main() {
     char grade_letter;
     int age;
 
-    cout << "What is your first name: ";
+    cout << "你的名字是：";
     cin.getline(first_name, 40);
 
-    cout << "What is your last name: ";
+    cout << "你的姓氏是：";
     cin.getline(last_name, 40);
 
-    cout << "What letter grade do you deserve: ";
+    cout << "你应该得到什么等级：";
     cin >> grade_letter;
 
-    cout << "What is your age: ";
+    cout << "你的年龄是：";
     cin >> age;
 
-    cout << "Name: " << last_name << ", " << first_name << endl;
-    cout << "Grade: " << char(grade_letter+1) << "\n";
-    cout << "Age: " << age << endl;
+    cout << "姓名：" << last_name << ", " << first_name << endl;
+    cout << "等级：" << char(grade_letter+1) << "\n";
+    cout << "年龄：" << age << endl;
 
     return 0;
 }

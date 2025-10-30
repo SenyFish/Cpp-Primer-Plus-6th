@@ -1,4 +1,4 @@
-// arrfun4.cpp -- functions with an array range
+// arrfun4.cpp -- 带有数组范围的函数
 #include <iostream>
 const int ArSize = 8;
 int sum_arr(const int * begin, const int * end);
@@ -6,20 +6,20 @@ int main()
 {
     using namespace std;
     int cookies[ArSize] = {1,2,4,8,16,32,64,128};
-//  some systems require preceding int with static to
-//  enable array initialization
+//  某些系统需要在int前加static以
+//  启用数组初始化
 
     int sum = sum_arr(cookies, cookies + ArSize);
-    cout << "Total cookies eaten: " << sum <<  endl;
-    sum = sum_arr(cookies, cookies + 3);        // first 3 elements
-    cout << "First three eaters ate " << sum << " cookies.\n";
-    sum = sum_arr(cookies + 4, cookies + 8);    // last 4 elements
-    cout << "Last four eaters ate " << sum << " cookies.\n";
+    cout << "吃掉的饼干总数：" << sum <<  endl;
+    sum = sum_arr(cookies, cookies + 3);        // 前3个元素
+    cout << "前三个人吃了" << sum << "块饼干。\n";
+    sum = sum_arr(cookies + 4, cookies + 8);    // 后4个元素
+    cout << "后四个人吃了" << sum << "块饼干。\n";
     // cin.get();
     return 0;
 }
 
-// return the sum of an integer array
+// 返回整数数组的总和
 int sum_arr(const int * begin, const int * end)
 {
     const int * pt;

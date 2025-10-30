@@ -1,27 +1,27 @@
-// use_new.cpp -- using the new operator
+// use_new.cpp -- 使用new运算符
 #include <iostream>
 int main()
 {
     using namespace std;
     int nights = 1001;
-    int * pt = new int;         // allocate space for an int
-    *pt = 1001;                 // store a value there
+    int * pt = new int;         // 为int分配空间
+    *pt = 1001;                 // 在那里存储一个值
 
-    cout << "nights value = ";
-    cout << nights << ": location " << &nights << endl;
+    cout << "nights的值 = ";
+    cout << nights << "：位置 " << &nights << endl;
     cout << "int ";
-    cout << "value = " << *pt << ": location = " << pt << endl;
+    cout << "值 = " << *pt << "：位置 = " << pt << endl;
 
-    double * pd = new double;   // allocate space for a double
-    *pd = 10000001.0;           // store a double there
+    double * pd = new double;   // 为double分配空间
+    *pd = 10000001.0;           // 在那里存储一个double
 
     cout << "double ";
-    cout << "value = " << *pd << ": location = " << pd << endl;
-    cout << "location of pointer pd: " << &pd << endl;
-    cout << "size of pt = " << sizeof(pt);
-    cout << ": size of *pt = " << sizeof(*pt) << endl;
-    cout << "size of pd = " << sizeof pd;
-    cout << ": size of *pd = " << sizeof(*pd) << endl;
+    cout << "值 = " << *pd << "：位置 = " << pd << endl;
+    cout << "指针pd的位置：" << &pd << endl;
+    cout << "pt的大小 = " << sizeof(pt);
+    cout << "：*pt的大小 = " << sizeof(*pt) << endl;
+    cout << "pd的大小 = " << sizeof pd;
+    cout << "：*pd的大小 = " << sizeof(*pd) << endl;
     // cin.get();
     return 0;
 }

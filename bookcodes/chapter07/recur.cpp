@@ -1,10 +1,10 @@
-// recur.cpp -- using recursion
+// recur.cpp -- 使用递归
 #include <iostream>
 void countdown(int n);
 
 int main()
 {
-    countdown(4);           // call the recursive function
+    countdown(4);           // 调用递归函数
     // std::cin.get();
     return 0;
 }
@@ -12,8 +12,8 @@ int main()
 void countdown(int n)
 {
     using namespace std;
-    cout << "Counting down ... " << n << endl;
+    cout << "倒计时中... " << n << endl;
     if (n > 0)
-        countdown(n-1);     // function calls itself
-    cout << n << ": Kaboom!\n";
+        countdown(n-1);     // 函数调用自身
+    cout << n << "：轰！\n";
 }

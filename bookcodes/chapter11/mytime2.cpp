@@ -1,4 +1,4 @@
-// mytime2.cpp  -- implementing Time methods
+// mytime2.cpp  -- 实现Time方法
 #include <iostream>
 #include "mytime2.h"
 
@@ -61,5 +61,5 @@ Time Time::operator*(double mult) const
 
 void Time::Show() const
 {
-    std::cout << hours << " hours, " << minutes << " minutes";
+    std::cout << hours << "小时，" << minutes << "分钟";
 }

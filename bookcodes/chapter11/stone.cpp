@@ -1,31 +1,31 @@
-// stone.cpp -- user-defined conversions
-// compile with stonewt.cpp
+// stone.cpp -- 用户定义的转换
+// 与stonewt.cpp一起编译
 #include <iostream>
 using std::cout;
 #include "stonewt.h"
 void display(const Stonewt & st, int n);
 int main()
 {
-    Stonewt incognito = 275; // uses constructor to initialize
-    Stonewt wolfe(285.7);    // same as Stonewt wolfe = 285.7;
+    Stonewt incognito = 275; // 使用构造函数初始化
+    Stonewt wolfe(285.7);    // 与Stonewt wolfe = 285.7相同;
     Stonewt taft(21, 8);
 
-    cout << "The celebrity weighed ";
+    cout << "名人体重";
     incognito.show_stn();
-    cout << "The detective weighed ";
+    cout << "侦探体重";
     wolfe.show_stn();
-    cout << "The President weighed ";
+    cout << "总统体重";
     taft.show_lbs();
-    incognito = 276.8;      // uses constructor for conversion
-    taft = 325;             // same as taft = Stonewt(325);
-    cout << "After dinner, the celebrity weighed ";
+    incognito = 276.8;      // 使用构造函数进行转换
+    taft = 325;             // 与taft = Stonewt(325)相同;
+    cout << "晚餐后，名人体重";
     incognito.show_stn();
-    cout << "After dinner, the President weighed ";
+    cout << "晚餐后，总统体重";
     taft.show_lbs();
     display(taft, 2);
-    cout << "The wrestler weighed even more.\n";
+    cout << "摔跤手体重更重。\n";
     display(422, 2);
-    cout << "No stone left unearned\n";
+    cout << "没有遗漏任何石头\n";
     // std::cin.get();
     return 0;
 }
@@ -34,7 +34,7 @@ void display(const Stonewt & st, int n)
 {
     for (int i = 0; i < n; i++)
     {
-        cout << "Wow! ";
+        cout << "哇！";
         st.show_stn();
     }
 }

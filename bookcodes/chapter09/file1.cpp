@@ -1,20 +1,20 @@
-// file1.cpp -- example of a three-file program
+// file1.cpp -- 三文件程序示例
 #include <iostream>
-#include "coordin.h" // structure templates, function prototypes
+#include "coordin.h" // 结构模板，函数原型
 using namespace std;
 int main()
 {
     rect rplace;
     polar pplace;
 
-    cout << "Enter the x and y values: ";
-    while (cin >> rplace.x >> rplace.y)  // slick use of cin
+    cout << "请输入x和y值：";
+    while (cin >> rplace.x >> rplace.y)  // 巧妙使用cin
     {
         pplace = rect_to_polar(rplace);
         show_polar(pplace);
-        cout << "Next two numbers (q to quit): ";
+        cout << "下两个数字（输入q退出）：";
     }
-    cout << "Bye!\n";
+    cout << "再见！\n";
 // keep window open in MSVC++
 /*
     cin.clear();

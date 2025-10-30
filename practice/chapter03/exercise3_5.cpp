@@ -5,14 +5,14 @@ int main() {
     using namespace std;
 
     long long population_world, population_China;
-    cout << "Enter the world's population: ";
+    cout << "请输入世界人口：";
     cin >> population_world;
-    cout << "Enter the population of China: ";
+    cout << "请输入中国人口：";
     cin >> population_China;
 
     double rate = double(population_China)/population_world;
-    cout << "The population of the China is " << rate * 100
-         << "% of the world population." << endl;
+    cout << "中国人口占世界人口的 " << rate * 100
+         << "%。" << endl;
 
     return 0;
 }

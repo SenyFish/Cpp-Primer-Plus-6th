@@ -1,9 +1,9 @@
-// twotemps.cpp -- using overloaded template functions
+// twotemps.cpp -- 使用重载模板函数
 #include <iostream>
-template <typename T>     // original template
+template <typename T>     // 原始模板
 void Swap(T &a, T &b);
 
-template <typename T>     // new template
+template <typename T>     // 新模板
 void Swap(T *a, T *b, int n);
 
 void Show(int a[]);
@@ -12,18 +12,18 @@ int main()
 {
     using namespace std;
     int i = 10, j = 20;
-    cout << "i, j = " << i << ", " << j << ".\n";
-    cout << "Using compiler-generated int swapper:\n";
-    Swap(i,j);              // matches original template
-    cout << "Now i, j = " << i << ", " << j << ".\n";
+    cout << "i, j = " << i << ", " << j << "。\n";
+    cout << "使用编译器生成的int交换器：\n";
+    Swap(i,j);              // 匹配原始模板
+    cout << "现在i, j = " << i << ", " << j << "。\n";
 
     int d1[Lim] = {0,7,0,4,1,7,7,6};
     int d2[Lim] = {0,7,2,0,1,9,6,9};
-    cout << "Original arrays:\n";
+    cout << "原始数组：\n";
     Show(d1); 
     Show(d2);
-    Swap(d1,d2,Lim);        // matches new template
-    cout << "Swapped arrays:\n";
+    Swap(d1,d2,Lim);        // 匹配新模板
+    cout << "交换后的数组：\n";
     Show(d1);
     Show(d2);
     // cin.get();

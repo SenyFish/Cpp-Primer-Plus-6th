@@ -1,5 +1,5 @@
-// stock00.cpp -- implementing the Stock class
-// version 00
+// stock00.cpp -- 实现Stock类
+// 版本00
 #include <iostream>
 #include "stock00.h"
 
@@ -8,8 +8,8 @@ void Stock::acquire(const std::string & co, long n, double pr)
     company = co;
     if (n < 0)
     {
-        std::cout << "Number of shares can't be negative; "
-                  << company << " shares set to 0.\n";
+        std::cout << "股票数量不能为负；"
+                  << company << "的股票数设置为0。\n";
         shares = 0;
     }
     else
@@ -22,8 +22,8 @@ void Stock::buy(long num, double price)
 {
      if (num < 0)
     {
-        std::cout << "Number of shares purchased can't be negative. "
-             << "Transaction is aborted.\n";
+        std::cout << "购买的股票数量不能为负。"
+             << "交易已中止。\n";
     }
     else
     {
@@ -38,13 +38,13 @@ void Stock::sell(long num, double price)
     using std::cout;
     if (num < 0)
     {
-        cout << "Number of shares sold can't be negative. "
-             << "Transaction is aborted.\n";
+        cout << "出售的股票数量不能为负。"
+             << "交易已中止。\n";
     }
     else if (num > shares)
     {
-        cout << "You can't sell more than you have! "
-             << "Transaction is aborted.\n";
+        cout << "你不能出售超过你拥有的数量！"
+             << "交易已中止。\n";
     }
     else
     {
@@ -62,8 +62,8 @@ void Stock::update(double price)
 
 void Stock::show()
 {
-    std::cout << "Company: " << company
-              << "  Shares: " << shares << '\n'
-              << "  Share Price: $" << share_val
-              << "  Total Worth: $" << total_val << '\n';
+    std::cout << "公司：" << company
+              << "  股票：" << shares << '\n'
+              << "  股价：$" << share_val
+              << "  总价值：$" << total_val << '\n';
 }

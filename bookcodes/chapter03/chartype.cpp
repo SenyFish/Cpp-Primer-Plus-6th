@@ -1,14 +1,14 @@
-// chartype.cpp -- the char type
+// chartype.cpp -- char类型
 #include <iostream>
 int main( )
 {
     using namespace std;
-    char ch;        // declare a char variable
+    char ch;        // 声明一个char变量
 
-    cout << "Enter a character: " << endl;
+    cout << "请输入一个字符：" << endl;
     cin >> ch;
-    cout << "Hola! ";
-    cout << "Thank you for the " << ch << " character." << endl;
+    cout << "你好！";
+    cout << "感谢你输入字符 " << ch << "。" << endl;
     // cin.get();
     // cin.get();
     return 0;

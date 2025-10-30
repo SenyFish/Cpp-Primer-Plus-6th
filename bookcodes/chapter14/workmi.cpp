@@ -1,5 +1,5 @@
-// workmi.cpp -- multiple inheritance
-// compile with workermi.cpp
+// workmi.cpp -- 多重继承
+// 与workermi.cpp一起编译
 #include <iostream>
 #include <cstring>
 #include "workermi.h"
@@ -18,13 +18,13 @@ int main()
     for (ct = 0; ct < SIZE; ct++)
     {
         char choice;
-        cout << "Enter the employee category:\n"
-            << "w: waiter  s: singer  "
-            << "t: singing waiter  q: quit\n";
+        cout << "输入员工类别：\n"
+            << "w：服务员  s：歌手  "
+            << "t：会唱歌的服务员  q：退出\n";
         cin >> choice;
         while (strchr("wstq", choice) == NULL)
         {
-            cout << "Please enter a w, s, t, or q: ";
+            cout << "请输入w、s、t或q：";
             cin >> choice;
         }
         if (choice == 'q')
@@ -42,7 +42,7 @@ int main()
         lolas[ct]->Set();
     }
 
-    cout << "\nHere is your staff:\n";
+    cout << "\n这是您的员工：\n";
     int i;
     for (i = 0; i < ct; i++)
     {
@@ -51,7 +51,7 @@ int main()
     }
     for (i = 0; i < ct; i++)
         delete lolas[i];
-    cout << "Bye.\n";
+    cout << "再见。\n";
     // cin.get();
     // cin.get();
     return 0; 

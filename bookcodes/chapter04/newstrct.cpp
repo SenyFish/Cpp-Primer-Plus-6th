@@ -1,6 +1,6 @@
-// newstrct.cpp -- using new with a structure
+// newstrct.cpp -- 对结构体使用new
 #include <iostream>
-struct inflatable   // structure definition
+struct inflatable   // 结构体定义
 {
     char name[20];
     float volume;
@@ -9,17 +9,17 @@ struct inflatable   // structure definition
 int main()
 {
     using namespace std;
-    inflatable * ps = new inflatable; // allot memory for structure
-    cout << "Enter name of inflatable item: ";
-    cin.get(ps->name, 20);            // method 1 for member access
-    cout << "Enter volume in cubic feet: ";
-    cin >> (*ps).volume;              // method 2 for member access
-    cout << "Enter price: $";
+    inflatable * ps = new inflatable; // 为结构体分配内存
+    cout << "请输入充气物品的名称：";
+    cin.get(ps->name, 20);            // 成员访问方法1
+    cout << "请输入体积（立方英尺）：";
+    cin >> (*ps).volume;              // 成员访问方法2
+    cout << "请输入价格：$";
     cin >> ps->price;
-    cout << "Name: " << (*ps).name << endl;              // method 2
-    cout << "Volume: " << ps->volume << " cubic feet\n"; // method 1
-    cout << "Price: $" << ps->price << endl;             // method 1
-    delete ps;                        // free memory used by structure
+    cout << "名称：" << (*ps).name << endl;              // 方法2
+    cout << "体积：" << ps->volume << " 立方英尺\n"; // 方法1
+    cout << "价格：$" << ps->price << endl;             // 方法1
+    delete ps;                        // 释放结构体使用的内存
     // cin.get();
     // cin.get();
     return 0; 

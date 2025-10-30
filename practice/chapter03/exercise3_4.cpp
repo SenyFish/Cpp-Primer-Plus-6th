@@ -7,7 +7,7 @@ int main() {
 
     long total_seconds;
 
-    cout << "Enter the number of seconds: ";
+    cout << "请输入秒数：";
     cin >> total_seconds;
 
     int days = total_seconds / 86400;
@@ -15,11 +15,11 @@ int main() {
     int minutes = ((total_seconds % 86400) % 3600) / 60;
     int seconds = ((total_seconds % 86400) % 3600) % 60;
 
-    cout << total_seconds << "seconds = " 
-         << days << " days, " 
-         << hours << " hours, "
-         << minutes << " minutes, "
-         << seconds << " seconds." << endl;
+    cout << total_seconds << " 秒 = " 
+         << days << " 天，" 
+         << hours << " 小时，"
+         << minutes << " 分钟，"
+         << seconds << " 秒。" << endl;
 
     return 0;
 }

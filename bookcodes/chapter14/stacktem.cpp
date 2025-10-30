@@ -1,4 +1,4 @@
-// stacktem.cpp -- testing the template stack class
+// stacktem.cpp -- 测试模板栈类
 #include <iostream>
 #include <string>
 #include <cctype>
@@ -8,11 +8,11 @@ using std::cout;
 
 int main()
 {
-    Stack<std::string> st;   // create an empty stack
+    Stack<std::string> st;   // 创建一个空栈
     char ch;
     std::string po;
-    cout << "Please enter A to add a purchase order,\n"
-         << "P to process a PO, or Q to quit.\n";
+    cout << "请输入A添加采购订单，\n"
+         << "P处理订单，或Q退出。\n";
     while (cin >> ch && std::toupper(ch) != 'Q')
     {
         while (cin.get() != '\n')
@@ -25,26 +25,26 @@ int main()
         switch(ch)
         {
             case 'A':
-            case 'a': cout << "Enter a PO number to add: ";
+            case 'a': cout << "输入要添加的PO号码：";
                       cin >> po;
                       if (st.isfull())
-                          cout << "stack already full\n";
+                          cout << "栈已满\n";
                       else
                           st.push(po);
                       break;
             case 'P':
             case 'p': if (st.isempty())
-                          cout << "stack already empty\n";
+                          cout << "栈已空\n";
                       else {
                           st.pop(po);
-                          cout << "PO #" << po << " popped\n";
+                          cout << "PO #" << po << "已弹出\n";
                           break;
                       }
         }
-        cout << "Please enter A to add a purchase order,\n"
-             << "P to process a PO, or Q to quit.\n";
+        cout << "请输入A添加采购订单，\n"
+             << "P处理订单，或Q退出。\n";
     }
-    cout << "Bye\n";
+    cout << "再见\n";
     // cin.get();
     // cin.get();
     return 0; 

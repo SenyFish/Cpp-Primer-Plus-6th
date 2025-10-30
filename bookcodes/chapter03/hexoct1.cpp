@@ -1,16 +1,16 @@
-// hexoct1.cpp -- shows hex and octal literals
+// hexoct1.cpp -- 显示十六进制和八进制字面值
 #include <iostream>
 int main()
 {
     using namespace std;
-    int chest = 42;     // decimal integer literal
-    int waist = 0x42;   // hexadecimal integer literal
-    int inseam = 042;   // octal integer literal
+    int chest = 42;     // 十进制整数字面值
+    int waist = 0x42;   // 十六进制整数字面值
+    int inseam = 042;   // 八进制整数字面值
 
-    cout << "Monsieur cuts a striking figure!\n";
-    cout << "chest = " << chest << " (42 in decimal)\n";
-    cout << "waist = " << waist << " (0x42 in hex)\n";
-    cout << "inseam = " << inseam << " (042 in octal)\n";
+    cout << "先生身材很好！\n";
+    cout << "胸围 = " << chest << "（十进制42）\n";
+    cout << "腰围 = " << waist << "（十六进制0x42）\n";
+    cout << "内缝 = " << inseam << "（八进制042）\n";
 	// cin.get();
     return 0; 
 }

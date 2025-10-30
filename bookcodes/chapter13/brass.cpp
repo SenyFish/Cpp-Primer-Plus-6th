@@ -1,17 +1,17 @@
-// brass.cpp -- bank account class methods
+// brass.cpp -- 银行账户类方法
 #include <iostream>
 #include "brass.h"
 using std::cout;
 using std::endl;
 using std::string;
 
-// formatting stuff
+// 格式化内容
 typedef std::ios_base::fmtflags format;
 typedef std::streamsize precis;
 format setFormat();
 void restore(format f, precis p);
 
-// Brass methods
+// Brass方法
 
 Brass::Brass(const string & s, long an, double bal)
 {
@@ -23,28 +23,28 @@ Brass::Brass(const string & s, long an, double bal)
 void Brass::Deposit(double amt)
 {
     if (amt < 0)
-        cout << "Negative deposit not allowed; "
-             << "deposit is cancelled.\n";
+        cout << "不允许负数存款；"
+             << "存款已取消。\n";
     else
         balance += amt;
 }
 
 void Brass::Withdraw(double amt)
 {
-    // set up ###.## format
+    // 设置###.##格式
     format initialState = setFormat();
     precis prec = cout.precision(2);
 
     if (amt < 0)
-        cout << "Withdrawal amount must be positive; "
+        cout << "取款金额必须为正数；"
 
-             << "withdrawal canceled.\n";
+             << "取款已取消。\n";
     else if (amt <= balance)
         balance -= amt;
     else
-        cout << "Withdrawal amount of $" << amt
-             << " exceeds your balance.\n"
-             << "Withdrawal canceled.\n";
+        cout << "取款金额$" << amt
+             << "超出您的余额。\n"
+             << "取款已取消。\n";
     restore(initialState, prec);
 }
 double Brass::Balance() const
@@ -54,16 +54,16 @@ double Brass::Balance() const
 
 void Brass::ViewAcct() const
 {
-     // set up ###.## format
+     // 设置###.##格式
     format initialState = setFormat();
     precis prec = cout.precision(2);
-    cout << "Client: " << fullName << endl;
-    cout << "Account Number: " << acctNum << endl;
-    cout << "Balance: $" << balance << endl;
-    restore(initialState, prec); // Restore original format
+    cout << "客户：" << fullName << endl;
+    cout << "账号：" << acctNum << endl;
+    cout << "余额：$" << balance << endl;
+    restore(initialState, prec); // 恢复原始格式
 }
 
-// BrassPlus Methods
+// BrassPlus方法
 BrassPlus::BrassPlus(const string & s, long an, double bal,
            double ml, double r) : Brass(s, an, bal)
 {
@@ -73,32 +73,32 @@ BrassPlus::BrassPlus(const string & s, long an, double bal,
 }
 
 BrassPlus::BrassPlus(const Brass & ba, double ml, double r)
-           : Brass(ba)   // uses implicit copy constructor
+           : Brass(ba)   // 使用隐式复制构造函数
 {
     maxLoan = ml;
     owesBank = 0.0;
     rate = r;
 }
 
-// redefine how ViewAcct() works
+// 重新定义ViewAcct()的工作方式
 void BrassPlus::ViewAcct() const
 {
-    // set up ###.## format
+    // 设置###.##格式
     format initialState = setFormat();
     precis prec = cout.precision(2);
 
-    Brass::ViewAcct();   // display base portion
-    cout << "Maximum loan: $" << maxLoan << endl;
-    cout << "Owed to bank: $" << owesBank << endl;
-    cout.precision(3);  // ###.### format
-    cout << "Loan Rate: " << 100 * rate << "%\n";
+    Brass::ViewAcct();   // 显示基类部分
+    cout << "最大贷款：$" << maxLoan << endl;
+    cout << "欠银行：$" << owesBank << endl;
+    cout.precision(3);  // ###.###格式
+    cout << "贷款利率：" << 100 * rate << "%\n";
     restore(initialState, prec); 
 }
 
-// redefine how Withdraw() works
+// 重新定义Withdraw()的工作方式
 void BrassPlus::Withdraw(double amt)
 {
-    // set up ###.## format
+    // 设置###.##格式
     format initialState = setFormat();
     precis prec = cout.precision(2);
 
@@ -109,19 +109,19 @@ void BrassPlus::Withdraw(double amt)
     {
         double advance = amt - bal;
         owesBank += advance * (1.0 + rate);
-        cout << "Bank advance: $" << advance << endl;
-        cout << "Finance charge: $" << advance * rate << endl;
+        cout << "银行透支：$" << advance << endl;
+        cout << "财务费用：$" << advance * rate << endl;
         Deposit(advance);
         Brass::Withdraw(amt);
     }
     else
-        cout << "Credit limit exceeded. Transaction cancelled.\n";
+        cout << "超出信用额度。交易已取消。\n";
     restore(initialState, prec); 
 }
 
 format setFormat()
 {
-    // set up ###.## format
+    // 设置###.##格式
     return cout.setf(std::ios_base::fixed, 
                 std::ios_base::floatfield);
 } 

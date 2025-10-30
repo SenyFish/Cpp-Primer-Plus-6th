@@ -1,10 +1,10 @@
-// arrfun3.cpp -- array functions and const
+// arrfun3.cpp -- 数组函数和const
 #include <iostream>
 const int Max = 5;
 
-// function prototypes
+// 函数原型
 int fill_array(double ar[], int limit);
-void show_array(const double ar[], int n);  // don't change data
+void show_array(const double ar[], int n);  // 不改变数据
 void revalue(double r, double ar[], int n);
 
 int main()
@@ -16,19 +16,19 @@ int main()
     show_array(properties, size);
     if (size > 0)
     {
-        cout << "Enter revaluation factor: ";
+        cout << "请输入重估因子：";
         double factor;
-        while (!(cin >> factor))    // bad input
+        while (!(cin >> factor))    // 错误输入
         {
             cin.clear();
             while (cin.get() != '\n')
                 continue;
-           cout << "Bad input; Please enter a number: ";
+           cout << "错误输入；请输入一个数字：";
         }
         revalue(factor, properties, size);
         show_array(properties, size);
     }
-    cout << "Done.\n";
+    cout << "完成。\n";
     // cin.get();
     // cin.get();
     return 0;
@@ -41,36 +41,36 @@ int fill_array(double ar[], int limit)
     int i;
     for (i = 0; i < limit; i++)
     {
-        cout << "Enter value #" << (i + 1) << ": ";
+        cout << "请输入值 #" << (i + 1) << "：";
         cin >> temp;
-        if (!cin)    // bad input
+        if (!cin)    // 错误输入
         {
             cin.clear();
             while (cin.get() != '\n')
                 continue;
-           cout << "Bad input; input process terminated.\n";
+           cout << "错误输入；输入过程终止。\n";
            break;
         }
-        else if (temp < 0)     // signal to terminate
+        else if (temp < 0)     // 终止信号
             break;
         ar[i] = temp;
     }
     return i;
 }
 
-// the following function can use, but not alter,
-// the array whose address is ar
+// 以下函数可以使用但不能改变
+// 地址为ar的数组
 void show_array(const double ar[], int n)
 {
     using namespace std;
     for (int i = 0; i < n; i++)
     {
-        cout << "Property #" << (i + 1) << ": $";
+        cout << "房产 #" << (i + 1) << "：$";
         cout << ar[i] << endl;
     }
 }
 
-// multiplies each element of ar[] by r
+// 将ar[]的每个元素乘以r
 void revalue(double r, double ar[], int n)
 {
     for (int i = 0; i < n; i++)

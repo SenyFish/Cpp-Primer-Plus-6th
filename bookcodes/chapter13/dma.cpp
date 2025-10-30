@@ -1,9 +1,9 @@
-// dma.cpp --dma class methods
+// dma.cpp -- dma类方法
 
 #include "dma.h"
 #include <cstring>
 
-// baseDMA methods
+// baseDMA方法
 baseDMA::baseDMA(const char * l, int r)
 {
     label = new char[std::strlen(l) + 1];
@@ -36,12 +36,12 @@ baseDMA & baseDMA::operator=(const baseDMA & rs)
     
 std::ostream & operator<<(std::ostream & os, const baseDMA & rs)
 {
-    os << "Label: " << rs.label << std::endl;
-    os << "Rating: " << rs.rating << std::endl;
+    os << "标签：" << rs.label << std::endl;
+    os << "评级：" << rs.rating << std::endl;
     return os;
 }
 
-// lacksDMA methods
+// lacksDMA方法
 lacksDMA::lacksDMA(const char * c, const char * l, int r)
     : baseDMA(l, r)
 {
@@ -59,11 +59,11 @@ lacksDMA::lacksDMA(const char * c, const baseDMA & rs)
 std::ostream & operator<<(std::ostream & os, const lacksDMA & ls)
 {
     os << (const baseDMA &) ls;
-    os << "Color: " << ls.color << std::endl;
+    os << "颜色：" << ls.color << std::endl;
     return os;
 }
 
-// hasDMA methods
+// hasDMA方法
 hasDMA::hasDMA(const char * s, const char * l, int r)
          : baseDMA(l, r)
 {
@@ -79,7 +79,7 @@ hasDMA::hasDMA(const char * s, const baseDMA & rs)
 }
 
 hasDMA::hasDMA(const hasDMA & hs)
-         : baseDMA(hs)  // invoke base class copy constructor
+         : baseDMA(hs)  // 调用基类复制构造函数
 {
     style = new char[std::strlen(hs.style) + 1];
     std::strcpy(style, hs.style);
@@ -94,8 +94,8 @@ hasDMA & hasDMA::operator=(const hasDMA & hs)
 {
     if (this == &hs)
         return *this;
-    baseDMA::operator=(hs);  // copy base portion
-    delete [] style;         // prepare for new style
+    baseDMA::operator=(hs);  // 复制基类部分
+    delete [] style;         // 为新style做准备
     style = new char[std::strlen(hs.style) + 1];
     std::strcpy(style, hs.style);
     return *this;
@@ -104,6 +104,6 @@ hasDMA & hasDMA::operator=(const hasDMA & hs)
 std::ostream & operator<<(std::ostream & os, const hasDMA & hs)
 {
     os << (const baseDMA &) hs;
-    os << "Style: " << hs.style << std::endl;
+    os << "样式：" << hs.style << std::endl;
     return os;
 }

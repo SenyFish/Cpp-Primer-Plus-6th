@@ -1,21 +1,21 @@
-// calling.cpp -- defining, prototyping, and calling a function
+// calling.cpp -- 定义、原型化和调用函数
 #include <iostream>
 
-void simple();    // function prototype
+void simple();    // 函数原型
 
 int main()
 {
     using namespace std;
-    cout << "main() will call the simple() function:\n";
-    simple();     // function call
-	cout << "main() is finished with the simple() function.\n";
+    cout << "main()将调用simple()函数：\n";
+    simple();     // 函数调用
+	cout << "main()已完成simple()函数的调用。\n";
     // cin.get();
     return 0;
 }
 
-// function definition
+// 函数定义
 void simple()
 {
     using namespace std;
-    cout << "I'm but a simple function.\n";
+    cout << "我只是一个简单的函数。\n";
 }

@@ -1,4 +1,4 @@
-// strfile.cpp -- read strings from a file
+// strfile.cpp -- 从文件读取字符串
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -10,20 +10,20 @@ int main()
      fin.open("tobuy.txt");
      if (fin.is_open() == false)
      {
-        cerr << "Can't open file. Bye.\n";
+        cerr << "无法打开文件。再见。\n";
         exit(EXIT_FAILURE);
      }
      string item;
      int count = 0;
      
      getline(fin, item, ':');
-     while (fin)  // while input is good
+     while (fin)  // 当输入良好时
      {
         ++count;
-        cout << count <<": " << item << endl;
+        cout << count <<"：" << item << endl;
         getline(fin, item,':');     
      }
-     cout << "Done\n";
+     cout << "完成\n";
      fin.close();
 	 // std::cin.get();
 	 // std::cin.get();

@@ -12,7 +12,7 @@ int main() {
     double sum_value = 0;
     unsigned int large_avg = 0, n = 0;
 
-    cout << "Enter 10 double value or type non-digital value to exit: ";
+    cout << "请输入10个浮点数值或输入非数字值退出：";
     while ((n < size) && (cin >> donation[n])) {
         
         sum_value += donation[n];
@@ -26,9 +26,9 @@ int main() {
             ++large_avg;
     }
 
-    cout << "The average value is: " << avg
-         << ", there are " << large_avg
-         << " larger than average value." << endl;
+    cout << "平均值为：" << avg
+         << "，有" << large_avg
+         << "个数值大于平均值。" << endl;
 
     return 0;
 }

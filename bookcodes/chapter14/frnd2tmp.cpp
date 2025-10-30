@@ -1,4 +1,4 @@
-// frnd2tmp.cpp -- template class with non-template friends
+// frnd2tmp.cpp -- 带有非模板友元的模板类
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -13,44 +13,44 @@ public:
     HasFriend(const T & i) : item(i) {ct++;}
     ~HasFriend()  {ct--; }
     friend void counts();
-    friend void reports(HasFriend<T> &); // template parameter
+    friend void reports(HasFriend<T> &); // 模板参数
 };
 
-// each specialization has its own static data member
+// 每个特化都有自己的静态数据成员
 template <typename T>
 int HasFriend<T>::ct = 0;
 
-// non-template friend to all HasFriend<T> classes
+// 所有HasFriend<T>类的非模板友元
 void counts()
 {
-    cout << "int count: " << HasFriend<int>::ct << "; ";
-    cout << "double count: " << HasFriend<double>::ct << endl;
+    cout << "int计数：" << HasFriend<int>::ct << "；";
+    cout << "double计数：" << HasFriend<double>::ct << endl;
 }
 
-// non-template friend to the HasFriend<int> class
+// HasFriend<int>类的非模板友元
 void reports(HasFriend<int> & hf)
 {
-    cout <<"HasFriend<int>: " << hf.item << endl;
+    cout <<"HasFriend<int>：" << hf.item << endl;
 }
 
-// non-template friend to the HasFriend<double> class
+// HasFriend<double>类的非模板友元
 void reports(HasFriend<double> & hf)
 {
-    cout <<"HasFriend<double>: " << hf.item << endl;
+    cout <<"HasFriend<double>：" << hf.item << endl;
 }
 
 int main()
 {
-    cout << "No objects declared: ";
+    cout << "未声明对象：";
     counts();
     HasFriend<int> hfi1(10);
-    cout << "After hfi1 declared: ";
+    cout << "声明hfi1后：";
     counts();
     HasFriend<int> hfi2(20);
-    cout << "After hfi2 declared: ";
+    cout << "声明hfi2后：";
     counts();
     HasFriend<double> hfdb(10.5);
-    cout << "After hfdb declared: ";
+    cout << "声明hfdb后：";
     counts(); 
     reports(hfi1);
     reports(hfi2);

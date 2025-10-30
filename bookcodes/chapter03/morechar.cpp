@@ -1,25 +1,25 @@
-// morechar.cpp -- the char type and int type contrasted
+// morechar.cpp -- char类型和int类型的对比
 #include <iostream>
 int main()
 {
     using namespace std;
-    char ch = 'M';       // assign ASCII code for M to ch
-    int i = ch;          // store same code in an int
-    cout << "The ASCII code for " << ch << " is " << i << endl;
+    char ch = 'M';       // 将M的ASCII码赋给ch
+    int i = ch;          // 在int中存储相同的代码
+    cout << ch << " 的ASCII码是 " << i << endl;
 
-    cout << "Add one to the character code:" << endl;
-    ch = ch + 1;          // change character code in ch
-    i = ch;               // save new character code in i
-    cout << "The ASCII code for " << ch << " is " << i << endl;
+    cout << "给字符码加1：" << endl;
+    ch = ch + 1;          // 改变ch中的字符码
+    i = ch;               // 在i中保存新的字符码
+    cout << ch << " 的ASCII码是 " << i << endl;
 
-    // using the cout.put() member function to display a char
-    cout << "Displaying char ch using cout.put(ch): ";
+    // 使用cout.put()成员函数显示一个字符
+    cout << "使用cout.put(ch)显示字符ch：";
     cout.put(ch);
 
-    // using cout.put() to display a char constant
+    // 使用cout.put()显示一个字符常量
     cout.put('!');
 
-    cout << endl << "Done" << endl;
+    cout << endl << "完成" << endl;
 	// cin.get();
     return 0;
 }

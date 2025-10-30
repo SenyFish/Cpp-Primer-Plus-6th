@@ -1,8 +1,8 @@
-//error4.cpp – using exception classes
+//error4.cpp – ?????
 #include <iostream>
 #include <cmath> // or math.h, unix users may need -lm flag
 #include "exc_mean.h"
-// function prototypes
+// ????
 double hmean(double a, double b);
 double gmean(double a, double b);
 int main()
@@ -13,33 +13,33 @@ int main()
     
     double x, y, z;
 
-    cout << "Enter two numbers: ";
+    cout << "???????";
     while (cin >> x >> y)
     {
-        try {                  // start of try block
+        try {                  // try???
             z = hmean(x,y);
-            cout << "Harmonic mean of " << x << " and " << y
-                << " is " << z << endl;
-            cout << "Geometric mean of " << x << " and " << y
-                << " is " << gmean(x,y) << endl;
-            cout << "Enter next set of numbers <q to quit>: ";
-        }// end of try block
-        catch (bad_hmean & bg)    // start of catch block
+            cout << x << "?" << y << "??????"
+                << "?" << z << endl;
+            cout << x << "?" << y << "??????"
+                << "?" << gmean(x,y) << endl;
+            cout << "???????<q??>?";
+        }// try???
+        catch (bad_hmean & bg)    // catch???
         {
             bg.mesg();
-            cout << "Try again.\n";
+            cout << "????\n";
             continue;
         }                  
         catch (bad_gmean & hg) 
         {
             cout << hg.mesg();
-            cout << "Values used: " << hg.v1 << ", " 
+            cout << "?????" << hg.v1 << "?" 
                  << hg.v2 << endl;
-            cout << "Sorry, you don't get to play any more.\n";
+            cout << "??????????\n";
             break;
-        } // end of catch block
+        } // catch???
     }
-    cout << "Bye!\n";
+    cout << "???\n";
     // cin.get();
     // cin.get();
     return 0;

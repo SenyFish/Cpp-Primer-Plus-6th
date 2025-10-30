@@ -10,16 +10,16 @@ int main() {
     using namespace std;
 
     int input_height = 0;
-    cout << "Please input you height in inch: __\b\b";
+    cout << "请输入你的身高（英寸）：__\b\b";
     cin >> input_height;
 
     int height_foot = input_height / Foot2inch;
     int height_inch = input_height % Foot2inch;
 
-    cout << "Your height in inch is: " << input_height 
-         << "; transforming in foot and inch is: " 
-         << height_foot << " foot "
-         << height_inch << " inch." << endl;
+    cout << "你的身高（英寸）是：" << input_height 
+         << "；转换为英尺和英寸是：" 
+         << height_foot << " 英尺 "
+         << height_inch << " 英寸。" << endl;
 
     return 0;
 }

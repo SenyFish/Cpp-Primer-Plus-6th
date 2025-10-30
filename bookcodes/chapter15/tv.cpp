@@ -1,4 +1,4 @@
-// tv.cpp -- methods for the Tv class (Remote methods are inline)
+// tv.cpp -- Tv类的方法（Remote方法是内联的）
 #include <iostream>
 #include "tv.h"
 
@@ -43,14 +43,14 @@ void Tv::settings() const
 {
     using std::cout;
     using std::endl;
-    cout << "TV is " << (state == Off? "Off" : "On") << endl;
+    cout << "电视是" << (state == Off? "关" : "开") << endl;
     if (state == On)
     {
-        cout << "Volume setting = " << volume << endl;
-        cout << "Channel setting = " << channel << endl;
-        cout << "Mode = "
-            << (mode == Antenna? "antenna" : "cable") << endl;
-        cout << "Input = "
+        cout << "音量设置 = " << volume << endl;
+        cout << "频道设置 = " << channel << endl;
+        cout << "模式 = "
+            << (mode == Antenna? "天线" : "有线") << endl;
+        cout << "输入 = "
             << (input == TV? "TV" : "DVD") << endl;
     }
 }

@@ -1,4 +1,4 @@
-// rtti2.cpp  -- using dynamic_cast, typeid, and type_info
+// rtti2.cpp  -- 使用dynamic_cast、typeid和type_info
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -11,7 +11,7 @@ private:
     int hold;
 public:
     Grand(int h = 0) : hold(h) {}
-    virtual void Speak() const { cout << "I am a grand class!\n";}
+    virtual void Speak() const { cout << "我是一个grand类！\n";}
     virtual int Value() const { return hold; }
 };
 
@@ -19,9 +19,9 @@ class Superb : public Grand
 {
 public:
     Superb(int h = 0) : Grand(h) {}
-    void Speak() const {cout << "I am a superb class!!\n"; }
+    void Speak() const {cout << "我是一个superb类！！\n"; }
     virtual void Say() const
-        { cout << "I hold the superb value of " << Value() << "!\n";}
+        { cout << "我持有superb值" << Value() << "！\n";}
 };
 
 class Magnificent : public Superb
@@ -30,9 +30,9 @@ private:
     char ch;
 public:
     Magnificent(int h = 0, char cv = 'A') : Superb(h), ch(cv) {}
-    void Speak() const {cout << "I am a magnificent class!!!\n";}
-    void Say() const {cout << "I hold the character " << ch <<
-               " and the integer "  << Value() << "!\n"; }
+    void Speak() const {cout << "我是一个magnificent类！！！\n";}
+    void Say() const {cout << "我持有字符" << ch <<
+               "和整数"  << Value() << "！\n"; }
 };
 
 Grand * GetOne();
@@ -44,12 +44,12 @@ int main()
     for (int i = 0; i < 5; i++)
     {
         pg = GetOne();
-        cout << "Now processing type " << typeid(*pg).name() << ".\n";
+        cout << "现在正在处理类型" << typeid(*pg).name() << "。\n";
         pg->Speak();
         if( ps = dynamic_cast<Superb *>(pg))
             ps->Say();
         if (typeid(Magnificent) == typeid(*pg))
-            cout << "Yes, you're really magnificent.\n";
+            cout << "是的，你真的是magnificent。\n";
     }
     // std::cin.get();
     return 0;

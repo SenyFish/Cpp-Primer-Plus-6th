@@ -1,4 +1,4 @@
-// topfive.cpp -- handling an array of string objects
+// topfive.cpp -- 处理字符串对象数组
 #include <iostream>
 #include <string>
 using namespace std;
@@ -6,15 +6,15 @@ const int SIZE = 5;
 void display(const string sa[], int n);
 int main()
 {
-    string list[SIZE];     // an array holding 5 string object
-    cout << "Enter your " << SIZE << " favorite astronomical sights:\n";
+    string list[SIZE];     // 保存5个string对象的数组
+    cout << "请输入你最喜欢的" << SIZE << "个天文景观：\n";
     for (int i = 0; i < SIZE; i++)
     {
-        cout << i + 1 << ": ";
+        cout << i + 1 << "：";
         getline(cin,list[i]);
     }
 
-    cout << "Your list:\n";
+    cout << "你的列表：\n";
     display(list, SIZE);
     // cin.get();
 
@@ -24,5 +24,5 @@ int main()
 void display(const string sa[], int n)
 {
     for (int i = 0; i < n; i++)
-        cout << i + 1 << ": " << sa[i] << endl;
+        cout << i + 1 << "：" << sa[i] << endl;
 }

@@ -1,6 +1,6 @@
-// outfile.cpp -- writing to a file
+// outfile.cpp -- 写入文件
 #include <iostream>
-#include <fstream>                  // for file I/O
+#include <fstream>                  // 用于文件I/O
 
 int main()
 {
@@ -11,38 +11,38 @@ int main()
     double a_price;
     double d_price;
 
-    ofstream outFile;               // create object for output
-    outFile.open("carinfo.txt");    // associate with a file
+    ofstream outFile;               // 创建输出对象
+    outFile.open("carinfo.txt");    // 关联文件
 
-    cout << "Enter the make and model of automobile: ";
+    cout << "请输入汽车品牌和型号：";
     cin.getline(automobile, 50);
-    cout << "Enter the model year: ";
+    cout << "请输入年份：";
     cin >> year;
-    cout << "Enter the original asking price: ";
+    cout << "请输入原始要价：";
     cin >> a_price;
     d_price = 0.913 * a_price;
 
-// display information on screen with cout
+// 使用cout在屏幕上显示信息
 
     cout << fixed;
     cout.precision(2);
     cout.setf(ios_base::showpoint);
-    cout << "Make and model: " << automobile << endl;
-    cout << "Year: " << year << endl;
-    cout << "Was asking $" << a_price << endl;
-    cout << "Now asking $" << d_price << endl;
+    cout << "品牌和型号：" << automobile << endl;
+    cout << "年份：" << year << endl;
+    cout << "原价 $" << a_price << endl;
+    cout << "现价 $" << d_price << endl;
 
-// now do exact same things using outFile instead of cout
+// 现在使用outFile而不是cout做完全相同的事情
 
     outFile << fixed;
     outFile.precision(2);
     outFile.setf(ios_base::showpoint);
-    outFile << "Make and model: " << automobile << endl;
-    outFile << "Year: " << year << endl;
-    outFile << "Was asking $" << a_price << endl;
-    outFile << "Now asking $" << d_price << endl;
+    outFile << "品牌和型号：" << automobile << endl;
+    outFile << "年份：" << year << endl;
+    outFile << "原价 $" << a_price << endl;
+    outFile << "现价 $" << d_price << endl;
     
-    outFile.close();                // done with file
+    outFile.close();                // 完成文件操作
     // cin.get();
     // cin.get();
     return 0;

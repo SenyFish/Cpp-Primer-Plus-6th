@@ -1,5 +1,5 @@
-// usebrass3.cpp -- polymorphic example
-// compile with acctacb.cpp
+// usebrass3.cpp -- 多态示例
+// 与acctacb.cpp一起编译
 #include <iostream>
 #include <string>
 #include "acctabc.h"
@@ -19,25 +19,24 @@ int main()
 
    for (int i = 0; i < CLIENTS; i++)
    {
-       cout << "Enter client's name: ";
+       cout << "输入客户姓名：";
        getline(cin,temp);
-       cout << "Enter client's account number: ";
+       cout << "输入客户账号：";
        cin >> tempnum;
-       cout << "Enter opening balance: $";
+       cout << "输入初始余额：$";
        cin >> tempbal;
-       cout << "Enter 1 for Brass Account or "
-            << "2 for BrassPlus Account: ";
+       cout << "输入1代表Brass账户或"
+            << "2代表BrassPlus账户：";
        while (cin >> kind && (kind != '1' && kind != '2'))
-           cout <<"Enter either 1 or 2: ";
+           cout <<"请输入1或2：";
        if (kind == '1')
            p_clients[i] = new Brass(temp, tempnum, tempbal);
        else
        {
            double tmax, trate;
-           cout << "Enter the overdraft limit: $";
+           cout << "输入透支限额：$";
            cin >> tmax;
-           cout << "Enter the interest rate "
-                << "as a decimal fraction: ";
+           cout << "以小数形式输入利率：";
            cin >> trate;
            p_clients[i] = new BrassPlus(temp, tempnum, tempbal,
                                         tmax, trate);
@@ -54,9 +53,9 @@ int main()
               
    for (int i = 0; i < CLIENTS; i++)
    {
-       delete p_clients[i];  // free memory
+       delete p_clients[i];  // 释放内存
    }
-   cout << "Done.\n";    
+   cout << "完成。\n";    
    // cin.get();
    return 0; 
 }

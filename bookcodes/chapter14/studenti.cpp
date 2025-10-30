@@ -1,11 +1,11 @@
-// studenti.cpp -- Student class using private inheritance
+// studenti.cpp -- 使用私有继承的Student类
 #include "studenti.h"
 using std::ostream;
 using std::endl;
 using std::istream;
 using std::string;
 
-// public methods
+// 公有方法
 double Student::Average() const
 {
     if (ArrayDb::size() > 0)
@@ -21,7 +21,7 @@ const string & Student::Name() const
 
 double & Student::operator[](int i)
 {
-    return ArrayDb::operator[](i);         // use ArrayDb::operator[]()
+    return ArrayDb::operator[](i);         // 使用ArrayDb::operator[]()
 }
 
 double Student::operator[](int i) const
@@ -29,7 +29,7 @@ double Student::operator[](int i) const
     return ArrayDb::operator[](i);
 }
 
-// private method
+// 私有方法
 ostream & Student::arr_out(ostream & os) const
 {
     int i;
@@ -46,29 +46,29 @@ ostream & Student::arr_out(ostream & os) const
             os << endl;
     }
     else
-        os << " empty array ";
+        os << "空数组";
     return os; 
 }
 
-// friends
-// use String version of operator>>()
+// 友元
+// 使用String版本的operator>>()
 istream & operator>>(istream & is, Student & stu)
 {
     is >> (string &)stu;
     return is; 
 }
 
-// use string friend getline(ostream &, const string &)
+// 使用string友元getline(ostream &, const string &)
 istream & getline(istream & is, Student & stu)
 {
     getline(is, (string &)stu);
     return is;
 }
 
-// use string version of operator<<()
+// 使用string版本的operator<<()
 ostream & operator<<(ostream & os, const Student & stu)
 {
-    os << "Scores for " << (const string &) stu  << ":\n";
-    stu.arr_out(os);  // use private method for scores
+    os << (const string &) stu  << "的成绩：\n";
+    stu.arr_out(os);  // 使用私有方法输出成绩
     return os;
 }

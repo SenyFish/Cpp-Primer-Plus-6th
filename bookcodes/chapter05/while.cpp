@@ -1,4 +1,4 @@
-// while.cpp -- introducing the while loop
+// while.cpp -- 介绍while循环
 #include <iostream>
 const int ArSize = 20;
 int main()
@@ -6,14 +6,14 @@ int main()
     using namespace std;
     char name[ArSize];
 
-    cout << "Your first name, please: ";
+    cout << "请输入你的名字：";
     cin >> name;
-    cout << "Here is your name, verticalized and ASCIIized:\n";
-    int i = 0;                  // start at beginning of string
-    while (name[i] != '\0')     // process to end of string
+    cout << "这是你的名字，垂直显示并转为ASCII码：\n";
+    int i = 0;                  // 从字符串开头开始
+    while (name[i] != '\0')     // 处理到字符串末尾
     {
         cout << name[i] << ": " << int(name[i]) << endl;
-        i++;                    // don't forget this step
+        i++;                    // 不要忘记这一步
     }
     // cin.get();
     // cin.get();

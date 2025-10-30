@@ -1,4 +1,4 @@
-//filefunc.cpp -- function with ostream & parameter
+//filefunc.cpp -- 带有ostream &参数的函数
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -13,24 +13,24 @@ int main()
     fout.open(fn);
     if (!fout.is_open())
     {
-        cout << "Can't open " << fn << ". Bye.\n";
+        cout << "无法打开" << fn << "。再见。\n";
         exit(EXIT_FAILURE);
     }
     double objective;
-    cout << "Enter the focal length of your "
-            "telescope objective in mm: ";
+    cout << "请输入你的望远镜物镜的"
+            "焦距（毫米）：";
     cin >> objective;
     double eps[LIMIT];
-    cout << "Enter the focal lengths, in mm, of " << LIMIT
-         << " eyepieces:\n";
+    cout << "请输入" << LIMIT << "个目镜的"
+         << "焦距（毫米）：\n";
     for (int i = 0; i < LIMIT; i++)
     {
-        cout << "Eyepiece #" << i + 1 << ": ";
+        cout << "目镜#" << i + 1 << "：";
         cin >> eps[i];
     }
     file_it(fout, objective, eps, LIMIT);
     file_it(cout, objective, eps, LIMIT);
-    cout << "Done\n";
+    cout << "完成\n";
     // cin.get();
     // cin.get();
     return 0;
@@ -38,16 +38,16 @@ int main()
 
 void file_it(ostream & os, double fo, const double fe[],int n)
 {
-    // save initial formatting state
+    // 保存初始格式状态
     ios_base::fmtflags initial;
     initial = os.setf(ios_base::fixed, ios_base::floatfield);
     std::streamsize sz = os.precision(0);
-    os << "Focal length of objective: " << fo << " mm\n";
+    os << "物镜焦距：" << fo << "毫米\n";
     os.precision(1);
     os.width(12);
-    os << "f.l. eyepiece";
+    os << "目镜焦距";
     os.width(15);
-    os << "magnification" << endl;
+    os << "放大倍数" << endl;
     for (int i = 0; i < n; i++)
     {
         os.width(12);
@@ -55,7 +55,7 @@ void file_it(ostream & os, double fo, const double fe[],int n)
         os.width(15);
         os << int (fo/fe[i] + 0.5) << endl;
     }
-    // restore initial formatting state
+    // 恢复初始格式状态
     os.setf(initial, ios_base::floatfield);
     os.precision(sz);
 }

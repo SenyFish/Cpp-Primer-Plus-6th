@@ -1,4 +1,4 @@
-// vect3.cpp -- using STL functions
+// vect3.cpp -- 使用STL函数
 #include <iostream>
 #include <string>
 #include <vector>
@@ -23,26 +23,26 @@ int main()
         books.push_back(temp);
     if (books.size() > 0)
     {
-        cout << "Thank you. You entered the following "
-             << books.size() << " ratings:\n"
-              << "Rating\tBook\n";
+        cout << "谢谢。您输入了以下"
+             << books.size() << "个评分：\n"
+              << "评分\t书籍\n";
         for_each(books.begin(), books.end(), ShowReview);
 
         sort(books.begin(), books.end());
-        cout << "Sorted by title:\nRating\tBook\n";
+        cout << "按标题排序：\n评分\t书籍\n";
         for_each(books.begin(), books.end(), ShowReview);
 
         sort(books.begin(), books.end(), worseThan);
-        cout << "Sorted by rating:\nRating\tBook\n";
+        cout << "按评分排序：\n评分\t书籍\n";
         for_each(books.begin(), books.end(), ShowReview);
 
         random_shuffle(books.begin(), books.end());
-        cout << "After shuffling:\nRating\tBook\n";
+        cout << "洗牌后：\n评分\t书籍\n";
         for_each(books.begin(), books.end(), ShowReview);
     }
     else
-        cout << "No entries. ";
-    cout << "Bye.\n";
+        cout << "没有条目。";
+    cout << "再见。\n";
     // cin.get();
     return 0;
 }
@@ -67,15 +67,15 @@ bool worseThan(const Review & r1, const Review & r2)
 
 bool FillReview(Review & rr)
 {
-    std::cout << "Enter book title (quit to quit): ";
+    std::cout << "输入书名（输入quit退出）：";
     std::getline(std::cin,rr.title);
     if (rr.title == "quit")
         return false;
-    std::cout << "Enter book rating: ";
+    std::cout << "输入书籍评分：";
     std::cin >> rr.rating;
     if (!std::cin)
         return false;
-    // get rid of rest of input line
+    // 清除输入行的其余部分
     while (std::cin.get() != '\n')
         continue;
     return true;

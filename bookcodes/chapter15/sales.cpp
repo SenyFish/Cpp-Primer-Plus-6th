@@ -1,4 +1,4 @@
-// sales.cpp -- Sales implementation
+// sales.cpp -- Sales实现
 #include "sales.h"
 using std::string;
 
@@ -21,7 +21,7 @@ Sales::Sales(int yy, const double * gr, int n)
     int i;
     for (i = 0; i < lim; ++i)
         gross[i] = gr[i];
-    // for i > n and i < MONTHS
+    // 对于i > n且i < MONTHS
     for ( ; i < MONTHS; ++i)
         gross[i] = 0;
 }

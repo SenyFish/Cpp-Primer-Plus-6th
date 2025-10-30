@@ -8,14 +8,14 @@ int main() {
     string name;
     string dessert;
 
-    cout << "Enter your name: \n";
+    cout << "请输入你的名字：\n";
     getline(cin, name);
 
-    cout << "Enter your favorite dessert:\n";
+    cout << "请输入你最喜欢的甜点：\n";
     getline(cin, dessert);
 
-    cout << "I have delicious " << dessert;
-    cout << " for you,  " << name << ".\n";
+    cout << "我有美味的" << dessert;
+    cout << "给你，" << name << "。\n";
 
     return 0;
 }

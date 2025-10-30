@@ -1,6 +1,6 @@
-// structur.cpp -- a simple structure
+// structur.cpp -- 一个简单的结构体
 #include <iostream>
-struct inflatable   // structure declaration
+struct inflatable   // 结构体声明
 {
     char name[20];
     float volume;
@@ -12,25 +12,25 @@ int main()
     using namespace std;
     inflatable guest =
     {
-        "Glorious Gloria",  // name value
-        1.88,               // volume value
-        29.99               // price value
-    };  // guest is a structure variable of type inflatable
-// It's initialized to the indicated values
+        "Glorious Gloria",  // name值
+        1.88,               // volume值
+        29.99               // price值
+    };  // guest是inflatable类型的结构体变量
+// 它被初始化为指定的值
     inflatable pal =
     {
         "Audacious Arthur",
         3.12,
         32.99
-    };  // pal is a second variable of type inflatable
-// NOTE: some implementations require using
+    };  // pal是inflatable类型的第二个变量
+// 注意：某些实现需要使用
 // static inflatable guest =
 
-    cout << "Expand your guest list with " << guest.name;
-    cout << " and " << pal.name << "!\n";
-// pal.name is the name member of the pal variable
-    cout << "You can have both for $";
-    cout << guest.price + pal.price << "!\n";
+    cout << "用" << guest.name << "扩展你的客人名单";
+    cout << "和" << pal.name << "！\n";
+// pal.name是pal变量的name成员
+    cout << "两个一起只需$";
+    cout << guest.price + pal.price << "！\n";
     // cin.get();
     return 0; 
 }

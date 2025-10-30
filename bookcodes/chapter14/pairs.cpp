@@ -1,4 +1,4 @@
-// pairs.cpp -- defining and using a Pair template
+// pairs.cpp -- 定义并使用Pair模板
 #include <iostream>
 #include <string>
 template <class T1, class T2>
@@ -41,11 +41,11 @@ int main()
     };
 
     int joints = sizeof(ratings) / sizeof (Pair<string, int>);
-    cout << "Rating:\t Eatery\n";
+    cout << "评级：\t 餐馆\n";
     for (int i = 0; i < joints; i++)
         cout << ratings[i].second() << ":\t "
              << ratings[i].first() << endl;
-    cout << "Oops! Revised rating:\n";
+    cout << "糟糕！修订后的评级：\n";
     ratings[3].first() = "Bertie's Fab Eats";
     ratings[3].second() = 6;
     cout << ratings[3].second() << ":\t "

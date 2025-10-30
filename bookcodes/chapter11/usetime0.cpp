@@ -1,5 +1,5 @@
-// usetime0.cpp -- using the first draft of the Time class
-// compile usetime0.cpp and mytime0.cpp together
+// usetime0.cpp -- 使用Time类的第一个草稿
+// 将usetime0.cpp和mytime0.cpp一起编译
 #include <iostream>
 #include "mytime0.h"
 
@@ -12,15 +12,15 @@ int main()
     Time fixing(5, 55);
     Time total;
 
-    cout << "planning time = ";
+    cout << "计划时间 = ";
     planning.Show();
     cout << endl;
  
-    cout << "coding time = ";
+    cout << "编码时间 = ";
     coding.Show();
     cout << endl;
     
-    cout << "fixing time = ";
+    cout << "修复时间 = ";
     fixing.Show();
     cout << endl;
 

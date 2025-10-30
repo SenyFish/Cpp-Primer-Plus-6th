@@ -1,4 +1,4 @@
-// instr1.cpp -- reading more than one string
+// instr1.cpp -- 读取多个字符串
 #include <iostream>
 int main()
 {
@@ -7,12 +7,12 @@ int main()
     char name[ArSize];
     char dessert[ArSize];
 
-    cout << "Enter your name:\n";
+    cout << "请输入你的名字：\n";
     cin >> name;
-    cout << "Enter your favorite dessert:\n";
+    cout << "请输入你最喜欢的甜点：\n";
     cin >> dessert;
-    cout << "I have some delicious " << dessert;
-    cout << " for you, " << name << ".\n";
+    cout << "我有一些美味的" << dessert;
+    cout << "给你，" << name << "。\n";
     // cin.get();
 	// cin.get();
     return 0; 

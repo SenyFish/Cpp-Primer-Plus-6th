@@ -1,5 +1,5 @@
-// usebrass1.cpp -- testing bank account classes
-// compile with brass.cpp
+// usebrass1.cpp -- 测试银行账户类
+// 与brass.cpp一起编译
 #include <iostream>
 #include "brass.h"
 
@@ -14,13 +14,13 @@ int main()
     cout << endl;
     Hoggy.ViewAcct();
     cout << endl;
-    cout << "Depositing $1000 into the Hogg Account:\n";
+    cout << "向Hogg账户存入$1000：\n";
     Hoggy.Deposit(1000.00);
-    cout << "New balance: $" << Hoggy.Balance() << endl;
-    cout << "Withdrawing $4200 from the Pigg Account:\n";
+    cout << "新余额：$" << Hoggy.Balance() << endl;
+    cout << "从Pigg账户取款$4200：\n";
     Piggy.Withdraw(4200.00);
-    cout << "Pigg account balance: $" << Piggy.Balance() << endl;
-    cout << "Withdrawing $4200 from the Hogg Account:\n";
+    cout << "Pigg账户余额：$" << Piggy.Balance() << endl;
+    cout << "从Hogg账户取款$4200：\n";
     Hoggy.Withdraw(4200.00);
     Hoggy.ViewAcct();
 	// std::cin.get();

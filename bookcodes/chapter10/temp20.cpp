@@ -1,13 +1,13 @@
-// stock20.cpp -- augmented version
+// stock20.cpp -- 增强版本
 #include <iostream>
 #include "stock20.h"
 using namespace std;
-// constructors
+// 构造函数
 /*
-Stock::Stock()        // default constructor
+Stock::Stock()        // 默认构造函数
 {
-	    std::cout << "Default constructor called\n";
-    company = "no name";
+	    std::cout << "调用默认构造函数\n";
+    company = "无名称";
 
     shares = 0;
     share_val = 0.0;
@@ -16,13 +16,13 @@ Stock::Stock()        // default constructor
 */
 Stock::Stock(const std::string & co, long n, double pr)
 {
-	   std::cout << "Constructor using " << co << " called\n";
+	   std::cout << "使用" << co << "调用构造函数\n";
 
     company = co;
     if (n < 0)
     {
-        std::cout << "Number of shares can't be negative; "
-                   << company << " shares set to 0.\n";
+        std::cout << "股票数量不能为负；"
+                   << company << "的股票数设置为0。\n";
         shares = 0;
     }
     else
@@ -31,19 +31,19 @@ Stock::Stock(const std::string & co, long n, double pr)
     set_tot();
 }
 
-// class destructor
-Stock::~Stock()        // quiet class destructor
+// 类析构函数
+Stock::~Stock()        // 静默的类析构函数
 {
-	   std::cout << "Bye, " << company << "!\n";
+	   std::cout << "再见，" << company << "！\n";
 }
 
-// other methods
+// 其他方法
 void Stock::buy(long num, double price)
 {
      if (num < 0)
     {
-        std::cout << "Number of shares purchased can't be negative. "
-             << "Transaction is aborted.\n";
+        std::cout << "购买的股票数量不能为负。"
+             << "交易已中止。\n";
     }
     else
     {
@@ -58,13 +58,13 @@ void Stock::sell(long num, double price)
     using std::cout;
     if (num < 0)
     {
-        cout << "Number of shares sold can't be negative. "
-             << "Transaction is aborted.\n";
+        cout << "出售的股票数量不能为负。"
+             << "交易已中止。\n";
     }
     else if (num > shares)
     {
-        cout << "You can't sell more than you have! "
-             << "Transaction is aborted.\n";
+        cout << "你不能出售超过你拥有的数量！"
+             << "交易已中止。\n";
     }
     else
     {
@@ -84,19 +84,19 @@ void Stock::show() const
 {
     using std::cout;
     using std::ios_base;
-    // set format to #.###
+    // 设置格式为#.###
     ios_base::fmtflags orig = 
         cout.setf(ios_base::fixed, ios_base::floatfield); 
     std::streamsize prec = cout.precision(3);
 
-    cout << "Company: " << company
-        << "  Shares: " << shares << '\n';
-    cout << "  Share Price: $" << share_val;
-    // set format to #.##
+    cout << "公司：" << company
+        << "  股票：" << shares << '\n';
+    cout << "  股价：$" << share_val;
+    // 设置格式为#.##
     cout.precision(2);
-    cout << "  Total Worth: $" << total_val << '\n';
+    cout << "  总价值：$" << total_val << '\n';
 
-    // restore original format
+    // 恢复原始格式
     cout.setf(orig, ios_base::floatfield);
     cout.precision(prec);
 }

@@ -1,10 +1,10 @@
-// firstref.cpp -- defining and using a reference
+// firstref.cpp -- 定义和使用引用
 #include <iostream>
 int main()
 {
     using namespace std;
     int rats = 101;
-    int & rodents = rats;   // rodents is a reference
+    int & rodents = rats;   // rodents是一个引用
 
     cout << "rats = " << rats;
     cout << ", rodents = " << rodents << endl;
@@ -12,10 +12,10 @@ int main()
     cout << "rats = " << rats;
     cout << ", rodents = " << rodents << endl;
 
-// some implementations require type casting the following
-// addresses to type unsigned
-    cout << "rats address = " << &rats;
-    cout << ", rodents address = " << &rodents << endl;
+// 某些实现需要将以下地址
+// 类型转换为unsigned类型
+    cout << "rats的地址 = " << &rats;
+    cout << ", rodents的地址 = " << &rodents << endl;
     // cin.get();
     return 0; 
 }

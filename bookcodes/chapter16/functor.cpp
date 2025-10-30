@@ -1,10 +1,10 @@
-// functor.cpp -- using a functor
+// functor.cpp -- 使用函数对象
 #include <iostream>
 #include <list>
 #include <iterator>
 #include <algorithm>
 
-template<class T>  // functor class defines operator()()
+template<class T>  // 函数对象类定义operator()()
 class TooBig
 {
 private:
@@ -24,23 +24,23 @@ int main()
 	using std::for_each;
 	using std::remove_if;
 
-    TooBig<int> f100(100); // limit = 100
+    TooBig<int> f100(100); // 限制 = 100
     int vals[10] = {50, 100, 90, 180, 60, 210, 415, 88, 188, 201};
-    list<int> yadayada(vals, vals + 10); // range constructor
+    list<int> yadayada(vals, vals + 10); // 范围构造函数
     list<int> etcetera(vals, vals + 10);
  
- // C++0x can use the following instead
+ // C++0x可以使用以下代替
 //  list<int> yadayada = {50, 100, 90, 180, 60, 210, 415, 88, 188, 201};
 //  list<int> etcetera {50, 100, 90, 180, 60, 210, 415, 88, 188, 201};
 
-    cout << "Original lists:\n";
+    cout << "原始列表：\n";
     for_each(yadayada.begin(), yadayada.end(), outint);
     cout << endl;
     for_each(etcetera.begin(), etcetera.end(), outint);
     cout << endl;
-    yadayada.remove_if(f100);               // use a named function object
-    etcetera.remove_if(TooBig<int>(200));   // construct a function object
-    cout <<"Trimmed lists:\n";
+    yadayada.remove_if(f100);               // 使用命名的函数对象
+    etcetera.remove_if(TooBig<int>(200));   // 构造一个函数对象
+    cout <<"修剪后的列表：\n";
     for_each(yadayada.begin(), yadayada.end(), outint);
     cout << endl;
     for_each(etcetera.begin(), etcetera.end(), outint);

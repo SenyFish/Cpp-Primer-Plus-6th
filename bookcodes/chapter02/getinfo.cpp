@@ -1,4 +1,4 @@
-// getinfo.cpp -- input and output
+// getinfo.cpp -- 输入和输出
 #include <iostream>
 
 int main()
@@ -7,12 +7,12 @@ int main()
     
     int carrots;
     
-    cout << "How many carrots do you have?" << endl;
-    cin >> carrots;                // C++ input
-    cout << "Here are two more. ";
+    cout << "你有多少根胡萝卜？" << endl;
+    cin >> carrots;                // C++输入
+    cout << "这里再给你两根。";
     carrots = carrots + 2;
-// the next line concatenates output
-    cout << "Now you have " << carrots << " carrots." << endl;
+// 下一行连接输出
+    cout << "现在你有 " << carrots << " 根胡萝卜。" << endl;
 	// cin.get();
 	// cin.get();
     return 0;

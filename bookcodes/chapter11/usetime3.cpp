@@ -1,5 +1,5 @@
-//usetime3.cpp -- using the fourth draft of the Time class
-// compile usetime3.cpp and mytime3.cpp together
+//usetime3.cpp -- 使用Time类的第四个草稿
+// 将usetime3.cpp和mytime3.cpp一起编译
 #include <iostream>
 #include "mytime3.h"
 
@@ -11,13 +11,13 @@ int main()
     Time tosca(2, 48);
     Time temp;
 
-    cout << "Aida and Tosca:\n";
+    cout << "艾依达和托斯卡：\n";
     cout << aida<<"; " << tosca << endl;
     temp = aida + tosca;     // operator+()
-    cout << "Aida + Tosca: " << temp << endl;
-    temp = aida* 1.17;  // member operator*()
-    cout << "Aida * 1.17: " << temp << endl;
-    cout << "10.0 * Tosca: " << 10.0 * tosca << endl;
+    cout << "艾依达 + 托斯卡：" << temp << endl;
+    temp = aida* 1.17;  // 成员operator*()
+    cout << "艾依达 * 1.17：" << temp << endl;
+    cout << "10.0 * 托斯卡：" << 10.0 * tosca << endl;
 	// std::cin.get();
     return 0; 
 }

@@ -1,7 +1,7 @@
-// strtype3.cpp -- more string class features
+// strtype3.cpp -- 更多string类特性
 #include <iostream>
-#include <string>               // make string class available
-#include <cstring>              // C-style string library
+#include <string>               // 使string类可用
+#include <cstring>              // C风格字符串库
 int main()
 {
     using namespace std;
@@ -10,22 +10,22 @@ int main()
     string str1;  
     string str2 = "panther";
 
-    // assignment for string objects and character arrays
-    str1 = str2;                // copy str2 to str1
-    strcpy(charr1, charr2);     // copy charr2 to charr1
+    // string对象和字符数组的赋值
+    str1 = str2;                // 将str2复制到str1
+    strcpy(charr1, charr2);     // 将charr2复制到charr1
  
-    // appending for string objects and character arrays
-    str1 += " paste";           // add paste to end of str1
-    strcat(charr1, " juice");   // add juice to end of charr1
+    // string对象和字符数组的追加
+    str1 += " paste";           // 将paste添加到str1末尾
+    strcat(charr1, " juice");   // 将juice添加到charr1末尾
 
-    // finding the length of a string object and a C-style string
-    int len1 = str1.size();     // obtain length of str1
-    int len2 = strlen(charr1);  // obtain length of charr1
+    // 查找string对象和C风格字符串的长度
+    int len1 = str1.size();     // 获取str1的长度
+    int len2 = strlen(charr1);  // 获取charr1的长度
  
-    cout << "The string " << str1 << " contains "
-         << len1 << " characters.\n";
-    cout << "The string " << charr1 << " contains "
-         << len2 << " characters.\n";
+    cout << "字符串 " << str1 << " 包含 "
+         << len1 << " 个字符。\n";
+    cout << "字符串 " << charr1 << " 包含 "
+         << len2 << " 个字符。\n";
     // cin.get();
 
     return 0; 

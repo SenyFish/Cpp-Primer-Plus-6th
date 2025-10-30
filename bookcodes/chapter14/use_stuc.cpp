@@ -1,5 +1,5 @@
-// use_stuc.cpp -- using a composite class
-// compile with studentc.cpp
+// use_stuc.cpp -- 使用组合类
+// 与studentc.cpp一起编译
 #include <iostream>
 #include "studentc.h"
 using std::cin;
@@ -19,16 +19,16 @@ int main()
     int i;
     for (i = 0; i < pupils; ++i)
         set(ada[i], quizzes);
-    cout << "\nStudent List:\n";
+    cout << "\n学生名单：\n";
     for (i = 0; i < pupils; ++i)
         cout << ada[i].Name() << endl;
-    cout << "\nResults:";
+    cout << "\n结果：";
     for (i = 0; i < pupils; ++i)
     {
         cout << endl << ada[i];
-        cout << "average: " << ada[i].Average() << endl;
+        cout << "平均分：" << ada[i].Average() << endl;
     }
-    cout << "Done.\n";
+    cout << "完成。\n";
     // cin.get();
 
     return 0;
@@ -36,9 +36,9 @@ int main()
 
 void set(Student & sa, int n)
 {
-    cout << "Please enter the student's name: ";
+    cout << "请输入学生姓名：";
     getline(cin, sa);
-    cout << "Please enter " << n << " quiz scores:\n";
+    cout << "请输入" << n << "个测验分数：\n";
     for (int i = 0; i < n; i++)
         cin >> sa[i];
     while (cin.get() != '\n')

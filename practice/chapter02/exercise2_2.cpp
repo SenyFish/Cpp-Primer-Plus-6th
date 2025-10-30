@@ -6,11 +6,11 @@ int main() {
     using namespace std;
 
     int distance = 0, yard;
-    cout << "Please input a distance numebr in the unit of Long: ";
+    cout << "请输入以浪（Long）为单位的距离：";
     cin >> distance;
     yard = distance * 220;
 
-    cout << "The distance tranform in yards is: " << yard << endl;
+    cout << "转换为码的距离是：" << yard << endl;
 
     return 0;
 }

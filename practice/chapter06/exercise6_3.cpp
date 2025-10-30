@@ -4,7 +4,7 @@
 int main() {
 
     using namespace std;
-    cout << "Please enter one of the following choice: \n";
+    cout << "请输入以下选项之一：\n";
     cout << "c) carnivore\tp) pianist.\n"
          << "t) tree\tg) game" << endl;
 
@@ -14,24 +14,24 @@ int main() {
 
         switch (c) {
             case 'c': 
-                cout << "Tiger is a carnivore." << endl;
+                cout << "老虎是肉食动物。" << endl;
                 exit = true;
                 break;
             case 'p':
-                cout << "Mozart is a great pianst." << endl;
+                cout << "莫扎特是伟大的钢琴家。" << endl;
                 exit = true;
                 break;
             case 't':
-                cout << "A maple is a tree." << endl;
+                cout << "枫树是一种树。" << endl;
                 exit = true;
                 break;
             case 'g':
-                cout << "Supper Mario is a great game." << endl;
+                cout << "超级马里奥是一款伟大的游戏。" << endl;
                 exit = true;
                 break;
 
             default:
-                cout << "Please enter c, p, t, or g: q" << endl;
+                cout << "请输入 c、p、t 或 g：q" << endl;
                 break;
         }
     }

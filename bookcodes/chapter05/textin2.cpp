@@ -1,4 +1,4 @@
-// textin2.cpp -- using cin.get(char)
+// textin2.cpp -- 使用cin.get(char)
 #include <iostream>
 int main()
 {
@@ -6,16 +6,16 @@ int main()
     char ch;
     int count = 0;
 
-    cout << "Enter characters; enter # to quit:\n";
-    cin.get(ch);        // use the cin.get(ch) function
+    cout << "请输入字符；输入#退出：\n";
+    cin.get(ch);        // 使用cin.get(ch)函数
     while (ch != '#')
     {
         cout << ch;
         ++count;
-        cin.get(ch);    // use it again
+        cin.get(ch);    // 再次使用它
     }
-    cout << endl << count << " characters read\n";
-// get rid of rest of line
+    cout << endl << count << " 个字符被读取\n";
+// 清除行的其余部分
     // while (cin.get() != '\n')
     //    ;
     //cin.get();

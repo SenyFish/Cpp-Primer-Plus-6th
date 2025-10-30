@@ -1,4 +1,4 @@
-// nested.cpp -- nested loops and 2-D array
+// nested.cpp -- 嵌套循环和二维数组
 #include <iostream>
 #include <string>
 #include <array>
@@ -7,8 +7,8 @@ const int Years = 4;
 int main()
 {
     using namespace std;
-    const string cities[Cities] =   // array of pointers
-    {                               // to 5 strings
+    const string cities[Cities] =   // 字符串数组
+    {                               // 5个字符串
         "Gribble City",
         "Gribbletown",
         "New Gribble",
@@ -18,16 +18,16 @@ int main()
 
 	array<array<int,Cities>, Years> maxtemps =
 
- /*   int maxtemps[Years][Cities] =   // 2-D array */
+ /*   int maxtemps[Years][Cities] =   // 二维数组 */
     {
-        96, 100, 87, 101, 105,   // values for maxtemps[0]
-        96, 98, 91, 107, 104,   // values for maxtemps[1]
-        97, 101, 93, 108, 107, // values for maxtemps[2]
-        98, 103, 95, 109, 108   // values for maxtemps[3]
+        96, 100, 87, 101, 105,   // maxtemps[0]的值
+        96, 98, 91, 107, 104,   // maxtemps[1]的值
+        97, 101, 93, 108, 107, // maxtemps[2]的值
+        98, 103, 95, 109, 108   // maxtemps[3]的值
     };
 
 
-    cout << "Maximum temperatures for 2008 - 2011\n\n";
+    cout << "2008-2011年的最高温度\n\n";
     for (int city = 0; city < Cities; ++city)
     {
         cout << cities[city] << ":\t";

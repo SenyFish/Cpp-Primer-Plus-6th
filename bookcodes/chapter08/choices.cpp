@@ -1,4 +1,4 @@
-// choices.cpp -- choosing a template
+// choices.cpp -- 选择模板
 #include <iostream>
 
 template<class T>
@@ -22,10 +22,10 @@ int main()
     double x = 15.5;
     double y = 25.9;
 
-    cout << lesser(m, n) << endl;       // use #2
-    cout << lesser(x, y) << endl;       // use #1 with double
-    cout << lesser<>(m, n) << endl;     // use #1 with int
-    cout << lesser<int>(x, y)  << endl; // use #1 with int
+    cout << lesser(m, n) << endl;       // 使用#2
+    cout << lesser(x, y) << endl;       // 使用#1与double
+    cout << lesser<>(m, n) << endl;     // 使用#1与int
+    cout << lesser<int>(x, y)  << endl; // 使用#1与int
 
     // cin.get();
     return 0;

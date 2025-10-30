@@ -1,19 +1,19 @@
-// worker0.cpp -- working class methods
+// worker0.cpp -- 工作类方法
 #include "worker0.h"
 #include <iostream>
 using std::cout;
 using std::cin;
 using std::endl;
-// Worker methods
+// Worker方法
 
-// must implement virtual destructor, even if pure
+// 必须实现虚析构函数，即使是纯虚的
 Worker::~Worker() {}
 
 void Worker::Set()
 {
-    cout << "Enter worker's name: ";
+    cout << "输入工人姓名：";
     getline(cin, fullname);
-    cout << "Enter worker's ID: ";
+    cout << "输入工人ID：";
     cin >> id;
     while (cin.get() != '\n')
         continue;
@@ -21,15 +21,15 @@ void Worker::Set()
 
 void Worker::Show() const
 {
-    cout << "Name: " << fullname << "\n";
-    cout << "Employee ID: " << id << "\n";
+    cout << "姓名：" << fullname << "\n";
+    cout << "员工ID：" << id << "\n";
 }
 
-// Waiter methods
+// Waiter方法
 void Waiter::Set()
 {
     Worker::Set();
-    cout << "Enter waiter's panache rating: ";
+    cout << "输入服务员的派头评级：";
     cin >> panache;
     while (cin.get() != '\n')
         continue;
@@ -37,12 +37,12 @@ void Waiter::Set()
 
 void Waiter::Show() const
 {
-    cout << "Category: waiter\n";
+    cout << "类别：服务员\n";
     Worker::Show();
-    cout << "Panache rating: " << panache << "\n";
+    cout << "派头评级：" << panache << "\n";
 }
 
-// Singer methods
+// Singer方法
 
 char * Singer::pv[] = {"other", "alto", "contralto",
             "soprano", "bass", "baritone", "tenor"};
@@ -50,25 +50,25 @@ char * Singer::pv[] = {"other", "alto", "contralto",
 void Singer::Set()
 {
     Worker::Set();
-    cout << "Enter number for singer's vocal range:\n";
+    cout << "输入歌手声域编号：\n";
     int i;
     for (i = 0; i < Vtypes; i++)
     {
-        cout << i << ": " << pv[i] << "   ";
+        cout << i << "：" << pv[i] << "   ";
         if ( i % 4 == 3)
             cout << endl;
     }
     if (i % 4 != 0)
         cout << endl;
     while (cin >>  voice && (voice < 0 || voice >= Vtypes) )
-        cout << "Please enter a value >= 0 and < " << Vtypes << endl;
+        cout << "请输入>=0且<" << Vtypes << "的值\n";
     while (cin.get() != '\n')
         continue;
 }
 
 void Singer::Show() const
 {
-    cout << "Category: singer\n";
+    cout << "类别：歌手\n";
     Worker::Show();
-    cout << "Vocal range: " << pv[voice] << endl;
+    cout << "声域：" << pv[voice] << endl;
 }

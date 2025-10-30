@@ -1,4 +1,4 @@
-// plus_one.cpp -- the increment operator
+// plus_one.cpp -- 递增运算符
 #include <iostream>
 int main()
 {

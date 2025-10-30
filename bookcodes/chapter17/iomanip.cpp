@@ -1,5 +1,5 @@
-// iomanip.cpp -- using manipulators from iomanip
-// some systems require explicitly linking the math library
+// iomanip.cpp -- 使用iomanip中的操纵符
+// 某些系统需要显式链接数学库
 #include <iostream>
 #include <iomanip>
 #include <cmath>
@@ -7,12 +7,12 @@
 int main()
 {
     using namespace std;
-    // use new standard manipulators
+    // 使用新的标准操纵符
     cout << fixed << right;
 
-    // use iomanip manipulators
-    cout << setw(6) << "N" << setw(14) << "square root"
-         << setw(15) << "fourth root\n";
+    // 使用iomanip操纵符
+    cout << setw(6) << "N" << setw(14) << "平方根"
+         << setw(15) << "四次方根\n";
 
     double root;
     for (int n = 10; n <=100; n += 10)

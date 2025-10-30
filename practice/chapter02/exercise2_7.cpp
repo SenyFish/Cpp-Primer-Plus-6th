@@ -7,7 +7,7 @@ using namespace std;
 
 void display_time(double hours, double minutes) {
 
-    cout << "Time: " << hours << ":" << minutes << endl;
+    cout << "时间：" << hours << ":" << minutes << endl;
 
     return;
 }
@@ -15,10 +15,10 @@ void display_time(double hours, double minutes) {
 int main() {
 
     double hours, minutes;
-    cout << "Enter the number of hours: ";
+    cout << "请输入小时数：";
     cin >> hours;
 
-    cout << "Enter the number of minutes: ";
+    cout << "请输入分钟数：";
     cin >> minutes;
 
     display_time(hours, minutes);

@@ -1,25 +1,25 @@
-// typecast.cpp -- forcing type changes
+// typecast.cpp -- 强制类型转换
 #include <iostream>
 int main()
 {
     using namespace std;
     int auks, bats, coots;
 
-    // the following statement adds the values as double,
-    // then converts the result to int
+    // 下面的语句将值作为double相加，
+    // 然后将结果转换为int
     auks = 19.99 + 11.99;
 
-    // these statements add values as int
-    bats = (int) 19.99 + (int) 11.99;   // old C syntax
-    coots = int (19.99) + int (11.99);  // new C++ syntax
+    // 这些语句将值作为int相加
+    bats = (int) 19.99 + (int) 11.99;   // 旧的C语法
+    coots = int (19.99) + int (11.99);  // 新的C++语法
     cout << "auks = " << auks << ", bats = " << bats;
     cout << ", coots = " << coots << endl;
 
     char ch = 'Z';
-    cout << "The code for " << ch << " is ";    // print as char
-    cout << int(ch) << endl;                    // print as int
-    cout << "Yes, the code is ";
-    cout << static_cast<int>(ch) << endl;       // using static_cast
+    cout << ch << " 的代码是 ";    // 作为char打印
+    cout << int(ch) << endl;                    // 作为int打印
+    cout << "是的，代码是 ";
+    cout << static_cast<int>(ch) << endl;       // 使用static_cast
    // cin.get();
     return 0; 
 }

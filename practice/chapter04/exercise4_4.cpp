@@ -8,15 +8,15 @@ int main() {
     string first_name, last_name;
     string final_name;
 
-    cout << "Enter your first name: ";
+    cout << "请输入你的名字：";
     getline(cin, first_name);
 
-    cout << "Enther your last name: ";
+    cout << "请输入你的姓氏：";
     getline(cin, last_name);
 
     final_name = last_name + ", " + first_name;
 
-    cout << "Here's the information in a single string: " << final_name << endl;
+    cout << "这是合并后的信息：" << final_name << endl;
 
     return 0;
 }

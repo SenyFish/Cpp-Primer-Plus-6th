@@ -1,4 +1,4 @@
-// stocks.cpp -- the whole program
+// stocks.cpp -- 完整程序
 #include <iostream>
 #include "stocks00.h"
 

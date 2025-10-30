@@ -1,4 +1,4 @@
-// rtti1.cpp -- using the RTTI dynamic_cast operator
+// rtti1.cpp -- 使用RTTI dynamic_cast运算符
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -11,7 +11,7 @@ private:
     int hold;
 public:
     Grand(int h = 0) : hold(h) {}
-    virtual void Speak() const { cout << "I am a grand class!\n";}
+    virtual void Speak() const { cout << "我是一个grand类！\n";}
     virtual int Value() const { return hold; }
 };
 
@@ -19,9 +19,9 @@ class Superb : public Grand
 {
 public:
     Superb(int h = 0) : Grand(h) {}
-    void Speak() const {cout << "I am a superb class!!\n"; }
+    void Speak() const {cout << "我是一个superb类！！\n"; }
     virtual void Say() const
-        { cout << "I hold the superb value of " << Value() << "!\n";}
+        { cout << "我持有superb值" << Value() << "！\n";}
 };
 
 class Magnificent : public Superb
@@ -30,9 +30,9 @@ private:
     char ch;
 public:
     Magnificent(int h = 0, char c = 'A') : Superb(h), ch(c) {}
-    void Speak() const {cout << "I am a magnificent class!!!\n";}
-    void Say() const {cout << "I hold the character " << ch <<
-               " and the integer "  << Value() << "!\n"; }
+    void Speak() const {cout << "我是一个magnificent类！！！\n";}
+    void Say() const {cout << "我持有字符" << ch <<
+               "和整数"  << Value() << "！\n"; }
 };
 
 Grand * GetOne();
@@ -53,7 +53,7 @@ int main()
     return 0;
 }
 
-Grand * GetOne()    // generate one of three kinds of objects randomly
+Grand * GetOne()    // 随机生成三种对象之一
 {
     Grand * p;
     switch( std::rand() % 3)

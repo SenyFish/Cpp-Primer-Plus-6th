@@ -1,4 +1,4 @@
-// namesp.cpp -- namespaces
+// namesp.cpp -- 命名空间
 #include <iostream>
 #include "namesp.h"
 
@@ -8,9 +8,9 @@ namespace pers
     using std::cin;
     void getPerson(Person & rp)
     {
-        cout << "Enter first name: ";
+        cout << "请输入名字：";
         cin >> rp.fname;
-        cout << "Enter last name: ";
+        cout << "请输入姓氏：";
         cin >> rp.lname;
     }
     
@@ -25,14 +25,14 @@ namespace debts
     void getDebt(Debt & rd)
     {
         getPerson(rd.name);
-        std::cout << "Enter debt: ";
+        std::cout << "请输入债务：";
         std::cin >> rd.amount;
     }
     
     void showDebt(const Debt & rd)
     {
         showPerson(rd.name);
-        std::cout <<": $" << rd.amount << std::endl;
+        std::cout <<"：$" << rd.amount << std::endl;
     }
     
     double sumDebts(const Debt ar[], int n)

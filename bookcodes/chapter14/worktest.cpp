@@ -1,4 +1,4 @@
-// worktest.cpp -- test worker class hierarchy
+// worktest.cpp -- 测试worker类层次结构
 #include <iostream>
 #include "worker0.h"
 const int LIM = 4;

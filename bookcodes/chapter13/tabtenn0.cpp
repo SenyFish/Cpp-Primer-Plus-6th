@@ -1,4 +1,4 @@
-//tabtenn0.cpp -- simple base-class methods
+//tabtenn0.cpp -- 简单的基类方法
 #include "tabtenn0.h"
 #include <iostream>
 

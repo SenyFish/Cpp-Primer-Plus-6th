@@ -1,4 +1,4 @@
-// error3.cpp -- using an exception
+// error3.cpp -- 使用异常
 #include <iostream>
 double hmean(double a, double b);
 
@@ -6,29 +6,29 @@ int main()
 {
     double x, y, z;
 
-    std::cout << "Enter two numbers: ";
+    std::cout << "输入两个数字：";
     while (std::cin >> x >> y)
     {
-        try {                   // start of try block
+        try {                   // try块开始
             z = hmean(x,y);
-        }                       // end of try block
-        catch (const char * s)  // start of exception handler
+        }                       // try块结束
+        catch (const char * s)  // 异常处理器开始
         {
             std::cout << s << std::endl;
-            std::cout << "Enter a new pair of numbers: ";
+            std::cout << "输入新的一对数字：";
             continue;
-        }                       // end of handler
-        std::cout << "Harmonic mean of " << x << " and " << y
-            << " is " << z << std::endl;
-        std::cout << "Enter next set of numbers <q to quit>: ";
+        }                       // 处理器结束
+        std::cout << x << "和" << y << "的调和平均数"
+            << "是" << z << std::endl;
+        std::cout << "输入下一组数字<q退出>：";
     }
-    std::cout << "Bye!\n";
+    std::cout << "再见！\n";
     return 0;
 }
 
 double hmean(double a, double b)
 {
     if (a == -b)
-        throw "bad hmean() arguments: a = -b not allowed";
+        throw "错误的hmean()参数：不允许a = -b";
     return 2.0 * a * b / (a + b); 
 }

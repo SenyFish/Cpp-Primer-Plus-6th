@@ -1,4 +1,4 @@
-//strc_ref.cpp -- using structure references
+//strc_ref.cpp -- 使用结构引用
 #include <iostream>
 #include <string>
 struct free_throws
@@ -30,16 +30,16 @@ int main()
     display(accumulate(team, two));
     accumulate(accumulate(team, three), four);
     display(team);
-// use return value in assignment
+// 在赋值中使用返回值
     dup = accumulate(team,five);
-    std::cout << "Displaying team:\n";
+    std::cout << "显示team：\n";
     display(team);
-    std::cout << "Displaying dup after assignment:\n";
+    std::cout << "赋值后显示dup：\n";
     display(dup);
     set_pc(four);
-// ill-advised assignment
+// 不明智的赋值
     accumulate(dup,five) = four;
-    std::cout << "Displaying dup after ill-advised assignment:\n";
+    std::cout << "不明智的赋值后显示dup：\n";
     display(dup);
     // std::cin.get();
     return 0;
@@ -48,10 +48,10 @@ int main()
 void display(const free_throws & ft)
 {
     using std::cout;
-    cout << "Name: " << ft.name << '\n';
-    cout << "  Made: " << ft.made << '\t';
-    cout << "Attempts: " << ft.attempts << '\t';
-    cout << "Percent: " << ft.percent << '\n';
+    cout << "姓名：" << ft.name << '\n';
+    cout << "  命中：" << ft.made << '\t';
+    cout << "尝试：" << ft.attempts << '\t';
+    cout << "百分比：" << ft.percent << '\n';
 }
 void set_pc(free_throws & ft)
 {

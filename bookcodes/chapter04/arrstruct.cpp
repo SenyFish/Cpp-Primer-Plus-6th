@@ -1,4 +1,4 @@
-// arrstruc.cpp -- an array of structures
+// arrstruc.cpp -- 结构体数组
 #include <iostream>
 struct inflatable
 {
@@ -9,15 +9,15 @@ struct inflatable
 int main()
 {
     using namespace std;
-    inflatable guests[2] =          // initializing an array of structs
+    inflatable guests[2] =          // 初始化结构体数组
     {
-        {"Bambi", 0.5, 21.99},      // first structure in array
-        {"Godzilla", 2000, 565.99}  // next structure in array
+        {"Bambi", 0.5, 21.99},      // 数组中的第一个结构体
+        {"Godzilla", 2000, 565.99}  // 数组中的下一个结构体
     };
 
-    cout << "The guests " << guests[0].name << " and " << guests[1].name
-         << "\nhave a combined volume of "
-         << guests[0].volume + guests[1].volume << " cubic feet.\n";
+    cout << "客人 " << guests[0].name << " 和 " << guests[1].name
+         << "\n的总体积为 "
+         << guests[0].volume + guests[1].volume << " 立方英尺。\n";
     // cin.get();
     return 0; 
 }

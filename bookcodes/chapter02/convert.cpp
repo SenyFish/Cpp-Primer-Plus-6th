@@ -1,15 +1,15 @@
-// convert.cpp -- converts stone to pounds
+// convert.cpp -- 将英石转换为磅
 #include <iostream>
-int stonetolb(int);     // function prototype
+int stonetolb(int);     // 函数原型
 int main()
 {
     using namespace std;
     int stone;
-    cout << "Enter the weight in stone: ";
+    cout << "请输入重量（英石）：";
     cin >> stone;
     int pounds = stonetolb(stone);
-    cout << stone << " stone = ";
-    cout << pounds << " pounds." << endl;
+    cout << stone << " 英石 = ";
+    cout << pounds << " 磅。" << endl;
 	// cin.get();
     // cin.get();
     return 0;

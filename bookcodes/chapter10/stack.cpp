@@ -1,6 +1,6 @@
-// stack.cpp -- Stack member functions
+// stack.cpp -- Stack成员函数
 #include "stack.h"
-Stack::Stack()    // create an empty stack
+Stack::Stack()    // 创建空栈
 {
     top = 0;
 }

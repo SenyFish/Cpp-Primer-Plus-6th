@@ -7,7 +7,7 @@ int main() {
     using namespace std;
     char ch;
 
-    cout << "Enter any charater: ";
+    cout << "请输入任意字符：";
     while ((ch=cin.get()) != '@') {
 
         if (isdigit(ch)) {
@@ -22,7 +22,7 @@ int main() {
 
     }
 
-    cout << "** done **" << endl;
+    cout << "** 完成 **" << endl;
 
     return 0;
 }

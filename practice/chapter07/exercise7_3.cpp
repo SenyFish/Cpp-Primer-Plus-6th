@@ -12,11 +12,11 @@ typedef struct {
 } Box;
 
 void output(Box bx) {
-    std::cout << "Box maker: " << bx.maker << std::endl;
-    std::cout << "Box height: " << bx.height << std::endl;
-    std::cout << "Box width: " << bx.width << std::endl;
-    std::cout << "Box length: " << bx.length << std::endl;
-    std::cout << "Box volume: " << bx.volume << std::endl;
+    std::cout << "盒子制造商：" << bx.maker << std::endl;
+    std::cout << "盒子高度：" << bx.height << std::endl;
+    std::cout << "盒子宽度：" << bx.width << std::endl;
+    std::cout << "盒子长度：" << bx.length << std::endl;
+    std::cout << "盒子体积：" << bx.volume << std::endl;
 }
 
 void calculate_volume(Box *p_bx) {

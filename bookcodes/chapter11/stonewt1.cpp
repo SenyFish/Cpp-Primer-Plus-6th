@@ -1,17 +1,17 @@
-// stonewt1.cpp -- Stonewt class methods + conversion functions
+// stonewt1.cpp -- Stonewt类方法+转换函数
 #include <iostream>
 using std::cout;
 #include "stonewt1.h"
 
-// construct Stonewt object from double value
+// 从double值构造Stonewt对象
 Stonewt::Stonewt(double lbs)
 {
-    stone = int (lbs) / Lbs_per_stn;    // integer division
+    stone = int (lbs) / Lbs_per_stn;    // 整数除法
     pds_left = int (lbs) % Lbs_per_stn + lbs - int(lbs);
     pounds = lbs;
 }
 
-// construct Stonewt object from stone, double values
+// 从英石和double值构造Stonewt对象
 Stonewt::Stonewt(int stn, double lbs)
 {
     stone = stn;
@@ -19,28 +19,28 @@ Stonewt::Stonewt(int stn, double lbs)
     pounds =  stn * Lbs_per_stn +lbs;
 }
 
-Stonewt::Stonewt()          // default constructor, wt = 0
+Stonewt::Stonewt()          // 默认构造函数，wt = 0
 {
     stone = pounds = pds_left = 0;
 }
 
-Stonewt::~Stonewt()         // destructor
+Stonewt::~Stonewt()         // 析构函数
 {
 }
 
-// show weight in stones
+// 以英石显示重量
 void Stonewt::show_stn() const
 {
-    cout << stone << " stone, " << pds_left << " pounds\n";
+    cout << stone << "英石，" << pds_left << "磅\n";
 }
 
-// show weight in pounds
+// 以磅显示重量
 void Stonewt::show_lbs() const
 {
-    cout << pounds << " pounds\n";
+    cout << pounds << "磅\n";
 }
 
-// conversion functions
+// 转换函数
 Stonewt::operator int() const
 {
 

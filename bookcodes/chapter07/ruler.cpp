@@ -1,4 +1,4 @@
-// ruler.cpp -- using recursion to subdivide a ruler
+// ruler.cpp -- 使用递归细分尺子
 #include <iostream>
 const int Len = 66;
 const int Divs = 6;
@@ -19,7 +19,7 @@ int main()
         subdivide(ruler,min,max, i);
         std::cout << ruler << std::endl;
         for (int j = 1; j < Len - 2; j++)
-            ruler[j] = ' ';  // reset to blank ruler
+            ruler[j] = ' ';  // 重置为空白尺子
     }
     // std::cin.get();
 

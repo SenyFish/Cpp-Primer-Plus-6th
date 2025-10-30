@@ -1,4 +1,4 @@
-// assgn_st.cpp -- assigning structures
+// assgn_st.cpp -- 结构体赋值
 #include <iostream>
 struct inflatable
 {
@@ -16,11 +16,11 @@ int main()
         12.49
     };
     inflatable choice;
-    cout << "bouquet: " << bouquet.name << " for $";
+    cout << "bouquet：" << bouquet.name << "，售价 $";
     cout << bouquet.price << endl;
 
-    choice = bouquet;  // assign one structure to another
-    cout << "choice: " << choice.name << " for $";
+    choice = bouquet;  // 将一个结构体赋值给另一个
+    cout << "choice：" << choice.name << "，售价 $";
     cout << choice.price << endl;
     // cin.get();
     return 0; 

@@ -1,4 +1,4 @@
-// cubes.cpp -- regular and reference arguments
+// cubes.cpp -- 常规参数和引用参数
 #include <iostream>
 double cube(double a);
 double refcube(double &ra);
@@ -8,9 +8,9 @@ int main ()
     double x = 3.0;
 
     cout << cube(x);
-    cout << " = cube of " << x << endl;
+    cout << " = " << x << "的立方" << endl;
     cout << refcube(x);
-    cout << " = cube of " << x << endl;
+    cout << " = " << x << "的立方" << endl;
     // cin.get();
     return 0;
 }

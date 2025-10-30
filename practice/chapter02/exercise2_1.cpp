@@ -7,6 +7,6 @@ int main() {
 
     using namespace std;
 
-    cout << "Hi there, I'm Shujia Huang from Shenzhen, Guangdong, China" << endl;
+    cout << "你好，我是Shujia Huang，来自中国广东深圳" << endl;
     return 0;
 }

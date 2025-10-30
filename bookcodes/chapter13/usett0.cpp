@@ -1,4 +1,4 @@
-// usett0.cpp -- using a base class
+// usett0.cpp -- 使用基类
 #include <iostream>
 #include "tabtenn0.h"
 
@@ -9,14 +9,14 @@ int main ( void )
     TableTennisPlayer player2("Tara", "Boomdea", false);
     player1.Name();
     if (player1.HasTable())
-        cout << ": has a table.\n";
+        cout << "：有球桌。\n";
     else
-        cout << ": hasn't a table.\n";
+        cout << "：没有球桌。\n";
     player2.Name();
     if (player2.HasTable())
-        cout << ": has a table";
+        cout << "：有球桌";
     else
-        cout << ": hasn't a table.\n";
+        cout << "：没有球桌。\n";
     // std::cin.get();
     return 0;
 }

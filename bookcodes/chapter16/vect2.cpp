@@ -1,4 +1,4 @@
-// vect2.cpp -- methods and iterators
+// vect2.cpp -- 方法和迭代器
 #include <iostream>
 #include <string>
 #include <vector>
@@ -21,52 +21,52 @@ int main()
     int num = books.size();
     if (num > 0)
     {
-        cout << "Thank you. You entered the following:\n"
-            << "Rating\tBook\n";
+        cout << "谢谢。您输入了以下内容：\n"
+            << "评分\t书籍\n";
         for (int i = 0; i < num; i++)
             ShowReview(books[i]);
-        cout << "Reprising:\n"
-            << "Rating\tBook\n";
+        cout << "重复：\n"
+            << "评分\t书籍\n";
         vector<Review>::iterator pr;
         for (pr = books.begin(); pr != books.end(); pr++)
             ShowReview(*pr);
-        vector <Review> oldlist(books);     // copy constructor used
+        vector <Review> oldlist(books);     // 使用复制构造函数
         if (num > 3)
         {
-            // remove 2 items
+            // 删除2项
             books.erase(books.begin() + 1, books.begin() + 3);
-            cout << "After erasure:\n";
+            cout << "删除后：\n";
             for (pr = books.begin(); pr != books.end(); pr++)
                 ShowReview(*pr);
-            // insert 1 item
+            // 插入1项
             books.insert(books.begin(), oldlist.begin() + 1,
                         oldlist.begin() + 2);
-            cout << "After insertion:\n";
+            cout << "插入后：\n";
             for (pr = books.begin(); pr != books.end(); pr++)
                 ShowReview(*pr);
         }
         books.swap(oldlist);
-        cout << "Swapping oldlist with books:\n";
+        cout << "交换oldlist和books：\n";
         for (pr = books.begin(); pr != books.end(); pr++)
             ShowReview(*pr);
     }
     else
-        cout << "Nothing entered, nothing gained.\n";
+        cout << "什么都没输入，什么都没得到。\n";
     // std::cin.get();
 	return 0;
 }
 
 bool FillReview(Review & rr)
 {
-    std::cout << "Enter book title (quit to quit): ";
+    std::cout << "输入书名（输入quit退出）：";
     std::getline(std::cin,rr.title);
     if (rr.title == "quit")
         return false;
-    std::cout << "Enter book rating: ";
+    std::cout << "输入书籍评分：";
     std::cin >> rr.rating;
     if (!std::cin)
         return false;
-    // get rid of rest of input line
+    // 清除输入行的其余部分
     while (std::cin.get() != '\n')
         continue;
     return true;

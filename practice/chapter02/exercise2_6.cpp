@@ -13,13 +13,13 @@ int main() {
     using namespace std;
 
     double light_years;
-    cout << "nter the number of light years: ";
+    cout << "请输入光年数：";
     cin >> light_years;
 
     cout << light_years
-         << " light years = "
+         << " 光年 = "
          << light_years2astromonical_unit(light_years)
-         << " astromonical units." << endl;
+         << " 天文单位。" << endl;
 
     return 0;
 }

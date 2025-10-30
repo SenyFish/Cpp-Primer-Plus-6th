@@ -1,4 +1,4 @@
-// twod.cpp -- making a 2-d array
+// twod.cpp -- 创建二维数组
 #include <iostream>
 #include "arraytp.h"
 int main(void)
@@ -29,12 +29,12 @@ int main(void)
             cout.width(2);
             cout << twodee[i][j] << ' ';
         }
-        cout << ": sum = ";
+        cout << "：和 = ";
         cout.width(3);
-        cout  << sums[i] << ", average = " << aves[i] << endl;
+        cout  << sums[i] << "，平均 = " << aves[i] << endl;
     }
     
-    cout << "Done.\n";
+    cout << "完成。\n";
     // std::cin.get();
     return 0;
 }

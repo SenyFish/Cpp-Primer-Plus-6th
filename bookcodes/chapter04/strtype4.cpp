@@ -1,26 +1,26 @@
-// strtype4.cpp -- line input
+// strtype4.cpp -- 行输入
 #include <iostream>
-#include <string>               // make string class available
-#include <cstring>              // C-style string library
+#include <string>               // 使string类可用
+#include <cstring>              // C风格字符串库
 int main()
 {
     using namespace std;
     char charr[20]; 
     string str;
 
-    cout << "Length of string in charr before input: " 
+    cout << "输入前charr中字符串的长度：" 
          << strlen(charr) << endl;
-    cout << "Length of string in str before input: "
+    cout << "输入前str中字符串的长度："
          << str.size() << endl;
-    cout << "Enter a line of text:\n";
-    cin.getline(charr, 20);     // indicate maximum length
-    cout << "You entered: " << charr << endl;
-    cout << "Enter another line of text:\n";
-    getline(cin, str);          // cin now an argument; no length specifier
-    cout << "You entered: " << str << endl;
-    cout << "Length of string in charr after input: " 
+    cout << "请输入一行文本：\n";
+    cin.getline(charr, 20);     // 指定最大长度
+    cout << "你输入了：" << charr << endl;
+    cout << "请输入另一行文本：\n";
+    getline(cin, str);          // cin现在是参数；无长度说明符
+    cout << "你输入了：" << str << endl;
+    cout << "输入后charr中字符串的长度：" 
          << strlen(charr) << endl;
-    cout << "Length of string in str after input: "
+    cout << "输入后str中字符串的长度："
          << str.size() << endl;
     // cin.get();
 

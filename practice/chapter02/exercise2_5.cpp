@@ -13,11 +13,11 @@ int main() {
     using namespace std;
 
     double celsius;
-    cout << "Please enter a celsius value: ";
+    cout << "请输入摄氏温度值：";
     cin >> celsius;
 
-    cout << celsius << " degrees Celsius is "
-         << celsiu2fahrenit(celsius) << " degrees Fahrenheit." << endl;
+    cout << celsius << " 摄氏度等于 "
+         << celsiu2fahrenit(celsius) << " 华氏度。" << endl;
 
     return 0;
 }

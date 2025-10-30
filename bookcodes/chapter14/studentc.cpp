@@ -1,11 +1,11 @@
-// studentc.cpp -- Student class using containment
+// studentc.cpp -- 使用包含的Student类
 #include "studentc.h"
 using std::ostream;
 using std::endl;
 using std::istream;
 using std::string;
 
-//public methods
+//公有方法
 double Student::Average() const
 {
     if (scores.size() > 0)
@@ -21,7 +21,7 @@ const string & Student::Name() const
 
 double & Student::operator[](int i)
 {
-    return scores[i];         // use valarray<double>::operator[]()
+    return scores[i];         // 使用valarray<double>::operator[]()
 }
 
 double Student::operator[](int i) const
@@ -29,7 +29,7 @@ double Student::operator[](int i) const
     return scores[i];
 }
 
-// private method
+// 私有方法
 ostream & Student::arr_out(ostream & os) const
 {
     int i;
@@ -46,30 +46,30 @@ ostream & Student::arr_out(ostream & os) const
             os << endl;
     }
     else
-        os << " empty array ";
+        os << "空数组";
     return os; 
 }
 
-// friends
+// 友元
 
-// use string version of operator>>()
+// 使用string版本的operator>>()
 istream & operator>>(istream & is, Student & stu)
 {
     is >> stu.name;
     return is; 
 }
 
-// use string friend getline(ostream &, const string &)
+// 使用string友元getline(ostream &, const string &)
 istream & getline(istream & is, Student & stu)
 {
     getline(is, stu.name);
     return is;
 }
 
-// use string version of operator<<()
+// 使用string版本的operator<<()
 ostream & operator<<(ostream & os, const Student & stu)
 {
-    os << "Scores for " << stu.name << ":\n";
-    stu.arr_out(os);  // use private method for scores
+    os << stu.name << "的成绩：\n";
+    stu.arr_out(os);  // 使用私有方法输出成绩
     return os;
 }

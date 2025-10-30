@@ -1,4 +1,4 @@
-//error5.cpp -- unwinding the stack
+//error5.cpp -- 栈解退
 #include <iostream>
 #include <cmath> // or math.h, unix users may need -lm flag
 #include <string>
@@ -13,19 +13,19 @@ public:
     {
         
         word = str;
-        std::cout << "demo " << word << " created\n";
+        std::cout << "demo " << word << "已创建\n";
     }
     ~demo()
     {
-        std::cout << "demo " << word << " destroyed\n";
+        std::cout << "demo " << word << "已销毁\n";
     }
     void show() const
     {
-        std::cout << "demo " << word << " lives!\n";
+        std::cout << "demo " << word << "存在！\n";
     }
 }; 
 
-// function prototypes
+// 函数原型
 double hmean(double a, double b);
 double gmean(double a, double b);
 double means(double a, double b);
@@ -38,34 +38,34 @@ int main()
     
     double x, y, z;
 	{
-        demo d1("found in block in main()");
-        cout << "Enter two numbers: ";
+        demo d1("在main()的块中找到");
+        cout << "输入两个数字：";
         while (cin >> x >> y)
         {
-               try {                  // start of try block
+               try {                  // try块开始
                    z = means(x,y);
-                   cout << "The mean mean of " << x << " and " << y
-                           << " is " << z << endl;
-                   cout << "Enter next pair: ";
-               } // end of try block
-               catch (bad_hmean & bg)    // start of catch block
+                   cout << x << "和" << y << "的平均平均数"
+                           << "是" << z << endl;
+                   cout << "输入下一对：";
+               } // try块结束
+               catch (bad_hmean & bg)    // catch块开始
                {
                    bg.mesg();
-                   cout << "Try again.\n";
+                   cout << "请重试。\n";
                    continue;
                }                  
                catch (bad_gmean & hg) 
                {
                    cout << hg.mesg();
-                   cout << "Values used: " << hg.v1 << ", " 
+                   cout << "使用的值：" << hg.v1 << "，" 
                            << hg.v2 << endl;
-                   cout << "Sorry, you don't get to play any more.\n";
+                   cout << "抱歉，您不能再玩了。\n";
                    break;
-               } // end of catch block
+               } // catch块结束
         }
         d1.show();
     }
-    cout << "Bye!\n";
+    cout << "再见！\n";
     // cin.get();
     // cin.get();
     return 0;
@@ -88,18 +88,18 @@ double gmean(double a, double b)
 double means(double a, double b)
 {
     double am, hm, gm;
-    demo d2("found in means()");
-    am = (a + b) / 2.0;    // arithmetic mean
+    demo d2("在means()中找到");
+    am = (a + b) / 2.0;    // 算术平均数
     try 
     {
         hm = hmean(a,b);
         gm = gmean(a,b);
     }
-    catch (bad_hmean & bg) // start of catch block
+    catch (bad_hmean & bg) // catch块开始
     {
         bg.mesg();
-        std::cout << "Caught in means()\n";
-        throw;             // rethrows the exception 
+        std::cout << "在means()中捕获\n";
+        throw;             // 重新抛出异常
     }          
     d2.show();
     return (am + hm + gm) / 3.0;

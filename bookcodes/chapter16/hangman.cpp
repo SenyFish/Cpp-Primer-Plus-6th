@@ -1,4 +1,4 @@
-// hangman.cpp -- some string methods
+// hangman.cpp -- 一些string方法
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -21,7 +21,7 @@ int main()
     
     std::srand(std::time(0));
     char play;
-    cout << "Will you play a word game? <y/n> ";
+    cout << "你想玩猜单词游戏吗？<y/n> ";
     cin >> play;
     play = tolower(play);
     while (play == 'y')
@@ -31,34 +31,34 @@ int main()
         string attempt(length, '-');
         string badchars;
         int guesses = 6;
-        cout << "Guess my secret word. It has " << length
-            << " letters, and you guess\n"
-            << "one letter at a time. You get " << guesses
-            << " wrong guesses.\n";
-        cout << "Your word: " << attempt << endl;
+        cout << "猜我的秘密单词。它有 " << length
+            << " 个字母，你每次猜\n"
+            << "一个字母。你有 " << guesses
+            << " 次错误猜测机会。\n";
+        cout << "你的单词：" << attempt << endl;
         while (guesses > 0 && attempt != target)
         {
             char letter;
-            cout << "Guess a letter: ";
+            cout << "猜一个字母：";
             cin >> letter;
             if (badchars.find(letter) != string::npos
                 || attempt.find(letter) != string::npos)
             {
-                cout << "You already guessed that. Try again.\n";
+                cout << "你已经猜过这个了。再试一次。\n";
                     continue;
             }
             int loc = target.find(letter);
             if (loc == string::npos)
             {
-                cout << "Oh, bad guess!\n";
+                cout << "哦，猜错了！\n";
                 --guesses;
-                badchars += letter; // add to string
+                badchars += letter; // 添加到字符串
             }
             else
             {
-                cout << "Good guess!\n";
+                cout << "猜对了！\n";
                 attempt[loc]=letter;
-                // check if letter appears again
+                // 检查字母是否再次出现
                 loc = target.find(letter, loc + 1);
                 while (loc != string::npos)
                 {
@@ -66,25 +66,25 @@ int main()
                     loc = target.find(letter, loc + 1);
                 }
            }
-            cout << "Your word: " << attempt << endl;
+            cout << "你的单词：" << attempt << endl;
             if (attempt != target)
             {
                 if (badchars.length() > 0)
-                    cout << "Bad choices: " << badchars << endl;
-                cout << guesses << " bad guesses left\n";
+                    cout << "错误的选择：" << badchars << endl;
+                cout << "还剩 " << guesses << " 次错误猜测机会\n";
             }
         }
         if (guesses > 0)
-            cout << "That's right!\n";
+            cout << "答对了！\n";
         else
-            cout << "Sorry, the word is " << target << ".\n";
+            cout << "很遗憾，单词是 " << target << "。\n";
 
-        cout << "Will you play another? <y/n> ";
+        cout << "还想再玩一次吗？<y/n> ";
         cin >> play;
         play = tolower(play);
     }
 
-    cout << "Bye\n";
+    cout << "再见\n";
 
     return 0; 
 }

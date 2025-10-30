@@ -1,4 +1,4 @@
-// callable.cpp -- callable types and templates
+// callable.cpp -- 可调用类型和模板
 #include <iostream>
 #include <math.h>
 using namespace std;
@@ -8,7 +8,7 @@ T use_f(T v, F f)
 {
     static int count = 0;
     count++;
-    cout << "  use_f count = " << count << ", &count = " << &count << endl;
+    cout << "  use_f计数 = " << count << "，&count = " << &count << endl;
     return f(v);
 }
 
@@ -34,17 +34,17 @@ double dub(double x) {return 2.0*x;}
 int main()
 {
     double y = 1.21;
-    cout << "Function pointer dub:\n";
+    cout << "函数指针dub：\n";
     cout << "  " << use_f(y, dub) << endl;
-    cout << "Function pointer sqrt:\n";
+    cout << "函数指针sqrt：\n";
     cout << "  " << use_f(y, sqrt) << endl;
-    cout << "Function object Fp:\n";
+    cout << "函数对象Fp：\n";
     cout << "  " << use_f(y, Fp(5.0)) << endl;
-    cout << "Function object Fq:\n";
+    cout << "函数对象Fq：\n";
     cout << "  " << use_f(y, Fq(5.0)) << endl;
-    cout << "Lambda expression 1:\n";
+    cout << "Lambda表达式1：\n";
     cout << "  " << use_f(y, [](double u) {return u*u;}) << endl;
-    cout << "Lambda expresson 2:\n";
+    cout << "Lambda表达式2：\n";
     cout << "  " << use_f(y, [](double u) {return u+u/2.0;}) << endl;
   
     cin.get();

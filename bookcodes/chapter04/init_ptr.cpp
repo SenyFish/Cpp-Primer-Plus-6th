@@ -1,4 +1,4 @@
-// init_ptr.cpp -- initialize a pointer
+// init_ptr.cpp -- 初始化指针
 #include <iostream>
 int main()
 {
@@ -6,10 +6,10 @@ int main()
     int higgens = 5;
     int * pt = &higgens;
 
-    cout << "Value of higgens = " << higgens
-         << "; Address of higgens = " << &higgens << endl;
-    cout << "Value of *pt = " << *pt
-         << "; Value of pt = " << pt << endl;
+    cout << "higgens的值 = " << higgens
+         << "；higgens的地址 = " << &higgens << endl;
+    cout << "*pt的值 = " << *pt
+         << "；pt的值 = " << pt << endl;
     // cin.get();
     return 0; 
 }

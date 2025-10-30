@@ -1,5 +1,5 @@
-// sayings1.cpp -- using expanded String class
-// compile with string1.cpp
+// sayings1.cpp -- 使用扩展的String类
+// 与string1.cpp一起编译
 #include <iostream>
 #include "string1.h" 
 const int ArSize = 10;
@@ -10,13 +10,13 @@ int main()
     using std::cin;
     using std::endl;
     String name;
-    cout <<"Hi, what's your name?\n>> ";
+    cout <<"你好，你叫什么名字？\n>> ";
     cin >> name;
 
-    cout << name << ", please enter up to " << ArSize
-         << " short sayings <empty line to quit>:\n";
-    String sayings[ArSize];     // array of objects
-    char temp[MaxLen];          // temporary string storage
+    cout << name << "，请输入最多 " << ArSize
+         << " 条简短名言 <空行退出>：\n";
+    String sayings[ArSize];     // 对象数组
+    char temp[MaxLen];          // 临时字符串存储
     int i;
     for (i = 0; i < ArSize; i++)
     {
@@ -24,16 +24,16 @@ int main()
         cin.get(temp, MaxLen);
         while (cin && cin.get() != '\n')
             continue;
-        if (!cin || temp[0] == '\0')    // empty line?
-            break;              // i not incremented
+        if (!cin || temp[0] == '\0')    // 空行？
+            break;              // i不递增
         else
-            sayings[i] = temp;  // overloaded assignment
+            sayings[i] = temp;  // 重载的赋值运算符
     }
-    int total = i;              // total # of lines read
+    int total = i;              // 读取的行数总计
 
     if ( total > 0)
     {
-        cout << "Here are your sayings:\n";
+        cout << "以下是你的名言：\n";
         for (i = 0; i < total; i++)
             cout << sayings[i][0] << ": " << sayings[i] << endl;
 
@@ -46,14 +46,14 @@ int main()
             if (sayings[i] < sayings[first])
                 first = i;
         }
-        cout << "Shortest saying:\n" << sayings[shortest] << endl;;
-        cout << "First alphabetically:\n" << sayings[first] << endl;
-        cout << "This program used "<< String::HowMany() 
-             << " String objects. Bye.\n";
+        cout << "最短的名言：\n" << sayings[shortest] << endl;;
+        cout << "字母序最靠前的名言：\n" << sayings[first] << endl;
+        cout << "本程序使用了 "<< String::HowMany() 
+             << " 个String对象。再见。\n";
     }
     else
-        cout << "No input! Bye.\n";
-// keep window open 
+        cout << "没有输入！再见。\n";
+// 保持窗口打开 
 /*    if (!cin)
         cin.clear();
     while (cin.get() != '\n')

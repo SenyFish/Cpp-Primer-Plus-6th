@@ -15,46 +15,46 @@ int main() {
     };
 
     int contribute_num = 0;
-    cout << "Enter the number of contributor: ";
+    cout << "请输入捐助者数量：";
     cin >> contribute_num;
     cin.get();  // 读取输入流中的回车符
 
     Patron *p_contribution = new Patron [contribute_num];
     for (int i = 0; i < contribute_num; ++i) {
-        cout << "Enter the name of " << i + 1 << " contributor: ";
+        cout << "请输入第" << i + 1 << "个捐助者的姓名：";
         getline(cin, p_contribution[i].name);
 
-        cout << "Enter the amount of donation: ";
+        cout << "请输入捐款金额：";
         cin >> p_contribution[i].amount;
         cin.get();  // 读取输入流中的回车符
     }
 
     unsigned int grand_amount_n = 0;
-    cout << "\nGrand patron: " << endl;
+    cout << "\n大捐助者：" << endl;
     for (int i = 0; i < contribute_num; ++i) {
 
         if (p_contribution[i].amount > Grand_Amount) {
-            cout << "Contributor name: " << p_contribution[i].name << "\n"
-                 << "Contributor amount: " << p_contribution[i].amount << endl;
+            cout << "捐助者姓名：" << p_contribution[i].name << "\n"
+                 << "捐助金额：" << p_contribution[i].amount << endl;
             ++grand_amount_n;
         }
     }
 
     if (grand_amount_n == 0) {
-        cout << "None" << endl;
+        cout << "无" << endl;
     }
 
     bool is_empty = true;
-    cout << "\nPatrons: " << endl;
+    cout << "\n捐助者：" << endl;
     for (int i=0; i < contribute_num; ++i) {
-        cout << "Contributor name: " << p_contribution[i].name << "\n"
-             << "Contributor amount: " << p_contribution[i].amount << endl;
+        cout << "捐助者姓名：" << p_contribution[i].name << "\n"
+             << "捐助金额：" << p_contribution[i].amount << endl;
 
         is_empty = false;
     }
 
     if (is_empty) {
-        cout << "** None **" << endl;
+        cout << "** 无 **" << endl;
     }
 
     delete [] p_contribution;

@@ -1,4 +1,4 @@
-// stock01.cpp -- revised show() method
+// stock01.cpp -- 修订的show()方法
 #include <iostream>
 #include "stock00.h"
 
@@ -7,8 +7,8 @@ void Stock::acquire(const std::string & co, long n, double pr)
     company = co;
     if (n < 0)
     {
-        std::cerr << "Number of shares can't be negative; "
-                  << company << " shares set to 0.\n";
+        std::cerr << "股票数量不能为负；"
+                  << company << "的股票数设置为0。\n";
         shares = 0;
     }
     else
@@ -21,8 +21,8 @@ void Stock::buy(long num, double price)
 {
      if (num < 0)
     {
-        std::cerr << "Number of shares purchased can't be negative. "
-             << "Transaction is aborted.\n";
+        std::cerr << "购买的股票数量不能为负。"
+             << "交易已中止。\n";
     }
     else
     {
@@ -37,13 +37,13 @@ void Stock::sell(long num, double price)
     using std::cerr;
     if (num < 0)
     {
-        cerr << "Number of shares sold can't be negative. "
-             << "Transaction is aborted.\n";
+        cerr << "出售的股票数量不能为负。"
+             << "交易已中止。\n";
     }
     else if (num > shares)
     {
-        cerr << "You can't sell more than you have! "
-             << "Transaction is aborted.\n";
+        cerr << "你不能出售超过你拥有的数量！"
+             << "交易已中止。\n";
     }
     else
     {
@@ -63,18 +63,18 @@ void Stock::show()
 {
     using std::cout;
     using std::ios_base;
-    // set format to #.###
+    // 设置格式为#.###
     ios_base::fmtflags orig = cout.setf(ios_base::fixed); 
     int prec = cout.precision(3);
 
-    cout << "Company: " << company
-        << "  Shares: " << shares << '\n';
-    cout << "  Share Price: $" << share_val;
-    // set format to *.**
+    cout << "公司：" << company
+        << "  股票：" << shares << '\n';
+    cout << "  股价：$" << share_val;
+    // 设置格式为*.**
     cout.precision(2);
-    cout << "  Total Worth: $" << total_val << '\n';
+    cout << "  总价值：$" << total_val << '\n';
 
-    // restore original format
+    // 恢复原始格式
     cout.setf(orig, ios_base::floatfield);
     cout.precision(prec);
 }

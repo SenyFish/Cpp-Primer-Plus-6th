@@ -4,12 +4,12 @@
 using namespace std;
 
 void blind_mice() {
-    cout << "Three blind mice." << endl;
+    cout << "三只瞎老鼠。" << endl;
     return;
 }
 
 void how_they_run() {
-    cout << "See how they run" << endl;
+    cout << "看它们怎么跑" << endl;
     return;
 }
 

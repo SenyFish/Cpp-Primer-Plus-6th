@@ -8,9 +8,9 @@ int main() {
 
     const int strsize = 80;
     struct Bop {
-        char fullname[strsize]; // real name
-        char title[strsize];    // job title
-        char bopname[strsize];  // secret BOP name
+        char fullname[strsize]; // 真实姓名
+        char title[strsize];    // 职位
+        char bopname[strsize];  // BOP秘密名称
         int preference;         // 0 = fullname, 1 = title, 2 = bopname
     };
 
@@ -23,10 +23,10 @@ int main() {
         {"Pat Hand", "4CCCC", "3CCCCC", 1}
     };
 
-    cout << "Benevolent order of Programmers report.\n";
-    cout << "a. display by name     b. display by title\n"
-         << "c. display by bopname  d. display by preference\n"
-         << "q. quit" << endl;
+    cout << "仁爱的程序员团体报告。\n";
+    cout << "a. 按姓名显示     b. 按职位显示\n"
+         << "c. 按BOP名称显示  d. 按偏好显示\n"
+         << "q. 退出" << endl;
 
     char ch;
     while (cin >> ch) {
@@ -56,9 +56,9 @@ int main() {
             }
         }
 
-        cout << "Next choice: ";
+        cout << "下一个选项：";
     }
-    cout << "** Done **" << endl;
+    cout << "** 完成 **" << endl;
     return 0;
 }
 

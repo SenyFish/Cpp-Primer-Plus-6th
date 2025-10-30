@@ -1,31 +1,31 @@
-// lotto.cpp -- probability of winning
+// lotto.cpp -- 获胜概率
 #include <iostream>
-// Note: some implementations require double instead of long double
+// 注意：某些实现需要使用double而不是long double
 long double probability(unsigned numbers, unsigned picks);
 int main()
 {
     using namespace std;
     double total, choices;
-    cout << "Enter the total number of choices on the game card and\n"
-            "the number of picks allowed:\n";
+    cout << "请输入游戏卡上的总选项数和\n"
+            "允许的选择数：\n";
     while ((cin >> total >> choices) && choices <= total)
     {
-        cout << "You have one chance in ";
-        cout << probability(total, choices);      // compute the odds
-        cout << " of winning.\n";
-        cout << "Next two numbers (q to quit): ";
+        cout << "你有";
+        cout << probability(total, choices);      // 计算概率
+        cout << "分之一的获胜机会。\n";
+        cout << "下两个数字（输入q退出）：";
     }
-    cout << "bye\n";
+    cout << "再见\n";
     // cin.get();
     // cin.get();
     return 0;
 }
 
-// the following function calculates the probability of picking picks
-// numbers correctly from numbers choices
+// 以下函数计算从numbers个选项中正确选择picks个
+// 数字的概率
 long double probability(unsigned numbers, unsigned picks)
 {
-    long double result = 1.0;  // here come some local variables
+    long double result = 1.0;  // 这里是一些局部变量
     long double n;
     unsigned p;
 

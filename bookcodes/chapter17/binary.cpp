@@ -1,5 +1,5 @@
-// binary.cpp -- binary file I/O
-#include <iostream> // not required by most systems
+// binary.cpp -- 二进制文件I/O
+#include <iostream> // 大多数系统不需要
 #include <fstream>
 #include <iomanip>
 #include <cstdlib>  // (or stdlib.h) for exit()
@@ -7,9 +7,9 @@
 inline void eatline() { while (std::cin.get() != '\n') continue; }
 struct planet
 {
-    char name[20];      // name of planet
-    double population;  // its population
-    double g;           // its acceleration of gravity
+    char name[20];      // 行星名称
+    double population;  // 人口
+    double g;           // 重力加速度
 };
 
 const char * file = "planets.dat";
@@ -20,14 +20,13 @@ int main()
     planet pl;
     cout << fixed << right;
 
-// show initial contents
+// 显示初始内容
     ifstream fin;
-    fin.open(file, ios_base::in |ios_base::binary);  // binary file
-    //NOTE: some systems don't accept the ios_base::binary mode
+    fin.open(file, ios_base::in |ios_base::binary);  // 二进制文件
+    //注意：某些系统不接受ios_base::binary模式
     if (fin.is_open())
     {
-    cout << "Here are the current contents of the "
-        << file << " file:\n";
+    cout << "这是" << file << "文件的当前内容：\n";
     while (fin.read((char *) &pl, sizeof pl))
     {
         cout << setw(20) << pl.name << ": "
@@ -37,40 +36,38 @@ int main()
     fin.close();
     }
 
-// add new data
+// 添加新数据
     ofstream fout(file, 
              ios_base::out | ios_base::app | ios_base::binary);
-    //NOTE: some systems don't accept the ios::binary mode
+    //注意：某些系统不接受ios::binary模式
     if (!fout.is_open())
     {
-        cerr << "Can't open " << file << " file for output:\n";
+        cerr << "无法打开" << file << "文件进行输出：\n";
         exit(EXIT_FAILURE);
     }
 
-    cout << "Enter planet name (enter a blank line to quit):\n";
+    cout << "输入行星名称（输入空行退出）：\n";
     cin.get(pl.name, 20);
     while (pl.name[0] != '\0')
     {
         eatline();
-        cout << "Enter planetary population: ";
+        cout << "输入行星人口：";
         cin >> pl.population;
-        cout << "Enter planet's acceleration of gravity: ";
+        cout << "输入行星的重力加速度：";
         cin >> pl.g;
         eatline();
         fout.write((char *) &pl, sizeof pl);
-        cout << "Enter planet name (enter a blank line "
-                "to quit):\n";
+        cout << "输入行星名称（输入空行退出）：\n";
         cin.get(pl.name, 20);
     }
     fout.close();
 
-// show revised file
-    fin.clear();    // not required for some implementations, but won't hurt
+// 显示修订后的文件
+    fin.clear();    // 某些实现不需要，但无害
     fin.open(file, ios_base::in | ios_base::binary);
     if (fin.is_open())
     {
-        cout << "Here are the new contents of the "
-             << file << " file:\n";
+        cout << "这是" << file << "文件的新内容：\n";
         while (fin.read((char *) &pl, sizeof pl))
         {
             cout << setw(20) << pl.name << ": "
@@ -79,7 +76,7 @@ int main()
         }
         fin.close();
     }
-    cout << "Done.\n";
+    cout << "完成。\n";
 // keeping output window open
     // cin.clear();
     // eatline();

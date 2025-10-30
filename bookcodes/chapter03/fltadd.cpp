@@ -1,4 +1,4 @@
-// fltadd.cpp -- precision problems with float
+// fltadd.cpp -- float的精度问题
 #include <iostream>
 int main()
 {

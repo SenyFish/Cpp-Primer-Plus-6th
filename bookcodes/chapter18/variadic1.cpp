@@ -1,10 +1,10 @@
-//variadic1.cpp -- using recursion to unpack a parameter pack
+//variadic1.cpp -- 使用递归解包参数包
 #include <iostream>
 #include <string>
-// definition for 0 parameters -- terminating call
+// 0个参数的定义 -- 终止调用
 void show_list3() {}
 
-// definition for 1 or more parameters
+// 1个或多个参数的定义
 template<typename T, typename... Args>
 void show_list3( T value, Args... args)
 {

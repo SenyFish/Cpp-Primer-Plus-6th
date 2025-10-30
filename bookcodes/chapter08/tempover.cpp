@@ -1,10 +1,10 @@
-// tempover.cpp --- template overloading
+// tempover.cpp --- 模板重载
 #include <iostream>
 
-template <typename T>            // template A
+template <typename T>            // 模板A
 void ShowArray(T arr[], int n);
 
-template <typename T>            // template B
+template <typename T>            // 模板B
 void ShowArray(T * arr[], int n);
 
 struct debts
@@ -25,16 +25,16 @@ int main()
     };
     double * pd[3]; 
 
-// set pointers to the amount members of the structures in mr_E
+// 将指针设置为mr_E中结构的amount成员
     for (int i = 0; i < 3; i++)
         pd[i] = &mr_E[i].amount;
     
-    cout << "Listing Mr. E's counts of things:\n";
-// things is an array of int
-    ShowArray(things, 6);  // uses template A
-    cout << "Listing Mr. E's debts:\n";
-// pd is an array of pointers to double
-    ShowArray(pd, 3);      // uses template B (more specialized)
+    cout << "列出E先生的物品数量：\n";
+// things是int数组
+    ShowArray(things, 6);  // 使用模板A
+    cout << "列出E先生的债务：\n";
+// pd是指向double的指针数组
+    ShowArray(pd, 3);      // 使用模板B（更特化）
     // cin.get();
     return 0;
 }
@@ -43,7 +43,7 @@ template <typename T>
 void ShowArray(T arr[], int n)
 {
     using namespace std;
-    cout << "template A\n";
+    cout << "模板A\n";
     for (int i = 0; i < n; i++)
         cout << arr[i] << ' ';
     cout << endl;
@@ -53,7 +53,7 @@ template <typename T>
 void ShowArray(T * arr[], int n)
 {
     using namespace std;
-    cout << "template B\n";
+    cout << "模板B\n";
     for (int i = 0; i < n; i++)
         cout << *arr[i] << ' ';
     cout << endl; 

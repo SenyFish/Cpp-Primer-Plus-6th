@@ -1,7 +1,7 @@
-// switch.cpp -- using the switch statement
+// switch.cpp -- 使用switch语句
 #include <iostream>
 using namespace std;
-void showmenu();   // function prototypes
+void showmenu();   // 函数原型
 void report();
 void comfort();
 int main()
@@ -17,16 +17,16 @@ int main()
                         break;
             case 2  :   report();
                         break;
-            case 3  :   cout << "The boss was in all day.\n";
+            case 3  :   cout << "老板整天都在。\n";
                         break;
             case 4  :   comfort();
                         break;
-            default :   cout << "That's not a choice.\n";
+            default :   cout << "这不是一个有效选项。\n";
         }
         showmenu();
         cin >> choice;
     }
-    cout << "Bye!\n";
+    cout << "再见！\n";
     // cin.get();
     // cin.get();
     return 0;
@@ -34,19 +34,18 @@ int main()
 
 void showmenu()
 {
-    cout << "Please enter 1, 2, 3, 4, or 5:\n"
-            "1) alarm           2) report\n"
-            "3) alibi           4) comfort\n"
-            "5) quit\n";
+    cout << "请输入 1、2、3、4 或 5：\n"
+            "1) 警报           2) 报告\n"
+            "3) 不在场证明     4) 安慰\n"
+            "5) 退出\n";
 }
 void report()
 {
-    cout << "It's been an excellent week for business.\n"
-        "Sales are up 120%. Expenses are down 35%.\n";
+    cout << "这周的业务非常出色。\n"
+        "销售额上升了120%。费用下降了35%。\n";
 }
 void comfort()
 {
-    cout << "Your employees think you are the finest CEO\n"
-        "in the industry. The board of directors think\n"
-        "you are the finest CEO in the industry.\n";
+    cout << "你的员工认为你是行业中最优秀的CEO。\n"
+        "董事会也认为你是行业中最优秀的CEO。\n";
 }

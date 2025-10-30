@@ -1,17 +1,17 @@
-// more_and.cpp -- using the logical AND operator
+// more_and.cpp -- 使用逻辑AND运算符
 #include <iostream>
-const char * qualify[4] =       // an array of pointers*/
-{                               // to strings
-    "10,000-meter race.\n",
-    "mud tug-of-war.\n",
-    "masters canoe jousting.\n",
-    "pie-throwing festival.\n"
+const char * qualify[4] =       // 指针数组*/
+{                               // 指向字符串
+    "10000米赛跑。\n",
+    "泥地拔河。\n",
+    "大师独木舟竞技。\n",
+    "扔馅饼节。\n"
 };
 int main()
 {
     using namespace std;
     int age;
-    cout << "Enter your age in years: ";
+    cout << "请输入你的年龄（年）：";
     cin >> age;
     int index;
 
@@ -24,7 +24,7 @@ int main()
     else
         index = 3;
 
-    cout << "You qualify for the " << qualify[index]; 
+    cout << "你有资格参加" << qualify[index]; 
     // cin.get();
     // cin.get();
     return 0;

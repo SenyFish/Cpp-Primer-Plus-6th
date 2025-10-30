@@ -9,13 +9,13 @@ int main() {
     double x = 0, y = 0;
     double h_avg = 0;
 
-    cout << "Enter two numbers: ";
+    cout << "请输入两个数字：";
     cin >> x >> y;
 
     while (x != 0 && y != 0) {
         h_avg = 2 * x * y / (x+y);
-        cout << "The harmonic mean of " << x << " and " << y << " is " << h_avg << endl;
-        cout << "Enter the next two numbers: ";
+        cout << x << "和" << y << "的调和平均数为" << h_avg << endl;
+        cout << "请输入下两个数字：";
         cin >> x >> y;
     }
 

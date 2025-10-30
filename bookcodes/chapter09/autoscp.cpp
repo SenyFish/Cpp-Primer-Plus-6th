@@ -1,4 +1,4 @@
-// autoscp.cpp -- illustrating scope of automatic variables
+// autoscp.cpp -- 说明自动变量的作用域
 #include <iostream>
 void oil(int x);
 int main()
@@ -7,14 +7,14 @@ int main()
 
     int texas = 31;
     int year = 2011;
-    cout << "In main(), texas = " << texas << ", &texas = ";
+    cout << "在main()中，texas = " << texas << "，&texas = ";
     cout << &texas << endl;
-    cout << "In main(), year = " << year << ", &year = ";
+    cout << "在main()中，year = " << year << "，&year = ";
     cout << &year << endl;
     oil(texas);
-    cout << "In main(), texas = " << texas << ", &texas = ";
+    cout << "在main()中，texas = " << texas << "，&texas = ";
     cout << &texas << endl;
-    cout << "In main(), year = " << year << ", &year = ";
+    cout << "在main()中，year = " << year << "，&year = ";
     cout << &year << endl;
 	// cin.get();
     return 0;
@@ -25,17 +25,17 @@ void oil(int x)
     using namespace std;
     int texas = 5;
 
-    cout << "In oil(), texas = " << texas << ", &texas = ";
+    cout << "在oil()中，texas = " << texas << "，&texas = ";
     cout << &texas << endl;
-    cout << "In oil(), x = " << x << ", &x = ";
+    cout << "在oil()中，x = " << x << "，&x = ";
     cout << &x << endl;
-    {                               // start a block
+    {                               // 开始一个块
         int texas = 113;
-        cout << "In block, texas = " << texas;
-        cout << ", &texas = " << &texas << endl;
-                cout << "In block, x = " << x << ", &x = ";
+        cout << "在块中，texas = " << texas;
+        cout << "，&texas = " << &texas << endl;
+                cout << "在块中，x = " << x << "，&x = ";
         cout << &x << endl;
-    }                               // end a block
-    cout << "Post-block texas = " << texas;
-    cout << ", &texas = " << &texas << endl;
+    }                               // 结束一个块
+    cout << "块后texas = " << texas;
+    cout << "，&texas = " << &texas << endl;
 }

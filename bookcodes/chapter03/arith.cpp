@@ -1,4 +1,4 @@
-// arith.cpp -- some C++ arithmetic
+// arith.cpp -- 一些C++算术运算
 #include <iostream>
 int main()
 {
@@ -6,10 +6,10 @@ int main()
     float hats, heads;
     //double hats, heads;
 
-    cout.setf(ios_base::fixed, ios_base::floatfield); // fixed-point
-    cout << "Enter a number: ";
+    cout.setf(ios_base::fixed, ios_base::floatfield); // 定点表示
+    cout << "请输入一个数字：";
     cin >> hats;
-    cout << "Enter another number: ";
+    cout << "请输入另一个数字：";
     cin >> heads;
 
     cout << "hats = " << hats << "; heads = " << heads << endl;

@@ -1,4 +1,4 @@
-// travel.cpp -- using structures with functions
+// travel.cpp -- 将结构与函数一起使用
 #include <iostream>
 struct travel_time
 {
@@ -13,15 +13,15 @@ void show_time(travel_time t);
 int main()
 {
     using namespace std;
-    travel_time day1 = {5, 45};    // 5 hrs, 45 min
-    travel_time day2 = {4, 55};    // 4 hrs, 55 min
+    travel_time day1 = {5, 45};    // 5小时45分钟
+    travel_time day2 = {4, 55};    // 4小时55分钟
 
     travel_time trip = sum(day1, day2);
-    cout << "Two-day total: ";
+    cout << "两天总计：";
     show_time(trip);
 
     travel_time day3= {4, 32};
-    cout << "Three-day total: ";
+    cout << "三天总计：";
     show_time(sum(trip, day3));
     // cin.get();
 
@@ -41,6 +41,6 @@ travel_time sum(travel_time t1, travel_time t2)
 void show_time(travel_time t)
 {
     using namespace std;
-    cout << t.hours << " hours, "
-         << t.mins << " minutes\n";
+    cout << t.hours << "小时"
+         << t.mins << "分钟\n";
 }

@@ -1,4 +1,4 @@
-// arrtemp.cpp -- using template functions with array template
+// arrtemp.cpp -- 将模板函数与数组模板一起使用
 #include <iostream>
 #include <array>
 #include <string>
@@ -9,11 +9,11 @@ int main()
 	std::array<int, 5> ai = {1,2,3,4,5}; //,6,7,8,9,22};
 	std::array<std::string, 5> as =
 	{
-		"string under construction",
-		"stupid string indeed",
-		"there's nothing to see",
-		"nothing to do",
-		"but enjoy all that is"
+		"正在构建的字符串",
+		"确实是愚蠢的字符串",
+		"没什么可看的",
+		"无事可做",
+		"但享受一切"
 	};
 	display(ai);
 	display(as);

@@ -13,7 +13,7 @@ int main() {
     unsigned int other = 0;
     string input;
 
-    cout << "Enter words (q to quit): " << endl;
+    cout << "请输入单词（输入q退出）：" << endl;
     while (cin >> input) {
         if (input == "q")
             break;
@@ -38,9 +38,9 @@ int main() {
         }
     }
 
-    cout << vowels << " words beginning with vowels.\n"
-         << consonants << " words beginning with consonants.\n"
-         << other << " words beginning with other letter." << endl;
+    cout << vowels << "个单词以元音字母开头。\n"
+         << consonants << "个单词以辅音字母开头。\n"
+         << other << "个单词以其他字符开头。" << endl;
 
     return 0;
 }

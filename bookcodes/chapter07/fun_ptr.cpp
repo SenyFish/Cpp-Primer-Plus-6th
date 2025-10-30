@@ -1,10 +1,10 @@
-// fun_ptr.cpp -- pointers to functions
+// fun_ptr.cpp -- 指向函数的指针
 #include <iostream>
 double betsy(int);
 double pam(int);
 
-// second argument is pointer to a type double function that
-// takes a type int argument
+// 第二个参数是指向double类型函数的指针，
+// 该函数接受int类型参数
 void estimate(int lines, double (*pf)(int));
 
 int main()
@@ -12,11 +12,11 @@ int main()
     using namespace std;
     int code;
 
-    cout << "How many lines of code do you need? ";
+    cout << "你需要多少行代码？";
     cin >> code;
-    cout << "Here's Betsy's estimate:\n";
+    cout << "这是Betsy的估计：\n";
     estimate(code, betsy);
-    cout << "Here's Pam's estimate:\n";
+    cout << "这是Pam的估计：\n";
     estimate(code, pam);
     // cin.get();
     // cin.get();
@@ -36,6 +36,6 @@ double pam(int lns)
 void estimate(int lines, double (*pf)(int))
 {
     using namespace std;
-    cout << lines << " lines will take ";
-    cout << (*pf)(lines) << " hour(s)\n";
+    cout << lines << "行代码将需要";
+    cout << (*pf)(lines) << "小时\n";
 }

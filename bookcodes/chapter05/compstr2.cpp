@@ -1,6 +1,6 @@
-// compstr2.cpp -- comparing strings using arrays
+// compstr2.cpp -- 使用string类比较字符串
 #include <iostream>
-#include <string>     // string class
+#include <string>     // string类
 int main()
 {
     using namespace std;
@@ -11,7 +11,7 @@ int main()
         cout << word << endl;
         word[0] = ch;
     }
-    cout << "After loop ends, word is " << word << endl;
+    cout << "循环结束后，word是 " << word << endl;
     // cin.get();
     return 0; 
 }

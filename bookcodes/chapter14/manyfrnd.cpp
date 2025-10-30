@@ -1,4 +1,4 @@
-// manyfrnd.cpp -- unbound template friend to a template class
+// manyfrnd.cpp -- 模板类的无约束模板友元
 #include <iostream>
 using std::cout;
 using std::endl;

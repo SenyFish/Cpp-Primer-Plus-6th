@@ -1,4 +1,4 @@
-// get_fun.cpp -- using get() and getline()
+// get_fun.cpp -- 使用get()和getline()
 #include <iostream>
 const int Limit = 255;
 
@@ -10,25 +10,25 @@ int main()
 
     char input[Limit];
 
-    cout << "Enter a string for getline() processing:\n";
+    cout << "输入字符串供getline()处理：\n";
     cin.getline(input, Limit, '#');
-    cout << "Here is your input:\n";
-    cout << input << "\nDone with phase 1\n";
+    cout << "这是您的输入：\n";
+    cout << input << "\n阶段1完成\n";
 
     char ch;
     cin.get(ch);
-    cout << "The next input character is " << ch << endl;
+    cout << "下一个输入字符是" << ch << endl;
 
     if (ch != '\n')
-        cin.ignore(Limit, '\n');    // discard rest of line
+        cin.ignore(Limit, '\n');    // 丢弃行的其余部分
 
-    cout << "Enter a string for get() processing:\n";
+    cout << "输入字符串供get()处理：\n";
     cin.get(input, Limit, '#');
-    cout << "Here is your input:\n";
-    cout << input << "\nDone with phase 2\n";
+    cout << "这是您的输入：\n";
+    cout << input << "\n阶段2完成\n";
 
     cin.get(ch);
-    cout << "The next input character is " << ch << endl;
+    cout << "下一个输入字符是" << ch << endl;
 /* keeping output window open */
 /*
     cin.clear();

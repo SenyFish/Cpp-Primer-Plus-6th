@@ -1,4 +1,4 @@
-// instr2.cpp -- reading more than one word with getline
+// instr2.cpp -- 使用getline读取多个单词
 #include <iostream>
 int main()
 {
@@ -7,12 +7,12 @@ int main()
     char name[ArSize];
     char dessert[ArSize];
 
-    cout << "Enter your name:\n";
-    cin.getline(name, ArSize);  // reads through newline
-    cout << "Enter your favorite dessert:\n";
+    cout << "请输入你的名字：\n";
+    cin.getline(name, ArSize);  // 读取到换行符为止
+    cout << "请输入你最喜欢的甜点：\n";
     cin.getline(dessert, ArSize);
-    cout << "I have some delicious " << dessert;
-    cout << " for you, " << name << ".\n";
+    cout << "我有一些美味的" << dessert;
+    cout << "给你，" << name << "。\n";
     // cin.get();
     return 0; 
 }

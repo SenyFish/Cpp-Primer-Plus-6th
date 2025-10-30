@@ -1,21 +1,20 @@
-// or.cpp -- using the logical OR operator
+// or.cpp -- 使用逻辑OR运算符
 #include <iostream>
 int main()
 {
     using namespace std;
-    cout << "This program may reformat your hard disk\n"
-            "and destroy all your data.\n"
-            "Do you wish to continue? <y/n> ";
+    cout << "本程序可能会重新格式化你的硬盘\n"
+            "并销毁你所有的数据。\n"
+            "你希望继续吗？<y/n> ";
     char ch;
     cin >> ch;
-    if (ch == 'y' || ch == 'Y')             // y or Y
-        cout << "You were warned!\a\a\n";
-    else if (ch == 'n' || ch == 'N')        // n or N
-        cout << "A wise choice ... bye\n";
+    if (ch == 'y' || ch == 'Y')             // y 或 Y
+        cout << "已经警告过你了！\a\a\n";
+    else if (ch == 'n' || ch == 'N')        // n 或 N
+        cout << "明智的选择...再见\n";
     else
-        cout << "That wasn't a y or n! Apparently you "
-                "can't follow\ninstructions, so "
-                "I'll trash your disk anyway.\a\a\a\n";
+        cout << "那既不是y也不是n！显然你不会\n遵循指令，"
+                "所以我还是会销毁你的硬盘。\a\a\a\n";
 	// cin.get();
 	// cin.get();
     return 0;
